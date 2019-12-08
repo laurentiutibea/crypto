@@ -1,0 +1,6 @@
+{
+    "jwtPrivateKey": "",
+    "db": "mongodb://localhost/crypto",
+    "port": "3900",
+    "requiresAuth": true
+}
