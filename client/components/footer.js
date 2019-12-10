@@ -4,7 +4,7 @@ export default class Footer extends Component {
     render() {
         return (
             <div className="footer">
-                <p className="m-0 pb-2 pt-1">Laurentiu Tibea</p>
+                <p className="m-0 pb-2 pt-1"><strong>&copy; Laurentiu Tibea - Crypto</strong></p>
             </div>
         )
     }

@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-import Link from "next/link";
+import Link from "./link";
 
+import auth from "../services/authService";
 import crypto from "../src/crypto.png";
 
 export default class Navbar extends Component {
+    handleLogout = () => {
+        auth.logout();
+        window.location = "/login";
+    }
+
     render() {
         return (
             <div>
@@ -16,24 +22,24 @@ export default class Navbar extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
-                            <li className="nav-item active">
+                            <li className="nav-item">
                                 <Link href="/">
-                                    <a className="nav-link">Home</a>
+                                    <a className="nav-link"><strong>Home</strong></a>
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="/about">
-                                    <a className="nav-link">About Page</a>
+                                <Link href="/customdata">
+                                    <a className="nav-link"><strong>Custom Data Graphs</strong></a>
                                 </Link>
                                 
                             </li>
                             <li className="nav-item">
                                 <Link href="/admin">
-                                    <a className="nav-link">Administration Panel</a>
+                                    <a className="nav-link"><strong>Administration Panel</strong></a>
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <a href="#" className="nav-link" onClick={this.handleLogout}>Logout</a>
+                                <a href="#" className="nav-link" onClick={this.handleLogout}><strong>Logout</strong></a>
                             </li>
                         </ul>
                     </div>

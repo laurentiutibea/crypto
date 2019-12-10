@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -124,10 +124,139 @@ class Footer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 7
       },
       __self: this
-    }, "Laurentiu Tibea"));
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7
+      },
+      __self: this
+    }, "\xA9 Laurentiu Tibea - Crypto")));
   }
 
 }
+
+/***/ }),
+
+/***/ "./components/layout.js":
+/*!******************************!*\
+  !*** ./components/layout.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Layout; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/navbar */ "./components/navbar.js");
+/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/footer */ "./components/footer.js");
+/* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../static/style.css */ "./static/style.css");
+/* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_static_style_css__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\layout.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+class Layout extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  render() {
+    return __jsx("div", {
+      className: "main",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: this
+    }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }, __jsx("title", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }, "Home"), __jsx("link", {
+      rel: "stylesheet",
+      href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
+      integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
+      crossorigin: "anonymous",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    })), __jsx(_components_navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }), __jsx("div", {
+      className: "container",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }, this.props.children), __jsx(_components_footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }));
+  }
+
+}
+
+/***/ }),
+
+/***/ "./components/link.js":
+/*!****************************!*\
+  !*** ./components/link.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\link.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (({
+  href,
+  children
+}) => {
+  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])();
+  let className = children.props.className || '';
+  if (router.pathname === href) className = `${className} active`;
+  return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: href,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(children, {
+    className
+  }));
+});
 
 /***/ }),
 
@@ -141,37 +270,49 @@ class Footer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Navbar; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _src_crypto_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/crypto.png */ "./src/crypto.png");
-/* harmony import */ var _src_crypto_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_src_crypto_png__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./link */ "./components/link.js");
+/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
+/* harmony import */ var _src_crypto_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/crypto.png */ "./src/crypto.png");
+/* harmony import */ var _src_crypto_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_src_crypto_png__WEBPACK_IMPORTED_MODULE_4__);
+
 var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\navbar.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+
+class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
+  constructor(...args) {
+    super(...args);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleLogout", () => {
+      _services_authService__WEBPACK_IMPORTED_MODULE_3__["default"].logout();
+      window.location = "/login";
+    });
+  }
+
   render() {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 9
+        lineNumber: 15
       },
       __self: this
     }, __jsx("nav", {
       className: "navbar navbar-expand-sm navbar-light",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10
+        lineNumber: 16
       },
       __self: this
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    }, __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
       href: "/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11
+        lineNumber: 17
       },
       __self: this
     }, __jsx("a", {
@@ -179,14 +320,14 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       href: "#",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 18
       },
       __self: this
     }, __jsx("img", {
-      src: _src_crypto_png__WEBPACK_IMPORTED_MODULE_2___default.a,
+      src: _src_crypto_png__WEBPACK_IMPORTED_MODULE_4___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 18
       },
       __self: this
     }))), __jsx("button", {
@@ -199,14 +340,14 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       "aria-label": "Toggle navigation",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
+        lineNumber: 20
       },
       __self: this
     }, __jsx("span", {
       className: "navbar-toggler-icon",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 21
       },
       __self: this
     })), __jsx("div", {
@@ -214,67 +355,52 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       id: "navbarNav",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 23
       },
       __self: this
     }, __jsx("ul", {
       className: "navbar-nav",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
-      },
-      __self: this
-    }, __jsx("li", {
-      className: "nav-item active",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: this
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "nav-link",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, "Home"))), __jsx("li", {
-      className: "nav-item",
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 24
       },
       __self: this
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/about",
+    }, __jsx("li", {
+      className: "nav-item",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 25
       },
       __self: this
-    }, __jsx("a", {
-      className: "nav-link",
+    }, __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      href: "/",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 26
       },
       __self: this
-    }, "About Page"))), __jsx("li", {
+    }, __jsx("a", {
+      className: "nav-link",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, "Home")))), __jsx("li", {
       className: "nav-item",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 30
       },
       __self: this
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/admin",
+    }, __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      href: "/customdata",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 31
@@ -287,11 +413,44 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 32
       },
       __self: this
-    }, "Administration Panel"))), __jsx("li", {
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: this
+    }, "Custom Data Graphs")))), __jsx("li", {
       className: "nav-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 36
+      },
+      __self: this
+    }, __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      href: "/admin",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "nav-link",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      },
+      __self: this
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      },
+      __self: this
+    }, "Administration Panel")))), __jsx("li", {
+      className: "nav-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41
       },
       __self: this
     }, __jsx("a", {
@@ -300,10 +459,16 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: this.handleLogout,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 42
       },
       __self: this
-    }, "Logout"))))));
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      },
+      __self: this
+    }, "Logout")))))));
   }
 
 }
@@ -2098,20 +2263,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/navbar */ "./components/navbar.js");
-/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/footer */ "./components/footer.js");
-/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! socket.io-client */ "socket.io-client");
-/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
-/* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../static/style.css */ "./static/style.css");
-/* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_static_style_css__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
+/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! socket.io-client */ "socket.io-client");
+/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
+/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
 
 var _jsxFileName = "D:\\WEB\\crypto\\client\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-
 
 
 
@@ -2123,107 +2282,71 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
     super(...args);
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "state", {
-      user: {}
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleReq", () => {
-      // fetch("http://localhost:3900/api/crypto").then(res => res.json()).then(res => console.log("RESULT::: ", res));
-      const socket = socket_io_client__WEBPACK_IMPORTED_MODULE_5___default()("https://ws.coincap.io", {
-        transports: ['websocket']
-      });
-      socket.on("trades", data => {
-        console.log("DATA: ", data);
-      });
+      user: {},
+      data: {
+        data: [],
+        timestamp: ""
+      }
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleLogout", () => {
-      _services_authService__WEBPACK_IMPORTED_MODULE_6__["default"].logout();
+      _services_authService__WEBPACK_IMPORTED_MODULE_4__["default"].logout();
       window.location.replace("/login");
     });
   }
 
-  componentDidMount() {
-    const user = _services_authService__WEBPACK_IMPORTED_MODULE_6__["default"].getCurrentUser();
+  async componentDidMount() {
+    const user = _services_authService__WEBPACK_IMPORTED_MODULE_4__["default"].getCurrentUser();
     this.setState({
       user
     });
+    await _services_cryptoService__WEBPACK_IMPORTED_MODULE_5__["default"].getCurrencies().then(res => this.setState({
+      data: res.data
+    }));
+    console.log(this.state.data);
   }
 
   render() {
-    if (false) {} else return __jsx("div", {
-      className: "main",
+    if (false) {} else return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: this
-    }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 39
-      },
-      __self: this
-    }, __jsx("title", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 40
-      },
-      __self: this
-    }, "Login"), __jsx("link", {
-      rel: "stylesheet",
-      href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
-      integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
-      crossorigin: "anonymous",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 41
-      },
-      __self: this
-    })), __jsx(_components_navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 43
-      },
-      __self: this
-    }), __jsx("div", {
-      className: "container",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 34
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 35
       },
       __self: this
-    }, "Hello ", this.state.user.name), __jsx("button", {
-      onClick: () => {
-        const response = fetch("https://api.coincap.io/v2/assets", {
-          method: "GET",
-          redirect: "follow"
-        }).then(res => res.json()).then(res => console.log(res));
-      },
+    }, "Hello ", this.state.user.name), __jsx("div", {
+      className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 36
       },
       __self: this
-    }, "GET ASSETS"), __jsx("button", {
-      onClick: this.handleReq,
+    }, this.state.data.data.map(item => __jsx("div", {
+      className: "col-sm-2 border",
+      key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 38
       },
       __self: this
-    }, "GET WS")), __jsx(_components_footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 39
       },
       __self: this
-    }));
+    }, item.name), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    }, item.symbol)))));
   }
 
 }
@@ -2257,7 +2380,6 @@ var _config__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_requ
 
 const apiEndpoit = _config__WEBPACK_IMPORTED_MODULE_1__["apiUrl"] + "/auth";
 const tokenKey = "token";
-_httpService__WEBPACK_IMPORTED_MODULE_0__["default"].setJwt(getJwt());
 async function login(email, password) {
   const {
     data: jwt
@@ -2282,13 +2404,15 @@ async function logout() {
 function getCurrentUser() {
   try {
     const jwt = localStorage.getItem("token");
+    _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].setJwt(getJwt());
     return jwt_decode__WEBPACK_IMPORTED_MODULE_2___default()(jwt);
   } catch (ex) {
     return null;
   }
 }
-function getJwt() {//const jwt = localStorage.getItem(tokenKey);
-  //return jwt;
+function getJwt() {
+  const jwt = localStorage.getItem(tokenKey);
+  return jwt;
 }
 /* harmony default export */ __webpack_exports__["default"] = ({
   login,
@@ -2297,6 +2421,31 @@ function getJwt() {//const jwt = localStorage.getItem(tokenKey);
   logout,
   getCurrentUser,
   getJwt
+});
+
+/***/ }),
+
+/***/ "./services/cryptoService.js":
+/*!***********************************!*\
+  !*** ./services/cryptoService.js ***!
+  \***********************************/
+/*! exports provided: getCurrencies, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCurrencies", function() { return getCurrencies; });
+/* harmony import */ var _httpService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./httpService */ "./services/httpService.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config */ "./config.json");
+var _config__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../config */ "./config.json", 1);
+
+
+const apiEndpoit = _config__WEBPACK_IMPORTED_MODULE_1__["apiUrl"] + "/crypto";
+function getCurrencies() {
+  return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].get(apiEndpoit);
+}
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getCurrencies
 });
 
 /***/ }),
@@ -2363,7 +2512,7 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2493,6 +2642,17 @@ module.exports = require("jwt-decode");
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 

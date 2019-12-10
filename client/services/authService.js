@@ -5,8 +5,6 @@ import jwtDecode from "jwt-decode";
 const apiEndpoit = apiUrl + "/auth";
 const tokenKey = "token";
 
-http.setJwt(getJwt());
-
 export async function login(email, password){
 	const {data: jwt} = await http.post(apiEndpoit, {email, password});
 	localStorage.setItem(tokenKey, jwt);
@@ -27,6 +25,7 @@ export async function logout(){
 export function getCurrentUser(){
 	try{
 		const jwt = localStorage.getItem("token");
+		http.setJwt(getJwt());
 		return jwtDecode(jwt);
 	}
 	catch(ex){
@@ -35,8 +34,8 @@ export function getCurrentUser(){
 }
 
 export function getJwt(){
-	//const jwt = localStorage.getItem(tokenKey);
-	//return jwt;
+	const jwt = localStorage.getItem(tokenKey);
+	return jwt;
 }
 
 export default{
