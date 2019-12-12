@@ -2326,27 +2326,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
         lineNumber: 36
       },
       __self: this
-    }, this.state.data.data.map(item => __jsx("div", {
-      className: "col-sm-2 border",
-      key: item.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: this
-    }, __jsx("p", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 39
-      },
-      __self: this
-    }, item.name), __jsx("p", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 40
-      },
-      __self: this
-    }, item.symbol)))));
+    }));
   }
 
 }

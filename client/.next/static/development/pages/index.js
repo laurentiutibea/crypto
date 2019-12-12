@@ -12232,7 +12232,7 @@ if (typeof WebSocket !== 'undefined') {
 
 if (typeof window === 'undefined') {
   try {
-    NodeWebSocket = __webpack_require__(/*! ws */ 1);
+    NodeWebSocket = __webpack_require__(/*! ws */ 2);
   } catch (e) { }
 }
 
@@ -23178,29 +23178,7 @@ function (_Component) {
           lineNumber: 36
         },
         __self: this
-      }, this.state.data.data.map(function (item) {
-        return __jsx("div", {
-          className: "col-sm-2 border",
-          key: item.id,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 38
-          },
-          __self: this
-        }, __jsx("p", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 39
-          },
-          __self: this
-        }, item.name), __jsx("p", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 40
-          },
-          __self: this
-        }, item.symbol));
-      })));
+      }));
     }
   }]);
 
@@ -23446,7 +23424,7 @@ module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absol
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!********************!*\
   !*** ws (ignored) ***!
   \********************/

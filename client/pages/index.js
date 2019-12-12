@@ -34,12 +34,12 @@ class Index extends Component{
             <Layout>
                 <p>Hello {this.state.user.name}</p>
                 <div className="row">
-                    {this.state.data.data.map(item => (
+                    {/* {this.state.data.data.map(item => (
                         <div className="col-sm-2 border" key={item.id}>
                             <p>{item.name}</p>
                             <p>{item.symbol}</p>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
             </Layout>
         );
