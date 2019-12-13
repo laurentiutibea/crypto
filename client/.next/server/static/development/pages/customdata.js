@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2352,11 +2352,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 const chartOptions = {
   chart: {
-    zoomType: 'x',
-    backgroundColor: "#eeeeee"
-  },
-  subtitle: {
-    text: 'Click and drag in the plot area to zoom in'
+    zoomType: 'x'
   },
   xAxis: {
     type: 'datetime'
@@ -2438,7 +2434,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
         bkOptions.title = {
           text: `${this.state.selectedCryptocurrency} to ${this.state.selectedCurrency} exchange rate over time`
         }, bkOptions.series = [{
-          type: "area",
+          type: "line",
           name: `${this.state.selectedCryptocurrency} to ${this.state.selectedCurrency}`,
           data: e.data
         }];
@@ -2516,19 +2512,39 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
   }
 
   render() {
-    const selectCC = __jsx("select", {
-      name: "Cryptocurrency",
-      onChange: this.changeCryptocurrency,
+    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 153
+      },
+      __self: this
+    }, __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 154
+      },
+      __self: this
+    }, "Hello ", this.state.user.name), __jsx("div", {
+      className: "form-group w-25",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 155
+      },
+      __self: this
+    }, __jsx("select", {
+      name: "Cryptocurrency",
+      onChange: this.changeCryptocurrency,
+      className: "form-control",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 156
       },
       __self: this
     }, __jsx("option", {
       value: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 153
+        lineNumber: 156
       },
       __self: this
     }, "Select Cryptocurrency"), this.state.cryptocurrencies.map(item => __jsx("option", {
@@ -2536,24 +2552,23 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 153
+        lineNumber: 156
       },
       __self: this
-    }, item.name, " - ", item.symbol)));
-
-    const selectC = __jsx("select", {
+    }, item.name, " - ", item.symbol))), __jsx("select", {
       name: "Currency",
       onChange: this.changeCryptocurrency,
+      className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 154
+        lineNumber: 157
       },
       __self: this
     }, __jsx("option", {
       value: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 154
+        lineNumber: 157
       },
       __self: this
     }, "Select Currency"), this.state.currencies.map(item => __jsx("option", {
@@ -2561,29 +2576,15 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 154
-      },
-      __self: this
-    }, item.name, " - ", item.symbol)));
-
-    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 156
-      },
-      __self: this
-    }, __jsx("p", {
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 157
       },
       __self: this
-    }, "Hello ", this.state.user.name), selectCC, selectC, __jsx("button", {
+    }, item.name, " - ", item.symbol)))), __jsx("button", {
       className: "btn btn-primary",
       onClick: this.addGraph,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 160
+        lineNumber: 159
       },
       __self: this
     }, "+"), __jsx("button", {
@@ -2591,19 +2592,26 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: this.refreshAll,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 161
+        lineNumber: 160
       },
       __self: this
     }, "REFRESH"), __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 162
+        lineNumber: 161
       },
       __self: this
     }, this.state.graphs.length > 0 ? this.state.graphs.map((item, index) => __jsx("div", {
-      className: "col-md-6",
+      className: "col-md-12",
       key: item.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 164
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "form-group",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 165
@@ -2611,8 +2619,9 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       __self: this
     }, __jsx("select", {
       name: "Cryptocurrency",
-      onChange: this.changeCryptocurrency,
+      onChange: this.changeGraphCryptocurrency,
       defaultValue: item.cryptocurrency,
+      className: "form-control",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 166
@@ -2628,8 +2637,9 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       __self: this
     }, i.name, " - ", i.symbol))), __jsx("select", {
       name: "Currency",
-      onChange: this.changeCryptocurrency,
+      onChange: this.changeGraphCryptocurrency,
       defaultValue: item.currency,
+      className: "form-control",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 167
@@ -2643,14 +2653,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
         lineNumber: 167
       },
       __self: this
-    }, i.name, " - ", i.symbol))), !this.state.loading && __jsx(highcharts_react_official__WEBPACK_IMPORTED_MODULE_11___default.a, {
+    }, i.name, " - ", i.symbol)))), !this.state.loading && __jsx(highcharts_react_official__WEBPACK_IMPORTED_MODULE_11___default.a, {
       key: item.id,
       highcharts: highcharts__WEBPACK_IMPORTED_MODULE_10___default.a,
       options: item.chartOptions,
       oneToOne: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 168
+        lineNumber: 169
       },
       __self: this
     }))) : ""));
@@ -2820,7 +2830,7 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!***********************************!*\
   !*** multi ./pages/customdata.js ***!
   \***********************************/

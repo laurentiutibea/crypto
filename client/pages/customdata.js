@@ -7,8 +7,7 @@ import auth from "../services/authService";
 import crypto from "../services/cryptoService";
 
 const chartOptions = {
-  chart: {zoomType: 'x' , backgroundColor: "#eeeeee"},
-      subtitle: {text: 'Click and drag in the plot area to zoom in'},
+  chart: {zoomType: 'x'},
       xAxis: { type: 'datetime'},
       yAxis: {
           title: {text: 'Exchange rate'}
@@ -102,7 +101,7 @@ export default class CustomData extends Component {
     worker.onmessage = e => {
       bkOptions.title =  {text: `${this.state.selectedCryptocurrency} to ${this.state.selectedCurrency} exchange rate over time`},
       bkOptions.series = [{
-        type: "area",
+        type: "line",
         name: `${this.state.selectedCryptocurrency} to ${this.state.selectedCurrency}`,
         data: e.data
       }]
@@ -150,21 +149,23 @@ export default class CustomData extends Component {
   }
 
   render() {
-    const selectCC = <select name="Cryptocurrency" onChange={this.changeCryptocurrency}><option value="">Select Cryptocurrency</option>{this.state.cryptocurrencies.map(item => (<option value={item.id} key={item.id}>{item.name} - {item.symbol}</option>))}</select>
-    const selectC = <select name="Currency" onChange={this.changeCryptocurrency}><option value="">Select Currency</option>{this.state.currencies.map(item => (<option value={item.id} key={item.id}>{item.name} - {item.symbol}</option>))}</select>
     return (
       <Layout>
           <p>Hello {this.state.user.name}</p>
-          {selectCC}
-          {selectC}
+          <div className="form-group w-25">
+            <select name="Cryptocurrency" onChange={this.changeCryptocurrency} className="form-control"><option value="">Select Cryptocurrency</option>{this.state.cryptocurrencies.map(item => (<option value={item.id} key={item.id}>{item.name} - {item.symbol}</option>))}</select>
+            <select name="Currency" onChange={this.changeCryptocurrency} className="form-control"><option value="">Select Currency</option>{this.state.currencies.map(item => (<option value={item.id} key={item.id}>{item.name} - {item.symbol}</option>))}</select>
+          </div>
           <button className="btn btn-primary" onClick={this.addGraph}>+</button>
           <button className="btn btn-success" onClick={this.refreshAll}>REFRESH</button>
           <div className="row">
             {this.state.graphs.length > 0 ? 
                 this.state.graphs.map((item,index) => 
-                    <div className="col-md-6" key={item.id}>
-                        <select name="Cryptocurrency" onChange={this.changeCryptocurrency} defaultValue={item.cryptocurrency}>{this.state.cryptocurrencies.map(i => (<option value={i.id} key={i.id}>{i.name} - {i.symbol}</option>))}</select>
-                        <select name="Currency" onChange={this.changeCryptocurrency} defaultValue={item.currency}>{this.state.currencies.map(i => (<option value={i.id} key={i.id}>{i.name} - {i.symbol}</option>))}</select>
+                    <div className="col-md-12" key={item.id}>
+                        <div className="form-group">
+							<select name="Cryptocurrency" onChange={this.changeGraphCryptocurrency} defaultValue={item.cryptocurrency} className="form-control">{this.state.cryptocurrencies.map(i => (<option value={i.id} key={i.id}>{i.name} - {i.symbol}</option>))}</select>
+                        	<select name="Currency" onChange={this.changeGraphCryptocurrency} defaultValue={item.currency} className="form-control">{this.state.currencies.map(i => (<option value={i.id} key={i.id}>{i.name} - {i.symbol}</option>))}</select>
+						</div>
                         {!this.state.loading && <HighchartsReact key={item.id} highcharts={Highcharts} options={item.chartOptions} oneToOne={true}/>}
                     </div> 
             ): ""}
