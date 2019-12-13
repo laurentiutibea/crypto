@@ -3,8 +3,11 @@ import {apiUrl} from "../config";
 
 const apiEndpoit = apiUrl + "/crypto";
 
-export function getCurrencies(){
-	return http.get(apiEndpoit);
+export function getCurrencies(cryptocurrency, currency){
+	return http.post(apiEndpoit, {
+        cryptocurrency,
+        currency
+    });
 }
 
 export default{

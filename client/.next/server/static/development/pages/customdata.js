@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Footer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\footer.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/footer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 class Footer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
@@ -155,7 +155,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/footer */ "./components/footer.js");
 /* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../static/style.css */ "./static/style.css");
 /* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_static_style_css__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\layout.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -187,7 +187,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       rel: "stylesheet",
       href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
       integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
-      crossorigin: "anonymous",
+      crossOrigin: "anonymous",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 14
@@ -234,7 +234,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\link.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/link.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -278,7 +278,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_crypto_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/crypto.png */ "./src/crypto.png");
 /* harmony import */ var _src_crypto_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_src_crypto_png__WEBPACK_IMPORTED_MODULE_4__);
 
-var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\navbar.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/navbar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -483,6 +483,17 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"apiUrl\":\"http://localhost:3900/api\"}");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/date/now.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/date/now.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/date/now */ "core-js/library/fn/date/now");
 
 /***/ }),
 
@@ -2306,16 +2317,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! highcharts */ "highcharts");
-/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! highcharts-react-official */ "highcharts-react-official");
-/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(highcharts_react_official__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
-/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/date/now */ "./node_modules/@babel/runtime-corejs2/core-js/date/now.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
+/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! highcharts */ "highcharts");
+/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! highcharts-react-official */ "highcharts-react-official");
+/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(highcharts_react_official__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
+/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
 
 
 
@@ -2323,12 +2336,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\WEB\\crypto\\client\\pages\\customdata.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/pages/customdata.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
 
 
 
@@ -2336,137 +2350,310 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-class CustomData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
+const chartOptions = {
+  chart: {
+    zoomType: 'x',
+    backgroundColor: "#eeeeee"
+  },
+  subtitle: {
+    text: 'Click and drag in the plot area to zoom in'
+  },
+  xAxis: {
+    type: 'datetime'
+  },
+  yAxis: {
+    title: {
+      text: 'Exchange rate'
+    }
+  },
+  legend: {
+    enabled: false
+  },
+  plotOptions: {
+    area: {
+      fillColor: {
+        linearGradient: {
+          x1: 0,
+          y1: 0,
+          x2: 0,
+          y2: 1
+        },
+        stops: [[0, "#7cb5ec"], [0.5, "#7cb5ec80"], [0.9, "#7cb5ff33"]]
+      },
+      marker: {
+        radius: 2
+      },
+      lineWidth: 1,
+      states: {
+        hover: {
+          lineWidth: 1
+        }
+      },
+      threshold: null
+    }
+  }
+};
+class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
   constructor(...args) {
     super(...args);
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "state", {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "state", {
       user: {},
+      jwt: "",
       data: [],
       graphs: [],
-      chartOptions: {
-        chart: {
-          zoomType: 'x',
-          backgroundColor: "#eeeeee"
-        },
-        title: {
-          text: 'BTC to EUR exchange rate over time'
-        },
-        subtitle: {
-          text: 'Click and drag in the plot area to zoom in'
-        },
-        xAxis: {
-          type: 'datetime'
-        },
-        yAxis: {
-          title: {
-            text: 'Exchange rate'
-          }
-        },
-        legend: {
-          enabled: false
-        },
-        plotOptions: {
-          area: {
-            fillColor: {
-              linearGradient: {
-                x1: 0,
-                y1: 0,
-                x2: 0,
-                y2: 1
-              },
-              stops: [[0, "#7cb5ec"], [0.5, "#7cb5ec80"], [0.9, "#7cb5ff33"]]
-            },
-            marker: {
-              radius: 2
-            },
-            lineWidth: 1,
-            states: {
-              hover: {
-                lineWidth: 1
-              }
-            },
-            threshold: null
-          }
-        }
-      }
+      cryptocurrencies: [{
+        id: "bitcoin",
+        name: "Bitcoin",
+        symbol: "BTC"
+      }, {
+        id: "ethereum",
+        name: "Ethereum",
+        symbol: "ETH"
+      }],
+      currencies: [{
+        id: "eur",
+        name: "Euro",
+        symbol: "EUR"
+      }, {
+        id: "usd",
+        name: "American Dollar",
+        symbol: "USD"
+      }],
+      selectedCryptocurrency: "",
+      selectedCurrency: "",
+      workers: 0,
+      loading: false,
+      chartOptions: {}
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "addGraph", () => {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "addGraph", () => {
+      const worker = new Worker("static/service-worker.js");
+
+      const bkOptions = _objectSpread({}, chartOptions);
+
       const graphs = [...this.state.graphs];
-      graphs.push({
-        id: 1,
-        data: {
-          name: "Bitcoin"
-        }
-      });
+
+      worker.onmessage = e => {
+        bkOptions.title = {
+          text: `${this.state.selectedCryptocurrency} to ${this.state.selectedCurrency} exchange rate over time`
+        }, bkOptions.series = [{
+          type: "area",
+          name: `${this.state.selectedCryptocurrency} to ${this.state.selectedCurrency}`,
+          data: e.data
+        }];
+        graphs.push({
+          id: _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_6___default()(),
+          chartOptions: bkOptions,
+          cryptocurrency: this.state.selectedCryptocurrency,
+          currency: this.state.selectedCurrency
+        });
+        console.log(graphs);
+        this.setState({
+          data: e.data,
+          graphs: graphs,
+          workers: this.state.workers + 1
+        });
+      };
+
+      worker.postMessage(`${this.state.selectedCryptocurrency},${this.state.selectedCurrency},${this.state.jwt}`);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "changeCryptocurrency", e => {
+      console.log(e.target.value);
       this.setState({
-        graphs
+        [`selected${e.target.name}`]: e.target.value
       });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "refreshAll", () => {
+      let workers = new Array(this.state.workers);
+      const graphs = [...this.state.graphs];
+      this.setState({
+        loading: true
+      });
+
+      for (let i = 0; i < this.state.workers; i++) {
+        workers[i] = new Worker("static/service-worker.js");
+
+        workers[i].onmessage = e => {
+          graphs[i].chartOptions.series = [{
+            type: "area",
+            name: this.state.graphs[i].chartOptions.series[0].name,
+            data: e.data
+          }];
+          this.setState({
+            data: e.data,
+            graphs: graphs,
+            loading: false
+          });
+        };
+
+        workers[i].postMessage(`${graphs[i].cryptocurrency},${graphs[i].currency},${this.state.jwt}`);
+      }
     });
   }
 
   async componentDidMount() {
-    const user = _services_authService__WEBPACK_IMPORTED_MODULE_11__["default"].getCurrentUser();
+    const user = _services_authService__WEBPACK_IMPORTED_MODULE_12__["default"].getCurrentUser();
+    const jwt = _services_authService__WEBPACK_IMPORTED_MODULE_12__["default"].getJwt();
     this.setState({
-      user
+      user,
+      jwt
     });
-    await _services_cryptoService__WEBPACK_IMPORTED_MODULE_12__["default"].getCurrencies().then(res => {
-      const bkOptions = _objectSpread({}, this.state.chartOptions);
-
-      bkOptions.series = [{
-        type: "area",
-        name: "BTC to EUR",
-        data: res.data
-      }];
-      this.setState({
-        data: res.data,
-        chartOptions: bkOptions
-      });
-    });
-    console.log(this.state.data);
+    /* await crypto.getCurrencies("bitcoin","eur").then(res => {
+       const bkOptions = {...this.state.chartOptions};
+       bkOptions.series = [{
+         type: "area",
+         name: "BTC to EUR",
+         data: res.data
+       }]
+       this.setState({
+         data: res.data,
+         chartOptions: bkOptions
+         })
+     }); */
   }
 
   render() {
-    //const select = <select>{this.state.data.data.map(item => (<option value={item.id} key={item.id}>{item.name} - {item.symbol}</option>))}</select>
-    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    const selectCC = __jsx("select", {
+      name: "Cryptocurrency",
+      onChange: this.changeCryptocurrency,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 153
+      },
+      __self: this
+    }, __jsx("option", {
+      value: "",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 153
+      },
+      __self: this
+    }, "Select Cryptocurrency"), this.state.cryptocurrencies.map(item => __jsx("option", {
+      value: item.id,
+      key: item.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 153
+      },
+      __self: this
+    }, item.name, " - ", item.symbol)));
+
+    const selectC = __jsx("select", {
+      name: "Currency",
+      onChange: this.changeCryptocurrency,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 154
+      },
+      __self: this
+    }, __jsx("option", {
+      value: "",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 154
+      },
+      __self: this
+    }, "Select Currency"), this.state.currencies.map(item => __jsx("option", {
+      value: item.id,
+      key: item.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 154
+      },
+      __self: this
+    }, item.name, " - ", item.symbol)));
+
+    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 156
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 157
       },
       __self: this
-    }, "Hello ", this.state.user.name), __jsx("button", {
+    }, "Hello ", this.state.user.name), selectCC, selectC, __jsx("button", {
       className: "btn btn-primary",
       onClick: this.addGraph,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 160
       },
       __self: this
-    }, "+"), __jsx("div", {
+    }, "+"), __jsx("button", {
+      className: "btn btn-success",
+      onClick: this.refreshAll,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 161
+      },
+      __self: this
+    }, "REFRESH"), __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 162
       },
       __self: this
-    }, this.state.graphs.length > 0 ? this.state.graphs.map(item => __jsx(highcharts_react_official__WEBPACK_IMPORTED_MODULE_10___default.a, {
+    }, this.state.graphs.length > 0 ? this.state.graphs.map((item, index) => __jsx("div", {
+      className: "col-md-6",
       key: item.id,
-      highcharts: highcharts__WEBPACK_IMPORTED_MODULE_9___default.a,
-      options: this.state.chartOptions,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 165
+      },
+      __self: this
+    }, __jsx("select", {
+      name: "Cryptocurrency",
+      onChange: this.changeCryptocurrency,
+      defaultValue: item.cryptocurrency,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 166
+      },
+      __self: this
+    }, this.state.cryptocurrencies.map(i => __jsx("option", {
+      value: i.id,
+      key: i.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 166
+      },
+      __self: this
+    }, i.name, " - ", i.symbol))), __jsx("select", {
+      name: "Currency",
+      onChange: this.changeCryptocurrency,
+      defaultValue: item.currency,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 167
+      },
+      __self: this
+    }, this.state.currencies.map(i => __jsx("option", {
+      value: i.id,
+      key: i.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 167
+      },
+      __self: this
+    }, i.name, " - ", i.symbol))), !this.state.loading && __jsx(highcharts_react_official__WEBPACK_IMPORTED_MODULE_11___default.a, {
+      key: item.id,
+      highcharts: highcharts__WEBPACK_IMPORTED_MODULE_10___default.a,
+      options: item.chartOptions,
       oneToOne: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 168
       },
       __self: this
-    })) : ""));
+    }))) : ""));
   }
 
 }
@@ -2559,8 +2746,11 @@ var _config__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_requ
 
 
 const apiEndpoit = _config__WEBPACK_IMPORTED_MODULE_1__["apiUrl"] + "/crypto";
-function getCurrencies() {
-  return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].get(apiEndpoit);
+function getCurrencies(cryptocurrency, currency) {
+  return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].post(apiEndpoit, {
+    cryptocurrency,
+    currency
+  });
 }
 /* harmony default export */ __webpack_exports__["default"] = ({
   getCurrencies
@@ -2630,14 +2820,14 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /*!***********************************!*\
   !*** multi ./pages/customdata.js ***!
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\WEB\crypto\client\pages\customdata.js */"./pages/customdata.js");
+module.exports = __webpack_require__(/*! /home/laurentiu/Documents/crypto/client/pages/customdata.js */"./pages/customdata.js");
 
 
 /***/ }),
@@ -2650,6 +2840,17 @@ module.exports = __webpack_require__(/*! D:\WEB\crypto\client\pages\customdata.j
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+
+/***/ "core-js/library/fn/date/now":
+/*!**********************************************!*\
+  !*** external "core-js/library/fn/date/now" ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/date/now");
 
 /***/ }),
 

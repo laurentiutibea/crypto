@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\customdata.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/customdata.js"],{
 
 /***/ "./components/footer.js":
 /*!******************************!*\
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\footer.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/footer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\layout.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -144,7 +144,7 @@ function (_Component) {
         rel: "stylesheet",
         href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
         integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
-        crossorigin: "anonymous",
+        crossOrigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 14
@@ -195,7 +195,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\link.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/link.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -250,7 +250,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\navbar.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/navbar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 
@@ -500,6 +500,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/array/from */ "./nod
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/array/is-array */ "./node_modules/core-js/library/fn/array/is-array.js");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/date/now.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/date/now.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/date/now */ "./node_modules/core-js/library/fn/date/now.js");
 
 /***/ }),
 
@@ -3472,6 +3483,19 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/fn/date/now.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/core-js/library/fn/date/now.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es6.date.now */ "./node_modules/core-js/library/modules/es6.date.now.js");
+module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Date.now;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/fn/get-iterator.js":
 /*!*********************************************************!*\
   !*** ./node_modules/core-js/library/fn/get-iterator.js ***!
@@ -6382,6 +6406,21 @@ addToUnscopables('entries');
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/modules/es6.date.now.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/es6.date.now.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 20.3.3.1 / 15.9.4.4 Date.now()
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+
+$export($export.S, 'Date', { now: function () { return new Date().getTime(); } });
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/modules/es6.map.js":
 /*!*********************************************************!*\
   !*** ./node_modules/core-js/library/modules/es6.map.js ***!
@@ -8293,12 +8332,12 @@ module.exports.InvalidTokenError = InvalidTokenError;
 
 /***/ "./node_modules/next/dist/build/polyfills/object-assign.js":
 /*!***********************************************************************************************************************!*\
-  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/next/dist/build/polyfills/object-assign.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/next/dist/build/polyfills/object-assign.js");
 
 /***/ }),
 
@@ -8314,10 +8353,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcustomdata&absolutePagePath=D%3A%5CWEB%5Ccrypto%5Cclient%5Cpages%5Ccustomdata.js!./":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcustomdata&absolutePagePath=D%3A%5CWEB%5Ccrypto%5Cclient%5Cpages%5Ccustomdata.js ***!
-  \***************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcustomdata&absolutePagePath=%2Fhome%2Flaurentiu%2FDocuments%2Fcrypto%2Fclient%2Fpages%2Fcustomdata.js!./":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcustomdata&absolutePagePath=%2Fhome%2Flaurentiu%2FDocuments%2Fcrypto%2Fclient%2Fpages%2Fcustomdata.js ***!
+  \************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11335,12 +11374,12 @@ module.exports = exports['default'];
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -11975,12 +12014,12 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
@@ -12451,12 +12490,12 @@ if (false) {} else {
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -14058,23 +14097,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! highcharts */ "./node_modules/highcharts/highcharts.js");
-/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! highcharts-react-official */ "./node_modules/highcharts-react-official/dist/highcharts-react.min.js");
-/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(highcharts_react_official__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
-/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/date/now */ "./node_modules/@babel/runtime-corejs2/core-js/date/now.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
+/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! highcharts */ "./node_modules/highcharts/highcharts.js");
+/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! highcharts-react-official */ "./node_modules/highcharts-react-official/dist/highcharts-react.min.js");
+/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(highcharts_react_official__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
+/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
 
 
 
@@ -14091,12 +14132,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\WEB\\crypto\\client\\pages\\customdata.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_16___default.a.createElement;
+
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/pages/customdata.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_17___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_15__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_16__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
 
 
 
@@ -14104,132 +14146,205 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+var chartOptions = {
+  chart: {
+    zoomType: 'x',
+    backgroundColor: "#eeeeee"
+  },
+  subtitle: {
+    text: 'Click and drag in the plot area to zoom in'
+  },
+  xAxis: {
+    type: 'datetime'
+  },
+  yAxis: {
+    title: {
+      text: 'Exchange rate'
+    }
+  },
+  legend: {
+    enabled: false
+  },
+  plotOptions: {
+    area: {
+      fillColor: {
+        linearGradient: {
+          x1: 0,
+          y1: 0,
+          x2: 0,
+          y2: 1
+        },
+        stops: [[0, "#7cb5ec"], [0.5, "#7cb5ec80"], [0.9, "#7cb5ff33"]]
+      },
+      marker: {
+        radius: 2
+      },
+      lineWidth: 1,
+      states: {
+        hover: {
+          lineWidth: 1
+        }
+      },
+      threshold: null
+    }
+  }
+};
 
 var CustomData =
 /*#__PURE__*/
 function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_14__["default"])(CustomData, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_15__["default"])(CustomData, _Component);
 
   function CustomData() {
     var _getPrototypeOf2;
 
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_9__["default"])(this, CustomData);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__["default"])(this, CustomData);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_11__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_12__["default"])(CustomData)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_12__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_13__["default"])(CustomData)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_15__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_13__["default"])(_this), "state", {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_16__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_14__["default"])(_this), "state", {
       user: {},
+      jwt: "",
       data: [],
       graphs: [],
-      chartOptions: {
-        chart: {
-          zoomType: 'x',
-          backgroundColor: "#eeeeee"
-        },
-        title: {
-          text: 'BTC to EUR exchange rate over time'
-        },
-        subtitle: {
-          text: 'Click and drag in the plot area to zoom in'
-        },
-        xAxis: {
-          type: 'datetime'
-        },
-        yAxis: {
-          title: {
-            text: 'Exchange rate'
-          }
-        },
-        legend: {
-          enabled: false
-        },
-        plotOptions: {
-          area: {
-            fillColor: {
-              linearGradient: {
-                x1: 0,
-                y1: 0,
-                x2: 0,
-                y2: 1
-              },
-              stops: [[0, "#7cb5ec"], [0.5, "#7cb5ec80"], [0.9, "#7cb5ff33"]]
-            },
-            marker: {
-              radius: 2
-            },
-            lineWidth: 1,
-            states: {
-              hover: {
-                lineWidth: 1
-              }
-            },
-            threshold: null
-          }
-        }
-      }
+      cryptocurrencies: [{
+        id: "bitcoin",
+        name: "Bitcoin",
+        symbol: "BTC"
+      }, {
+        id: "ethereum",
+        name: "Ethereum",
+        symbol: "ETH"
+      }],
+      currencies: [{
+        id: "eur",
+        name: "Euro",
+        symbol: "EUR"
+      }, {
+        id: "usd",
+        name: "American Dollar",
+        symbol: "USD"
+      }],
+      selectedCryptocurrency: "",
+      selectedCurrency: "",
+      workers: 0,
+      loading: false,
+      chartOptions: {}
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_15__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_13__["default"])(_this), "addGraph", function () {
-      var graphs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_8__["default"])(_this.state.graphs);
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_16__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_14__["default"])(_this), "addGraph", function () {
+      var worker = new Worker("static/service-worker.js");
 
-      graphs.push({
-        id: 1,
-        data: {
-          name: "Bitcoin"
-        }
-      });
+      var bkOptions = _objectSpread({}, chartOptions);
+
+      var graphs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_9__["default"])(_this.state.graphs);
+
+      worker.onmessage = function (e) {
+        bkOptions.title = {
+          text: "".concat(_this.state.selectedCryptocurrency, " to ").concat(_this.state.selectedCurrency, " exchange rate over time")
+        }, bkOptions.series = [{
+          type: "area",
+          name: "".concat(_this.state.selectedCryptocurrency, " to ").concat(_this.state.selectedCurrency),
+          data: e.data
+        }];
+        graphs.push({
+          id: _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_8___default()(),
+          chartOptions: bkOptions,
+          cryptocurrency: _this.state.selectedCryptocurrency,
+          currency: _this.state.selectedCurrency
+        });
+        console.log(graphs);
+
+        _this.setState({
+          data: e.data,
+          graphs: graphs,
+          workers: _this.state.workers + 1
+        });
+      };
+
+      worker.postMessage("".concat(_this.state.selectedCryptocurrency, ",").concat(_this.state.selectedCurrency, ",").concat(_this.state.jwt));
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_16__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_14__["default"])(_this), "changeCryptocurrency", function (e) {
+      console.log(e.target.value);
+
+      _this.setState(Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_16__["default"])({}, "selected".concat(e.target.name), e.target.value));
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_16__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_14__["default"])(_this), "refreshAll", function () {
+      var workers = new Array(_this.state.workers);
+
+      var graphs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_9__["default"])(_this.state.graphs);
 
       _this.setState({
-        graphs: graphs
+        loading: true
       });
+
+      var _loop = function _loop(i) {
+        workers[i] = new Worker("static/service-worker.js");
+
+        workers[i].onmessage = function (e) {
+          graphs[i].chartOptions.series = [{
+            type: "area",
+            name: _this.state.graphs[i].chartOptions.series[0].name,
+            data: e.data
+          }];
+
+          _this.setState({
+            data: e.data,
+            graphs: graphs,
+            loading: false
+          });
+        };
+
+        workers[i].postMessage("".concat(graphs[i].cryptocurrency, ",").concat(graphs[i].currency, ",").concat(_this.state.jwt));
+      };
+
+      for (var i = 0; i < _this.state.workers; i++) {
+        _loop(i);
+      }
     });
 
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_10__["default"])(CustomData, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__["default"])(CustomData, [{
     key: "componentDidMount",
     value: function () {
       var _componentDidMount = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7__["default"])(
       /*#__PURE__*/
       _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.mark(function _callee() {
-        var _this2 = this;
-
-        var user;
+        var user, jwt;
         return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                user = _services_authService__WEBPACK_IMPORTED_MODULE_20__["default"].getCurrentUser();
+                user = _services_authService__WEBPACK_IMPORTED_MODULE_21__["default"].getCurrentUser();
+                jwt = _services_authService__WEBPACK_IMPORTED_MODULE_21__["default"].getJwt();
                 this.setState({
-                  user: user
+                  user: user,
+                  jwt: jwt
                 });
-                _context.next = 4;
-                return _services_cryptoService__WEBPACK_IMPORTED_MODULE_21__["default"].getCurrencies().then(function (res) {
-                  var bkOptions = _objectSpread({}, _this2.state.chartOptions);
+                /* await crypto.getCurrencies("bitcoin","eur").then(res => {
+                   const bkOptions = {...this.state.chartOptions};
+                   bkOptions.series = [{
+                     type: "area",
+                     name: "BTC to EUR",
+                     data: res.data
+                   }]
+                   this.setState({
+                     data: res.data,
+                     chartOptions: bkOptions
+                     })
+                 }); */
 
-                  bkOptions.series = [{
-                    type: "area",
-                    name: "BTC to EUR",
-                    data: res.data
-                  }];
-
-                  _this2.setState({
-                    data: res.data,
-                    chartOptions: bkOptions
-                  });
-                });
-
-              case 4:
-                console.log(this.state.data);
-
-              case 5:
+              case 3:
               case "end":
                 return _context.stop();
             }
@@ -14246,54 +14361,161 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
-      //const select = <select>{this.state.data.data.map(item => (<option value={item.id} key={item.id}>{item.name} - {item.symbol}</option>))}</select>
-      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_17__["default"], {
+      var selectCC = __jsx("select", {
+        name: "Cryptocurrency",
+        onChange: this.changeCryptocurrency,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 153
+        },
+        __self: this
+      }, __jsx("option", {
+        value: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 153
+        },
+        __self: this
+      }, "Select Cryptocurrency"), this.state.cryptocurrencies.map(function (item) {
+        return __jsx("option", {
+          value: item.id,
+          key: item.id,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 153
+          },
+          __self: this
+        }, item.name, " - ", item.symbol);
+      }));
+
+      var selectC = __jsx("select", {
+        name: "Currency",
+        onChange: this.changeCryptocurrency,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 154
+        },
+        __self: this
+      }, __jsx("option", {
+        value: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 154
+        },
+        __self: this
+      }, "Select Currency"), this.state.currencies.map(function (item) {
+        return __jsx("option", {
+          value: item.id,
+          key: item.id,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 154
+          },
+          __self: this
+        }, item.name, " - ", item.symbol);
+      }));
+
+      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 156
         },
         __self: this
       }, __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 157
         },
         __self: this
-      }, "Hello ", this.state.user.name), __jsx("button", {
+      }, "Hello ", this.state.user.name), selectCC, selectC, __jsx("button", {
         className: "btn btn-primary",
         onClick: this.addGraph,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 160
         },
         __self: this
-      }, "+"), __jsx("div", {
+      }, "+"), __jsx("button", {
+        className: "btn btn-success",
+        onClick: this.refreshAll,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 161
+        },
+        __self: this
+      }, "REFRESH"), __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 162
         },
         __self: this
-      }, this.state.graphs.length > 0 ? this.state.graphs.map(function (item) {
-        return __jsx(highcharts_react_official__WEBPACK_IMPORTED_MODULE_19___default.a, {
+      }, this.state.graphs.length > 0 ? this.state.graphs.map(function (item, index) {
+        return __jsx("div", {
+          className: "col-md-6",
           key: item.id,
-          highcharts: highcharts__WEBPACK_IMPORTED_MODULE_18___default.a,
-          options: _this3.state.chartOptions,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 165
+          },
+          __self: this
+        }, __jsx("select", {
+          name: "Cryptocurrency",
+          onChange: _this2.changeCryptocurrency,
+          defaultValue: item.cryptocurrency,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 166
+          },
+          __self: this
+        }, _this2.state.cryptocurrencies.map(function (i) {
+          return __jsx("option", {
+            value: i.id,
+            key: i.id,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 166
+            },
+            __self: this
+          }, i.name, " - ", i.symbol);
+        })), __jsx("select", {
+          name: "Currency",
+          onChange: _this2.changeCryptocurrency,
+          defaultValue: item.currency,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 167
+          },
+          __self: this
+        }, _this2.state.currencies.map(function (i) {
+          return __jsx("option", {
+            value: i.id,
+            key: i.id,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 167
+            },
+            __self: this
+          }, i.name, " - ", i.symbol);
+        })), !_this2.state.loading && __jsx(highcharts_react_official__WEBPACK_IMPORTED_MODULE_20___default.a, {
+          key: item.id,
+          highcharts: highcharts__WEBPACK_IMPORTED_MODULE_19___default.a,
+          options: item.chartOptions,
           oneToOne: true,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 87
+            lineNumber: 168
           },
           __self: this
-        });
+        }));
       }) : ""));
     }
   }]);
 
   return CustomData;
-}(react__WEBPACK_IMPORTED_MODULE_16__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_17__["Component"]);
 
 
 
@@ -14462,8 +14684,11 @@ var _config__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_requ
 
 
 var apiEndpoit = _config__WEBPACK_IMPORTED_MODULE_1__["apiUrl"] + "/crypto";
-function getCurrencies() {
-  return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].get(apiEndpoit);
+function getCurrencies(cryptocurrency, currency) {
+  return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].post(apiEndpoit, {
+    cryptocurrency: cryptocurrency,
+    currency: currency
+  });
 }
 /* harmony default export */ __webpack_exports__["default"] = ({
   getCurrencies: getCurrencies
@@ -14522,28 +14747,28 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 4:
-/*!*******************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fcustomdata&absolutePagePath=D%3A%5CWEB%5Ccrypto%5Cclient%5Cpages%5Ccustomdata.js ***!
-  \*******************************************************************************************************************************/
+/***/ 5:
+/*!****************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fcustomdata&absolutePagePath=%2Fhome%2Flaurentiu%2FDocuments%2Fcrypto%2Fclient%2Fpages%2Fcustomdata.js ***!
+  \****************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fcustomdata&absolutePagePath=D%3A%5CWEB%5Ccrypto%5Cclient%5Cpages%5Ccustomdata.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcustomdata&absolutePagePath=D%3A%5CWEB%5Ccrypto%5Cclient%5Cpages%5Ccustomdata.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fcustomdata&absolutePagePath=%2Fhome%2Flaurentiu%2FDocuments%2Fcrypto%2Fclient%2Fpages%2Fcustomdata.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcustomdata&absolutePagePath=%2Fhome%2Flaurentiu%2FDocuments%2Fcrypto%2Fclient%2Fpages%2Fcustomdata.js!./");
 
 
 /***/ }),
 
-/***/ "dll-reference dll_5f137288facb1107b491":
+/***/ "dll-reference dll_ef0ff7c60362f24a921f":
 /*!*******************************************!*\
-  !*** external "dll_5f137288facb1107b491" ***!
+  !*** external "dll_ef0ff7c60362f24a921f" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_5f137288facb1107b491;
+module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js","styles"]]]);
+},[[5,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=customdata.js.map
