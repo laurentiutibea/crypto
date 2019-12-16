@@ -14,7 +14,6 @@ async function getCurrencies(data){
             'Content-Type': 'application/json',
             'x-auth-token': data[2]
         },
-        body: JSON.stringify(bodyData),
-        
+        body: JSON.stringify(bodyData)
     }).then(res => res.json()).then(data => postMessage(data));
 }

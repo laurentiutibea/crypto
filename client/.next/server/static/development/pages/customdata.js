@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Footer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/footer.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\footer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 class Footer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
@@ -155,7 +155,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/footer */ "./components/footer.js");
 /* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../static/style.css */ "./static/style.css");
 /* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_static_style_css__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/layout.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -234,7 +234,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/link.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\link.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -278,7 +278,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_crypto_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/crypto.png */ "./src/crypto.png");
 /* harmony import */ var _src_crypto_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_src_crypto_png__WEBPACK_IMPORTED_MODULE_4__);
 
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/navbar.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\navbar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -2325,10 +2325,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! highcharts */ "highcharts");
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! highcharts-react-official */ "highcharts-react-official");
-/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(highcharts_react_official__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var react_highcharts__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-highcharts */ "react-highcharts");
+/* harmony import */ var react_highcharts__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_highcharts__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
 /* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
+/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../src/91.gif */ "./src/91.gif");
+/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_src_91_gif__WEBPACK_IMPORTED_MODULE_14__);
 
 
 
@@ -2337,7 +2339,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/pages/customdata.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\pages\\customdata.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -2345,6 +2347,8 @@ function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_cor
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
 
 
+
+ // import HighchartsReact from 'highcharts-react-official';
 
 
 
@@ -2420,6 +2424,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       selectedCurrency: "",
       workers: 0,
       loading: false,
+      times: 0,
       chartOptions: {}
     });
 
@@ -2431,22 +2436,24 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       const graphs = [...this.state.graphs];
 
       worker.onmessage = e => {
+        console.log(e.data);
         bkOptions.title = {
           text: `${this.state.selectedCryptocurrency} to ${this.state.selectedCurrency} exchange rate over time`
         }, bkOptions.series = [{
           type: "line",
           name: `${this.state.selectedCryptocurrency} to ${this.state.selectedCurrency}`,
-          data: e.data
+          data: e.data.prices
         }];
         graphs.push({
           id: _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_6___default()(),
           chartOptions: bkOptions,
           cryptocurrency: this.state.selectedCryptocurrency,
-          currency: this.state.selectedCurrency
+          currency: this.state.selectedCurrency,
+          live: false
         });
         console.log(graphs);
         this.setState({
-          data: e.data,
+          data: e.data.prices,
           graphs: graphs,
           workers: this.state.workers + 1
         });
@@ -2476,10 +2483,10 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
           graphs[i].chartOptions.series = [{
             type: "area",
             name: this.state.graphs[i].chartOptions.series[0].name,
-            data: e.data
+            data: e.data.prices
           }];
           this.setState({
-            data: e.data,
+            data: e.data.prices,
             graphs: graphs,
             loading: false
           });
@@ -2487,6 +2494,31 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
 
         workers[i].postMessage(`${graphs[i].cryptocurrency},${graphs[i].currency},${this.state.jwt}`);
       }
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "liveData", index => {
+      console.log("LIVE", index);
+      const worker = new Worker("static/service-worker.js");
+      const graphs = [...this.state.graphs];
+
+      worker.onmessage = e => {
+        graphs[index].chartOptions.series[0].data.push(e.data.currentPrice);
+        graphs[index].chartOptions.series = [{
+          type: "area",
+          name: this.state.graphs[index].chartOptions.series[0].name,
+          data: graphs[index].chartOptions.series[0].data
+        }];
+        this.setState({
+          data: graphs[index].chartOptions.series[0].data,
+          graphs: graphs
+        });
+      };
+
+      worker.postMessage(`${graphs[index].cryptocurrency},${graphs[index].currency},${this.state.jwt}`);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "changeGraphLive", (e, index) => {
+      setInterval(() => this.liveData(index), 4000);
     });
   }
 
@@ -2515,20 +2547,20 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
     return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 153
+        lineNumber: 183
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 154
+        lineNumber: 184
       },
       __self: this
     }, "Hello ", this.state.user.name), __jsx("div", {
       className: "form-group w-25",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 155
+        lineNumber: 185
       },
       __self: this
     }, __jsx("select", {
@@ -2537,14 +2569,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 156
+        lineNumber: 186
       },
       __self: this
     }, __jsx("option", {
       value: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 156
+        lineNumber: 186
       },
       __self: this
     }, "Select Cryptocurrency"), this.state.cryptocurrencies.map(item => __jsx("option", {
@@ -2552,7 +2584,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 156
+        lineNumber: 186
       },
       __self: this
     }, item.name, " - ", item.symbol))), __jsx("select", {
@@ -2561,14 +2593,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 157
+        lineNumber: 187
       },
       __self: this
     }, __jsx("option", {
       value: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 157
+        lineNumber: 187
       },
       __self: this
     }, "Select Currency"), this.state.currencies.map(item => __jsx("option", {
@@ -2576,7 +2608,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 157
+        lineNumber: 187
       },
       __self: this
     }, item.name, " - ", item.symbol)))), __jsx("button", {
@@ -2584,7 +2616,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: this.addGraph,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 159
+        lineNumber: 189
       },
       __self: this
     }, "+"), __jsx("button", {
@@ -2592,29 +2624,29 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: this.refreshAll,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 160
+        lineNumber: 190
       },
       __self: this
-    }, "REFRESH"), __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 161
-      },
-      __self: this
-    }, this.state.graphs.length > 0 ? this.state.graphs.map((item, index) => __jsx("div", {
-      className: "col-md-12",
+    }, "REFRESH"), this.state.graphs.length > 0 ? this.state.graphs.map((item, index) => __jsx("div", {
+      className: "row mt-4",
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 164
+        lineNumber: 193
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "col-md-3",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 194
       },
       __self: this
     }, __jsx("div", {
       className: "form-group",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 165
+        lineNumber: 195
       },
       __self: this
     }, __jsx("select", {
@@ -2624,7 +2656,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 166
+        lineNumber: 196
       },
       __self: this
     }, this.state.cryptocurrencies.map(i => __jsx("option", {
@@ -2632,7 +2664,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: i.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 166
+        lineNumber: 196
       },
       __self: this
     }, i.name, " - ", i.symbol))), __jsx("select", {
@@ -2642,7 +2674,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 167
+        lineNumber: 197
       },
       __self: this
     }, this.state.currencies.map(i => __jsx("option", {
@@ -2650,20 +2682,45 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: i.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 167
+        lineNumber: 197
       },
       __self: this
-    }, i.name, " - ", i.symbol)))), !this.state.loading && __jsx(highcharts_react_official__WEBPACK_IMPORTED_MODULE_11___default.a, {
+    }, i.name, " - ", i.symbol))), __jsx("input", {
+      type: "checkbox",
+      onChange: e => this.changeGraphLive(e, index),
+      defaultValue: item.live,
+      className: "form-control",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 198
+      },
+      __self: this
+    }))), __jsx("div", {
+      className: "col-md-9 text-center",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 201
+      },
+      __self: this
+    }, !this.state.loading ? __jsx(react_highcharts__WEBPACK_IMPORTED_MODULE_11___default.a, {
       key: item.id,
       highcharts: highcharts__WEBPACK_IMPORTED_MODULE_10___default.a,
-      options: item.chartOptions,
+      config: item.chartOptions,
+      ref: "chart",
       oneToOne: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 169
+        lineNumber: 202
       },
       __self: this
-    }))) : ""));
+    }) : __jsx("img", {
+      src: _src_91_gif__WEBPACK_IMPORTED_MODULE_14___default.a,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 202
+      },
+      __self: this
+    })))) : "");
   }
 
 }
@@ -2808,6 +2865,17 @@ function setJwt(jwt) {
 
 /***/ }),
 
+/***/ "./src/91.gif":
+/*!********************!*\
+  !*** ./src/91.gif ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/gif;base64,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"
+
+/***/ }),
+
 /***/ "./src/crypto.png":
 /*!************************!*\
   !*** ./src/crypto.png ***!
@@ -2830,14 +2898,14 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!***********************************!*\
   !*** multi ./pages/customdata.js ***!
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/laurentiu/Documents/crypto/client/pages/customdata.js */"./pages/customdata.js");
+module.exports = __webpack_require__(/*! D:\WEB\crypto\client\pages\customdata.js */"./pages/customdata.js");
 
 
 /***/ }),
@@ -2996,17 +3064,6 @@ module.exports = require("highcharts");
 
 /***/ }),
 
-/***/ "highcharts-react-official":
-/*!********************************************!*\
-  !*** external "highcharts-react-official" ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("highcharts-react-official");
-
-/***/ }),
-
 /***/ "jwt-decode":
 /*!*****************************!*\
   !*** external "jwt-decode" ***!
@@ -3070,6 +3127,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-highcharts":
+/*!***********************************!*\
+  !*** external "react-highcharts" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-highcharts");
 
 /***/ }),
 
