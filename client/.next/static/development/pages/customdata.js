@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\customdata.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/customdata.js"],{
 
 /***/ "./components/footer.js":
 /*!******************************!*\
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\footer.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/footer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\layout.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -195,7 +195,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\link.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/link.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -250,7 +250,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\navbar.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/navbar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 
@@ -8320,12 +8320,12 @@ module.exports.InvalidTokenError = InvalidTokenError;
 
 /***/ "./node_modules/next/dist/build/polyfills/object-assign.js":
 /*!***********************************************************************************************************************!*\
-  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/next/dist/build/polyfills/object-assign.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/next/dist/build/polyfills/object-assign.js");
 
 /***/ }),
 
@@ -8341,10 +8341,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcustomdata&absolutePagePath=D%3A%5CWEB%5Ccrypto%5Cclient%5Cpages%5Ccustomdata.js!./":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcustomdata&absolutePagePath=D%3A%5CWEB%5Ccrypto%5Cclient%5Cpages%5Ccustomdata.js ***!
-  \***************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcustomdata&absolutePagePath=%2Fhome%2Flaurentiu%2FDocuments%2Fcrypto%2Fclient%2Fpages%2Fcustomdata.js!./":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcustomdata&absolutePagePath=%2Fhome%2Flaurentiu%2FDocuments%2Fcrypto%2Fclient%2Fpages%2Fcustomdata.js ***!
+  \************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11362,12 +11362,12 @@ module.exports = exports['default'];
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -12002,12 +12002,12 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
@@ -12923,12 +12923,12 @@ if (false) {} else {
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -14568,7 +14568,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\WEB\\crypto\\client\\pages\\customdata.js";
+var _jsxFileName = "/home/laurentiu/Documents/crypto/client/pages/customdata.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_17___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -14588,7 +14588,10 @@ var chartOptions = {
     zoomType: 'x'
   },
   xAxis: {
-    type: 'datetime'
+    type: 'datetime',
+    dateTimeLabelFormats: {
+      day: '%d-%m-%Y / %H:%M'
+    }
   },
   yAxis: {
     title: {
@@ -14668,7 +14671,7 @@ function (_Component) {
       selectedCurrency: "",
       workers: 0,
       loading: false,
-      times: 0,
+      interval: [],
       chartOptions: {}
     });
 
@@ -14688,6 +14691,7 @@ function (_Component) {
           name: "".concat(_this.state.selectedCryptocurrency, " to ").concat(_this.state.selectedCurrency),
           data: e.data.prices
         }];
+        bkOptions.xAxis.categories = [e.data.time];
         graphs.push({
           id: _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_8___default()(),
           chartOptions: bkOptions,
@@ -14698,9 +14702,9 @@ function (_Component) {
         console.log(graphs);
 
         _this.setState({
-          data: e.data.prices,
           graphs: graphs,
-          workers: _this.state.workers + 1
+          workers: _this.state.workers + 1,
+          interval: ""
         });
       };
 
@@ -14727,13 +14731,12 @@ function (_Component) {
 
         workers[i].onmessage = function (e) {
           graphs[i].chartOptions.series = [{
-            type: "area",
+            type: "line",
             name: _this.state.graphs[i].chartOptions.series[0].name,
             data: e.data.prices
           }];
 
           _this.setState({
-            data: e.data.prices,
             graphs: graphs,
             loading: false
           });
@@ -14747,6 +14750,44 @@ function (_Component) {
       }
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_16__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_14__["default"])(_this), "refreshSingle", function (index) {
+      var worker = new Worker("static/service-worker.js");
+
+      var graphs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_9__["default"])(_this.state.graphs);
+
+      _this.setState({
+        loading: true
+      });
+
+      worker.onmessage = function (e) {
+        graphs[index].chartOptions.series = [{
+          type: "line",
+          name: _this.state.graphs[index].chartOptions.series[0].name,
+          data: e.data.prices
+        }];
+
+        _this.setState({
+          graphs: graphs,
+          loading: false
+        });
+      };
+
+      worker.postMessage("".concat(graphs[index].cryptocurrency, ",").concat(graphs[index].currency, ",").concat(_this.state.jwt));
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_16__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_14__["default"])(_this), "removeGraph", function (index) {
+      var graphs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_9__["default"])(_this.state.graphs);
+
+      clearInterval(graphs[index].interval);
+      graphs = graphs.filter(function (item, i) {
+        return i !== index;
+      });
+
+      _this.setState({
+        graphs: graphs
+      });
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_16__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_14__["default"])(_this), "liveData", function (index) {
       console.log("LIVE", index);
       var worker = new Worker("static/service-worker.js");
@@ -14756,13 +14797,12 @@ function (_Component) {
       worker.onmessage = function (e) {
         graphs[index].chartOptions.series[0].data.push(e.data.currentPrice);
         graphs[index].chartOptions.series = [{
-          type: "area",
+          type: "line",
           name: _this.state.graphs[index].chartOptions.series[0].name,
           data: graphs[index].chartOptions.series[0].data
         }];
 
         _this.setState({
-          data: graphs[index].chartOptions.series[0].data,
           graphs: graphs
         });
       };
@@ -14771,9 +14811,19 @@ function (_Component) {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_16__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_14__["default"])(_this), "changeGraphLive", function (e, index) {
-      setInterval(function () {
-        return _this.liveData(index);
-      }, 4000);
+      var graphs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_9__["default"])(_this.state.graphs);
+
+      if (e.target.checked) {
+        graphs[index].interval = setInterval(function () {
+          return _this.liveData(index);
+        }, 4000);
+
+        _this.setState({
+          graphs: graphs
+        });
+      } else {
+        clearInterval(graphs[index].interval);
+      }
     });
 
     return _this;
@@ -14831,20 +14881,20 @@ function (_Component) {
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_18__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 219
         },
         __self: this
       }, __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 184
+          lineNumber: 220
         },
         __self: this
       }, "Hello ", this.state.user.name), __jsx("div", {
         className: "form-group w-25",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185
+          lineNumber: 221
         },
         __self: this
       }, __jsx("select", {
@@ -14853,14 +14903,14 @@ function (_Component) {
         className: "form-control",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 222
         },
         __self: this
       }, __jsx("option", {
         value: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 222
         },
         __self: this
       }, "Select Cryptocurrency"), this.state.cryptocurrencies.map(function (item) {
@@ -14869,7 +14919,7 @@ function (_Component) {
           key: item.id,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 186
+            lineNumber: 222
           },
           __self: this
         }, item.name, " - ", item.symbol);
@@ -14879,14 +14929,14 @@ function (_Component) {
         className: "form-control",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 223
         },
         __self: this
       }, __jsx("option", {
         value: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 223
         },
         __self: this
       }, "Select Currency"), this.state.currencies.map(function (item) {
@@ -14895,7 +14945,7 @@ function (_Component) {
           key: item.id,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 187
+            lineNumber: 223
           },
           __self: this
         }, item.name, " - ", item.symbol);
@@ -14904,7 +14954,7 @@ function (_Component) {
         onClick: this.addGraph,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 225
         },
         __self: this
       }, "+"), __jsx("button", {
@@ -14912,30 +14962,30 @@ function (_Component) {
         onClick: this.refreshAll,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 226
         },
         __self: this
-      }, "REFRESH"), this.state.graphs.length > 0 ? this.state.graphs.map(function (item, index) {
+      }, "REFRESH ALL"), this.state.graphs.length > 0 ? this.state.graphs.map(function (item, index) {
         return __jsx("div", {
           className: "row mt-4",
           key: item.id,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 193
+            lineNumber: 229
           },
           __self: this
         }, __jsx("div", {
           className: "col-md-3",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 194
+            lineNumber: 230
           },
           __self: this
         }, __jsx("div", {
           className: "form-group",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 195
+            lineNumber: 231
           },
           __self: this
         }, __jsx("select", {
@@ -14945,7 +14995,7 @@ function (_Component) {
           className: "form-control",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 196
+            lineNumber: 232
           },
           __self: this
         }, _this2.state.cryptocurrencies.map(function (i) {
@@ -14954,7 +15004,7 @@ function (_Component) {
             key: i.id,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 196
+              lineNumber: 232
             },
             __self: this
           }, i.name, " - ", i.symbol);
@@ -14965,7 +15015,7 @@ function (_Component) {
           className: "form-control",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 197
+            lineNumber: 233
           },
           __self: this
         }, _this2.state.currencies.map(function (i) {
@@ -14974,7 +15024,7 @@ function (_Component) {
             key: i.id,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 197
+              lineNumber: 233
             },
             __self: this
           }, i.name, " - ", i.symbol);
@@ -14987,14 +15037,34 @@ function (_Component) {
           className: "form-control",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 198
+            lineNumber: 234
           },
           __self: this
-        }))), __jsx("div", {
+        }), __jsx("button", {
+          className: "btn btn-success",
+          onClick: function onClick() {
+            return _this2.refreshSingle(index);
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 235
+          },
+          __self: this
+        }, "REFRESH"), __jsx("button", {
+          className: "btn btn-danger",
+          onClick: function onClick() {
+            return _this2.removeGraph(index);
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 236
+          },
+          __self: this
+        }, "-"))), __jsx("div", {
           className: "col-md-9 text-center",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 201
+            lineNumber: 239
           },
           __self: this
         }, !_this2.state.loading ? __jsx(react_highcharts__WEBPACK_IMPORTED_MODULE_20___default.a, {
@@ -15005,14 +15075,14 @@ function (_Component) {
           oneToOne: true,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 202
+            lineNumber: 240
           },
           __self: this
         }) : __jsx("img", {
           src: _src_91_gif__WEBPACK_IMPORTED_MODULE_23___default.a,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 202
+            lineNumber: 240
           },
           __self: this
         })));
@@ -15264,28 +15334,28 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 1:
-/*!*******************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fcustomdata&absolutePagePath=D%3A%5CWEB%5Ccrypto%5Cclient%5Cpages%5Ccustomdata.js ***!
-  \*******************************************************************************************************************************/
+/***/ 0:
+/*!****************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fcustomdata&absolutePagePath=%2Fhome%2Flaurentiu%2FDocuments%2Fcrypto%2Fclient%2Fpages%2Fcustomdata.js ***!
+  \****************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fcustomdata&absolutePagePath=D%3A%5CWEB%5Ccrypto%5Cclient%5Cpages%5Ccustomdata.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcustomdata&absolutePagePath=D%3A%5CWEB%5Ccrypto%5Cclient%5Cpages%5Ccustomdata.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fcustomdata&absolutePagePath=%2Fhome%2Flaurentiu%2FDocuments%2Fcrypto%2Fclient%2Fpages%2Fcustomdata.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcustomdata&absolutePagePath=%2Fhome%2Flaurentiu%2FDocuments%2Fcrypto%2Fclient%2Fpages%2Fcustomdata.js!./");
 
 
 /***/ }),
 
-/***/ "dll-reference dll_5f137288facb1107b491":
+/***/ "dll-reference dll_ef0ff7c60362f24a921f":
 /*!*******************************************!*\
-  !*** external "dll_5f137288facb1107b491" ***!
+  !*** external "dll_ef0ff7c60362f24a921f" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_5f137288facb1107b491;
+module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=customdata.js.map
