@@ -6,7 +6,7 @@ onmessage = e => {
 async function getCurrencies(data){
     const bodyData = {
         cryptocurrency: data[0],
-        currency: data[1]
+        currency: data[1].toLowerCase()
     }
     await fetch("http://localhost:3900/api/crypto", {
         method: "POST",

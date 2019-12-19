@@ -2327,10 +2327,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var react_highcharts__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-highcharts */ "react-highcharts");
 /* harmony import */ var react_highcharts__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_highcharts__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
-/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
-/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../src/91.gif */ "./src/91.gif");
-/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_src_91_gif__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var react_addons_update__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-addons-update */ "react-addons-update");
+/* harmony import */ var react_addons_update__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_addons_update__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
+/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
+/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../src/91.gif */ "./src/91.gif");
+/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_src_91_gif__WEBPACK_IMPORTED_MODULE_15__);
 
 
 
@@ -2354,6 +2356,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+
 const chartOptions = {
   chart: {
     zoomType: 'x'
@@ -2361,7 +2364,10 @@ const chartOptions = {
   xAxis: {
     type: 'datetime',
     dateTimeLabelFormats: {
-      day: '%d-%m-%Y / %H:%M'
+      day: '%d-%m-%Y - %h:%m'
+    },
+    title: {
+      text: 'Date'
     }
   },
   yAxis: {
@@ -2405,28 +2411,13 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       jwt: "",
       data: [],
       graphs: [],
-      cryptocurrencies: [{
-        id: "bitcoin",
-        name: "Bitcoin",
-        symbol: "BTC"
-      }, {
-        id: "ethereum",
-        name: "Ethereum",
-        symbol: "ETH"
-      }],
-      currencies: [{
-        id: "eur",
-        name: "Euro",
-        symbol: "EUR"
-      }, {
-        id: "usd",
-        name: "American Dollar",
-        symbol: "USD"
-      }],
-      selectedCryptocurrency: "",
-      selectedCurrency: "",
+      cryptocurrencies: [],
+      currencies: [],
+      selectedCryptocurrency: {},
+      selectedCurrency: {},
       workers: 0,
       loading: false,
+      loaded: false,
       interval: [],
       chartOptions: {}
     });
@@ -2441,18 +2432,18 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       worker.onmessage = e => {
         console.log(e.data);
         bkOptions.title = {
-          text: `${this.state.selectedCryptocurrency} to ${this.state.selectedCurrency} exchange rate over time`
+          text: `${this.state.selectedCryptocurrency.name} to ${this.state.selectedCurrency.name} exchange rate over time`
         }, bkOptions.series = [{
           type: "line",
-          name: `${this.state.selectedCryptocurrency} to ${this.state.selectedCurrency}`,
+          name: `${this.state.selectedCryptocurrency.name} to ${this.state.selectedCurrency.name}`,
           data: e.data.prices
         }];
-        bkOptions.xAxis.categories = [e.data.time];
+        bkOptions.xAxis.categories = [...e.data.time];
         graphs.push({
           id: _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_6___default()(),
           chartOptions: bkOptions,
-          cryptocurrency: this.state.selectedCryptocurrency,
-          currency: this.state.selectedCurrency,
+          cryptocurrency: this.state.selectedCryptocurrency.value,
+          currency: this.state.selectedCurrency.value,
           live: false
         });
         console.log(graphs);
@@ -2463,13 +2454,35 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
         });
       };
 
-      worker.postMessage(`${this.state.selectedCryptocurrency},${this.state.selectedCurrency},${this.state.jwt}`);
+      worker.postMessage(`${this.state.selectedCryptocurrency.value},${this.state.selectedCurrency.value},${this.state.jwt}`);
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "changeCryptocurrency", e => {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "findName", (array, value) => {
+      for (let i = 0; i < this.state[array].length; i++) {
+        if (this.state[array][i].id === value) {
+          return this.state[array][i].name;
+        }
+      }
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "changeCryptocurrency", (e, array) => {
       console.log(e.target.value);
+      const name = this.findName(array, e.target.value);
+      console.log(name);
       this.setState({
-        [`selected${e.target.name}`]: e.target.value
+        [`selected${e.target.name}`]: {
+          value: e.target.value,
+          name: name
+        }
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "changeGraphCryptocurrency", (e, index) => {
+      console.log(e.target.value, index);
+      const graphs = [...this.state.graphs];
+      graphs[index][e.target.name.toLowerCase()] = e.target.value;
+      this.setState({
+        graphs: graphs
       });
     });
 
@@ -2484,6 +2497,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
         workers[i] = new Worker("static/service-worker.js");
 
         workers[i].onmessage = e => {
+          graphs[i].chartOptions.xAxis.categories = [...e.data.time];
           graphs[i].chartOptions.series = [{
             type: "line",
             name: this.state.graphs[i].chartOptions.series[0].name,
@@ -2501,20 +2515,18 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "refreshSingle", index => {
       const worker = new Worker("static/service-worker.js");
-      const graphs = [...this.state.graphs];
-      this.setState({
-        loading: true
-      });
+      const graphs = [...this.state.graphs]; //this.setState({loading: true});
 
       worker.onmessage = e => {
+        graphs[index].chartOptions.xAxis.categories = [...e.data.time];
         graphs[index].chartOptions.series = [{
           type: "line",
           name: this.state.graphs[index].chartOptions.series[0].name,
           data: e.data.prices
         }];
         this.setState({
-          graphs: graphs,
-          loading: false
+          graphs: graphs //loading: false
+
         });
       };
 
@@ -2536,6 +2548,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       const graphs = [...this.state.graphs];
 
       worker.onmessage = e => {
+        graphs[index].chartOptions.xAxis.categories.push(e.data.currentTime);
         graphs[index].chartOptions.series[0].data.push(e.data.currentPrice);
         graphs[index].chartOptions.series = [{
           type: "line",
@@ -2543,7 +2556,11 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
           data: graphs[index].chartOptions.series[0].data
         }];
         this.setState({
-          graphs: graphs
+          graphs: react_addons_update__WEBPACK_IMPORTED_MODULE_12___default()(this.state.graphs, {
+            [index]: {
+              $set: graphs[index]
+            }
+          })
         });
       };
 
@@ -2562,63 +2579,89 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
         clearInterval(graphs[index].interval);
       }
     });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "saveGraph", async index => {
+      const bkGraph = _objectSpread({}, this.state.graphs[index]);
+
+      const graph = {
+        categories: bkGraph.chartOptions.xAxis.categories,
+        series: bkGraph.chartOptions.series[0],
+        graphId: bkGraph.id,
+        cryptocurrency: bkGraph.cryptocurrency,
+        currency: bkGraph.currency,
+        date: new Date()
+      };
+      console.log(graph);
+      await _services_cryptoService__WEBPACK_IMPORTED_MODULE_14__["default"].saveGraph(graph).then(res => {
+        console.log("SUCCESS!");
+      }).catch(err => console.log("ERROR!", err));
+    });
   }
 
   async componentDidMount() {
-    const user = _services_authService__WEBPACK_IMPORTED_MODULE_12__["default"].getCurrentUser();
-    const jwt = _services_authService__WEBPACK_IMPORTED_MODULE_12__["default"].getJwt();
+    const user = _services_authService__WEBPACK_IMPORTED_MODULE_13__["default"].getCurrentUser();
+    const jwt = _services_authService__WEBPACK_IMPORTED_MODULE_13__["default"].getJwt();
     this.setState({
       user,
       jwt
     });
+    await _services_cryptoService__WEBPACK_IMPORTED_MODULE_14__["default"].getCryptocurrencies().then(res => {
+      console.log(res.data);
+      this.setState({
+        cryptocurrencies: res.data.cryptocurrencies,
+        currencies: res.data.currencies,
+        loaded: true
+      });
+    });
     /* await crypto.getCurrencies("bitcoin","eur").then(res => {
-       const bkOptions = {...this.state.chartOptions};
-       bkOptions.series = [{
-         type: "area",
-         name: "BTC to EUR",
-         data: res.data
-       }]
-       this.setState({
-         data: res.data,
-         chartOptions: bkOptions
-         })
-     }); */
+      const bkOptions = {...this.state.chartOptions};
+      bkOptions.series = [{
+        type: "area",
+        name: "BTC to EUR",
+        data: res.data
+      }]
+      this.setState({
+        data: res.data,
+        chartOptions: bkOptions
+        })
+    }); */
   }
 
   render() {
     return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 219
+        lineNumber: 243
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 220
+        lineNumber: 244
       },
       __self: this
     }, "Hello ", this.state.user.name), __jsx("div", {
       className: "form-group w-25",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 221
+        lineNumber: 245
       },
       __self: this
     }, __jsx("select", {
       name: "Cryptocurrency",
-      onChange: this.changeCryptocurrency,
+      onChange: e => this.changeCryptocurrency(e, "cryptocurrencies"),
+      disabled: !this.state.loaded,
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 222
+        lineNumber: 246
       },
       __self: this
     }, __jsx("option", {
       value: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 222
+        lineNumber: 246
       },
       __self: this
     }, "Select Cryptocurrency"), this.state.cryptocurrencies.map(item => __jsx("option", {
@@ -2626,23 +2669,24 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 222
+        lineNumber: 246
       },
       __self: this
     }, item.name, " - ", item.symbol))), __jsx("select", {
       name: "Currency",
-      onChange: this.changeCryptocurrency,
+      onChange: e => this.changeCryptocurrency(e, "currencies"),
+      disabled: !this.state.loaded,
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 223
+        lineNumber: 247
       },
       __self: this
     }, __jsx("option", {
       value: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 223
+        lineNumber: 247
       },
       __self: this
     }, "Select Currency"), this.state.currencies.map(item => __jsx("option", {
@@ -2650,7 +2694,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 223
+        lineNumber: 247
       },
       __self: this
     }, item.name, " - ", item.symbol)))), __jsx("button", {
@@ -2658,15 +2702,15 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: this.addGraph,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 225
+        lineNumber: 249
       },
       __self: this
-    }, "+"), __jsx("button", {
+    }, "ADD"), __jsx("button", {
       className: "btn btn-success",
       onClick: this.refreshAll,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 226
+        lineNumber: 250
       },
       __self: this
     }, "REFRESH ALL"), this.state.graphs.length > 0 ? this.state.graphs.map((item, index) => __jsx("div", {
@@ -2674,31 +2718,31 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 229
+        lineNumber: 253
       },
       __self: this
     }, __jsx("div", {
       className: "col-md-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 230
+        lineNumber: 254
       },
       __self: this
     }, __jsx("div", {
       className: "form-group",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 231
+        lineNumber: 255
       },
       __self: this
     }, __jsx("select", {
       name: "Cryptocurrency",
-      onChange: this.changeGraphCryptocurrency,
+      onChange: e => this.changeGraphCryptocurrency(e, index),
       defaultValue: item.cryptocurrency,
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 232
+        lineNumber: 256
       },
       __self: this
     }, this.state.cryptocurrencies.map(i => __jsx("option", {
@@ -2706,17 +2750,17 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: i.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 232
+        lineNumber: 256
       },
       __self: this
     }, i.name, " - ", i.symbol))), __jsx("select", {
       name: "Currency",
-      onChange: this.changeGraphCryptocurrency,
+      onChange: e => this.changeGraphCryptocurrency(e, index),
       defaultValue: item.currency,
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 233
+        lineNumber: 257
       },
       __self: this
     }, this.state.currencies.map(i => __jsx("option", {
@@ -2724,7 +2768,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: i.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 233
+        lineNumber: 257
       },
       __self: this
     }, i.name, " - ", i.symbol))), __jsx("input", {
@@ -2734,7 +2778,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 234
+        lineNumber: 258
       },
       __self: this
     }), __jsx("button", {
@@ -2742,22 +2786,38 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.refreshSingle(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 235
+        lineNumber: 259
       },
       __self: this
     }, "REFRESH"), __jsx("button", {
+      className: "btn btn-warning",
+      onClick: () => this.refreshSingle(index),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 260
+      },
+      __self: this
+    }, "SEARCH"), __jsx("button", {
       className: "btn btn-danger",
       onClick: () => this.removeGraph(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 236
+        lineNumber: 261
       },
       __self: this
-    }, "-"))), __jsx("div", {
+    }, "DELETE"), __jsx("button", {
+      className: "btn btn-primary",
+      onClick: () => this.saveGraph(index),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 262
+      },
+      __self: this
+    }, "SAVE"))), __jsx("div", {
       className: "col-md-9 text-center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 239
+        lineNumber: 265
       },
       __self: this
     }, !this.state.loading ? __jsx(react_highcharts__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -2768,14 +2828,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       oneToOne: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 240
+        lineNumber: 266
       },
       __self: this
     }) : __jsx("img", {
-      src: _src_91_gif__WEBPACK_IMPORTED_MODULE_14___default.a,
+      src: _src_91_gif__WEBPACK_IMPORTED_MODULE_15___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 240
+        lineNumber: 266
       },
       __self: this
     })))) : "");
@@ -2859,26 +2919,36 @@ function getJwt() {
 /*!***********************************!*\
   !*** ./services/cryptoService.js ***!
   \***********************************/
-/*! exports provided: getCurrencies, default */
+/*! exports provided: getCryptocurrencies, getCurrencies, saveGraph, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCryptocurrencies", function() { return getCryptocurrencies; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCurrencies", function() { return getCurrencies; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveGraph", function() { return saveGraph; });
 /* harmony import */ var _httpService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./httpService */ "./services/httpService.js");
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config */ "./config.json");
 var _config__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../config */ "./config.json", 1);
 
 
 const apiEndpoit = _config__WEBPACK_IMPORTED_MODULE_1__["apiUrl"] + "/crypto";
+function getCryptocurrencies() {
+  return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].get(`${apiEndpoit}/cryptocurrencies`);
+}
 function getCurrencies(cryptocurrency, currency) {
   return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].post(apiEndpoit, {
     cryptocurrency,
     currency
   });
 }
+function saveGraph(graph) {
+  return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].post(`${apiEndpoit}/save`, graph);
+}
 /* harmony default export */ __webpack_exports__["default"] = ({
-  getCurrencies
+  getCurrencies,
+  getCryptocurrencies,
+  saveGraph
 });
 
 /***/ }),
@@ -3185,6 +3255,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-addons-update":
+/*!**************************************!*\
+  !*** external "react-addons-update" ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-addons-update");
 
 /***/ }),
 

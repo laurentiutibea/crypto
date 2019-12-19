@@ -3,16 +3,35 @@ const router = express.Router();
 const axios = require("axios");
 const auth = require("../middleware/auth");
 
+router.get("/cryptocurrencies", auth, async (req, res) =>{
+	let symbols, cryptocurrencies, currencies = {};
+	let resultCurrencies = [];
+	await axios.get('https://api.coingecko.com/api/v3/simple/supported_vs_currencies').then(res => symbols = res.data)
+	await axios.get('https://api.coingecko.com/api/v3/coins/list').then(res => cryptocurrencies = res.data);
+	await axios.get('https://openexchangerates.org/api/currencies.json').then(res => currencies = res.data);
+	for (let [key, value] of Object.entries(currencies)) {
+		if(symbols.includes(key.toLowerCase())){
+			resultCurrencies.push({
+				id: key,
+				name: value,
+				symbol: key
+			})
+		}
+	}
+	resultCurrencies.concat(cryptocurrencies.filter(item => symbols.includes(item.symbol)));
+	cryptocurrencies.map(item => item.symbol = item.symbol.toUpperCase());
+	resultCurrencies.map(item => item.symbol = item.symbol.toUpperCase());
+	res.status(200).send({cryptocurrencies,currencies: resultCurrencies});
+});
+
 router.post("/", auth, async (req, res) =>{
 	let result = {};
 	await axios.get(`https://api.coingecko.com/api/v3/coins/${req.body.cryptocurrency}`).then(res => result = res.data);
 	const prices = [];
-	const time = [];
 	const currentPrice = result.market_data.current_price[req.body.currency];
 	const time = [];
 	const currentDate = new Date;
 	const currentDateFormat = currentDate.getDate()+"/"+(currentDate.getMonth()+1)+"/"+currentDate.getFullYear()+" - "+currentDate.getHours()+":"+currentDate.getMinutes();
-	const currentTime = currentDate.getTime()
 	const oneYear = new Date(currentDate.getTime() - 31556952000); // one year
 	const twoHundred = new Date(currentDate.getTime() - 17280000000); // 200 days
 	const sixty = new Date(currentDate.getTime() - 5184000000); // 60 days
@@ -40,6 +59,11 @@ router.post("/", auth, async (req, res) =>{
 	prices.push(parseFloat((currentPrice - result.market_data.price_change_percentage_1h_in_currency[req.body.currency] / 100).toFixed(3)));
 	prices.push(parseFloat((currentPrice).toFixed(3)));
 	res.status(200).send({prices,currentPrice: parseFloat((currentPrice).toFixed(3)),time,currentTime:currentDateFormat});
+});
+
+router.post("/save", auth, async (req, res) =>{
+	console.log(req.body);
+	res.status(200).send();
 });
 
 module.exports = router;
