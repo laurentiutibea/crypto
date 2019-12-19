@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Footer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/footer.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\footer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 class Footer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
@@ -155,7 +155,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/footer */ "./components/footer.js");
 /* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../static/style.css */ "./static/style.css");
 /* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_static_style_css__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/layout.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -234,7 +234,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/link.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\link.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -278,7 +278,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_crypto_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/crypto.png */ "./src/crypto.png");
 /* harmony import */ var _src_crypto_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_src_crypto_png__WEBPACK_IMPORTED_MODULE_4__);
 
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/navbar.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\navbar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -2327,8 +2327,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var react_highcharts__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-highcharts */ "react-highcharts");
 /* harmony import */ var react_highcharts__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_highcharts__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var react_addons_update__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-addons-update */ "react-addons-update");
-/* harmony import */ var react_addons_update__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_addons_update__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var immutability_helper__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! immutability-helper */ "immutability-helper");
+/* harmony import */ var immutability_helper__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(immutability_helper__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
 /* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
 /* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../src/91.gif */ "./src/91.gif");
@@ -2341,7 +2341,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/pages/customdata.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\pages\\customdata.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -2444,7 +2444,8 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
           chartOptions: bkOptions,
           cryptocurrency: this.state.selectedCryptocurrency.value,
           currency: this.state.selectedCurrency.value,
-          live: false
+          live: false,
+          image: e.data.image
         });
         console.log(graphs);
         this.setState({
@@ -2556,7 +2557,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
           data: graphs[index].chartOptions.series[0].data
         }];
         this.setState({
-          graphs: react_addons_update__WEBPACK_IMPORTED_MODULE_12___default()(this.state.graphs, {
+          graphs: immutability_helper__WEBPACK_IMPORTED_MODULE_12___default()(this.state.graphs, {
             [index]: {
               $set: graphs[index]
             }
@@ -2631,20 +2632,20 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
     return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 243
+        lineNumber: 244
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 244
+        lineNumber: 245
       },
       __self: this
     }, "Hello ", this.state.user.name), __jsx("div", {
       className: "form-group w-25",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 245
+        lineNumber: 246
       },
       __self: this
     }, __jsx("select", {
@@ -2654,14 +2655,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 246
+        lineNumber: 247
       },
       __self: this
     }, __jsx("option", {
       value: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 246
+        lineNumber: 247
       },
       __self: this
     }, "Select Cryptocurrency"), this.state.cryptocurrencies.map(item => __jsx("option", {
@@ -2669,7 +2670,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 246
+        lineNumber: 247
       },
       __self: this
     }, item.name, " - ", item.symbol))), __jsx("select", {
@@ -2679,14 +2680,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 247
+        lineNumber: 248
       },
       __self: this
     }, __jsx("option", {
       value: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 247
+        lineNumber: 248
       },
       __self: this
     }, "Select Currency"), this.state.currencies.map(item => __jsx("option", {
@@ -2694,7 +2695,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 247
+        lineNumber: 248
       },
       __self: this
     }, item.name, " - ", item.symbol)))), __jsx("button", {
@@ -2702,7 +2703,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: this.addGraph,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 249
+        lineNumber: 250
       },
       __self: this
     }, "ADD"), __jsx("button", {
@@ -2710,29 +2711,42 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: this.refreshAll,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 250
+        lineNumber: 251
       },
       __self: this
     }, "REFRESH ALL"), this.state.graphs.length > 0 ? this.state.graphs.map((item, index) => __jsx("div", {
-      className: "row mt-4",
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 253
+        lineNumber: 254
+      },
+      __self: this
+    }, __jsx("img", {
+      src: item.image,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 255
+      },
+      __self: this
+    }), __jsx("div", {
+      className: "row mt-4",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 256
       },
       __self: this
     }, __jsx("div", {
       className: "col-md-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 254
+        lineNumber: 257
       },
       __self: this
     }, __jsx("div", {
       className: "form-group",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 255
+        lineNumber: 258
       },
       __self: this
     }, __jsx("select", {
@@ -2742,7 +2756,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 256
+        lineNumber: 259
       },
       __self: this
     }, this.state.cryptocurrencies.map(i => __jsx("option", {
@@ -2750,7 +2764,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: i.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 256
+        lineNumber: 259
       },
       __self: this
     }, i.name, " - ", i.symbol))), __jsx("select", {
@@ -2760,7 +2774,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 257
+        lineNumber: 260
       },
       __self: this
     }, this.state.currencies.map(i => __jsx("option", {
@@ -2768,7 +2782,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: i.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 257
+        lineNumber: 260
       },
       __self: this
     }, i.name, " - ", i.symbol))), __jsx("input", {
@@ -2778,7 +2792,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 258
+        lineNumber: 261
       },
       __self: this
     }), __jsx("button", {
@@ -2786,7 +2800,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.refreshSingle(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 259
+        lineNumber: 262
       },
       __self: this
     }, "REFRESH"), __jsx("button", {
@@ -2794,7 +2808,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.refreshSingle(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 260
+        lineNumber: 263
       },
       __self: this
     }, "SEARCH"), __jsx("button", {
@@ -2802,7 +2816,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.removeGraph(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 261
+        lineNumber: 264
       },
       __self: this
     }, "DELETE"), __jsx("button", {
@@ -2810,14 +2824,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.saveGraph(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 262
+        lineNumber: 265
       },
       __self: this
     }, "SAVE"))), __jsx("div", {
       className: "col-md-9 text-center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 265
+        lineNumber: 268
       },
       __self: this
     }, !this.state.loading ? __jsx(react_highcharts__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -2828,17 +2842,17 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       oneToOne: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 266
+        lineNumber: 269
       },
       __self: this
     }) : __jsx("img", {
       src: _src_91_gif__WEBPACK_IMPORTED_MODULE_15___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 266
+        lineNumber: 269
       },
       __self: this
-    })))) : "");
+    }))))) : "");
   }
 
 }
@@ -3026,14 +3040,14 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!***********************************!*\
   !*** multi ./pages/customdata.js ***!
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/laurentiu/Documents/crypto/client/pages/customdata.js */"./pages/customdata.js");
+module.exports = __webpack_require__(/*! D:\WEB\crypto\client\pages\customdata.js */"./pages/customdata.js");
 
 
 /***/ }),
@@ -3192,6 +3206,17 @@ module.exports = require("highcharts");
 
 /***/ }),
 
+/***/ "immutability-helper":
+/*!**************************************!*\
+  !*** external "immutability-helper" ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("immutability-helper");
+
+/***/ }),
+
 /***/ "jwt-decode":
 /*!*****************************!*\
   !*** external "jwt-decode" ***!
@@ -3255,17 +3280,6 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-addons-update":
-/*!**************************************!*\
-  !*** external "react-addons-update" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-addons-update");
 
 /***/ }),
 

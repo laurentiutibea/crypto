@@ -58,7 +58,7 @@ router.post("/", auth, async (req, res) =>{
 	prices.push(parseFloat((currentPrice - result.market_data.price_change_percentage_24h_in_currency[req.body.currency] / 100).toFixed(3)));
 	prices.push(parseFloat((currentPrice - result.market_data.price_change_percentage_1h_in_currency[req.body.currency] / 100).toFixed(3)));
 	prices.push(parseFloat((currentPrice).toFixed(3)));
-	res.status(200).send({prices,currentPrice: parseFloat((currentPrice).toFixed(3)),time,currentTime:currentDateFormat});
+	res.status(200).send({prices,currentPrice: parseFloat((currentPrice).toFixed(3)),time,currentTime:currentDateFormat,image:result.image.small});
 });
 
 router.post("/save", auth, async (req, res) =>{

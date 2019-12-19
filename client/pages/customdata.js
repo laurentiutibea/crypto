@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import Highcharts from 'highcharts';
 // import HighchartsReact from 'highcharts-react-official';
 import ReactHighcharts from 'react-highcharts';
-import update from "react-addons-update";
+import update from "immutability-helper";
 
 import auth from "../services/authService";
 import crypto from "../services/cryptoService";
@@ -106,7 +106,8 @@ export default class CustomData extends Component {
 			chartOptions: bkOptions,
 			cryptocurrency: this.state.selectedCryptocurrency.value,
 			currency: this.state.selectedCurrency.value,
-			live: false
+      live: false,
+      image: e.data.image
     	})
       console.log(graphs);
       this.setState({
@@ -250,7 +251,9 @@ export default class CustomData extends Component {
           <button className="btn btn-success" onClick={this.refreshAll}>REFRESH ALL</button>
             {this.state.graphs.length > 0 ? 
               this.state.graphs.map((item,index) => 
-                <div className="row mt-4" key={item.id}>
+                <div key={item.id}>
+                  <img src={item.image}/>
+                  <div className="row mt-4">
                   <div className="col-md-3">
                     <div className="form-group">
                       <select name="Cryptocurrency" onChange={(e) => this.changeGraphCryptocurrency(e,index)} defaultValue={item.cryptocurrency} className="form-control">{this.state.cryptocurrencies.map(i => (<option value={i.id} key={i.id}>{i.name} - {i.symbol}</option>))}</select>
@@ -265,6 +268,7 @@ export default class CustomData extends Component {
                   <div className="col-md-9 text-center">
                     {!this.state.loading ? <ReactHighcharts key={item.id} highcharts={Highcharts} config={item.chartOptions} ref="chart" oneToOne={true}/> : <img src={loading}/>}
                   </div> 
+                </div>
                 </div>
             ): ""}
       </Layout>
