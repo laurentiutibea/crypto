@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Head from "next/head";
 
 import user from "../services/userService";
+import crypto from "../services/cryptoService";
 
 export default class Login extends Component {
     state = {
@@ -27,8 +28,9 @@ export default class Login extends Component {
         e.preventDefault();
         try{
             const {data} = this.state;
-            await user.register(data);
-
+            const responseUser = await user.register(data);
+            await crypto.createUserGraphs(responseUser.data._id);
+            
             window.location.replace("/login");
         }
         catch(ex){

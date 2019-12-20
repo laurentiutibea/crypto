@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 const auth = require("../middleware/auth");
+const {Graph} = require("../models/graph");
 
 router.get("/cryptocurrencies", auth, async (req, res) =>{
 	let symbols, cryptocurrencies, currencies = {};
@@ -61,9 +62,30 @@ router.post("/", auth, async (req, res) =>{
 	res.status(200).send({prices,currentPrice: parseFloat((currentPrice).toFixed(3)),time,currentTime:currentDateFormat,image:result.image.small});
 });
 
+router.post("/create", async (req, res) =>{
+	const graph = new Graph({
+		userId: req.body.userId,
+		graphs: []
+	})
+
+	await graph.save();
+
+	res.status(200).send(graph);
+});
+
 router.post("/save", auth, async (req, res) =>{
-	console.log(req.body);
-	res.status(200).send();
+	const graph = await Graph.update(
+		{userId:req.body.userId},
+		{$push:
+			{
+				graphs:req.body.graph,
+			}
+		}
+	);
+
+	if (!graph) return res.status(404).send("The user with the given id was not found.");
+
+	res.send(graph);
 });
 
 module.exports = router;

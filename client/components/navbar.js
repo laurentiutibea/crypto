@@ -5,6 +5,15 @@ import auth from "../services/authService";
 import crypto from "../src/crypto.png";
 
 export default class Navbar extends Component {
+    state = {
+        user: {}
+    }
+
+    componentDidMount(){
+        const user = auth.getCurrentUser();
+		this.setState({ user });
+    }
+
     handleLogout = () => {
         auth.logout();
         window.location = "/login";
@@ -24,7 +33,7 @@ export default class Navbar extends Component {
                         <ul className="navbar-nav">
                             <li className="nav-item">
                                 <Link href="/">
-                                    <a className="nav-link"><strong>Home</strong></a>
+                                    <a className="nav-link"><strong><i className="fas fa-home"/></strong></a>
                                 </Link>
                             </li>
                             <li className="nav-item">
@@ -38,8 +47,15 @@ export default class Navbar extends Component {
                                     <a className="nav-link"><strong>Administration Panel</strong></a>
                                 </Link>
                             </li>
+                        </ul>
+                    </div>
+                    <div>
+                    <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a href="#" className="nav-link" onClick={this.handleLogout}><strong>Logout</strong></a>
+                                <span className="nav-link">Hello {this.state.user.name}!</span>
+                            </li>
+                            <li className="nav-item">
+                                <a href="#" className="nav-link" onClick={this.handleLogout}><strong><i className="fas fa-power-off"/></strong></a>
                             </li>
                         </ul>
                     </div>

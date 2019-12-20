@@ -14,12 +14,17 @@ export function getCurrencies(cryptocurrency, currency){
     });
 }
 
-export function saveGraph(graph){
-    return http.post(`${apiEndpoit}/save`,graph);
+export function saveGraph(graph, userId){
+    return http.post(`${apiEndpoit}/save`,{graph, userId});
+}
+
+export function createUserGraphs(userId){
+    return http.post(`${apiEndpoit}/create`,{userId});
 }
 
 export default{
     getCurrencies,
     getCryptocurrencies,
-    saveGraph
+    saveGraph,
+    createUserGraphs
 }
