@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Footer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/footer.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\footer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 class Footer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
@@ -172,7 +172,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/footer */ "./components/footer.js");
 /* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../static/style.css */ "./static/style.css");
 /* harmony import */ var _static_style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_static_style_css__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/layout.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -259,7 +259,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/link.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\link.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -303,7 +303,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_crypto_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/crypto.png */ "./src/crypto.png");
 /* harmony import */ var _src_crypto_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_src_crypto_png__WEBPACK_IMPORTED_MODULE_4__);
 
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/components/navbar.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\components\\navbar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -428,14 +428,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
         lineNumber: 36
       },
       __self: this
-    }, __jsx("i", {
-      className: "fas fa-home",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: this
-    }))))), __jsx("li", {
+    }, "Dashboard")))), __jsx("li", {
       className: "nav-item",
       __source: {
         fileName: _jsxFileName,
@@ -466,61 +459,88 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       className: "nav-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 44
       },
       __self: this
     }, __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      href: "/admin",
+      href: "/saveddata",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 45
       },
       __self: this
     }, __jsx("a", {
       className: "nav-link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 46
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 46
+      },
+      __self: this
+    }, "Saved Data")))), __jsx("li", {
+      className: "nav-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 49
+      },
+      __self: this
+    }, __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      href: "/admin",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "nav-link text-success",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
+      },
+      __self: this
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
       },
       __self: this
     }, "Administration Panel")))))), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 56
       },
       __self: this
     }, __jsx("ul", {
       className: "navbar-nav",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 57
       },
       __self: this
     }, __jsx("li", {
       className: "nav-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 58
       },
       __self: this
     }, __jsx("span", {
       className: "nav-link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 59
       },
       __self: this
     }, "Hello ", this.state.user.name, "!")), __jsx("li", {
       className: "nav-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 61
       },
       __self: this
     }, __jsx("a", {
@@ -529,20 +549,20 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       onClick: this.handleLogout,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 62
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 62
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-power-off",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 62
       },
       __self: this
     }))))))));
@@ -2420,7 +2440,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/laurentiu/Documents/crypto/client/pages/customdata.js";
+var _jsxFileName = "D:\\WEB\\crypto\\client\\pages\\customdata.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -2513,7 +2533,8 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       worker.onmessage = e => {
         bkOptions.title = {
           text: `${this.state.selectedCryptocurrency.name} to ${this.state.selectedCurrency.name} exchange rate over time`
-        }, bkOptions.series = [{
+        };
+        bkOptions.series = [{
           type: "line",
           name: `${this.state.selectedCryptocurrency.name} to ${this.state.selectedCurrency.name}`,
           data: e.data.prices
@@ -2599,7 +2620,8 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
         const currency = this.findName("currencies", graphs[index].currency);
         graphs[index].chartOptions.title = {
           text: `${cryptocurrency} to ${currency} exchange rate over time`
-        }, graphs[index].chartOptions.xAxis.categories = [...e.data.time];
+        };
+        graphs[index].chartOptions.xAxis.categories = [...e.data.time];
         graphs[index].image = e.data.image;
         graphs[index].chartOptions.series = [{
           type: "line",
@@ -2678,11 +2700,10 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
           value: bkGraph.currency,
           name: currency
         },
-        date: new Date()
+        date: new Date(),
+        image: bkGraph.image
       };
-      await _services_cryptoService__WEBPACK_IMPORTED_MODULE_14__["default"].saveGraph(graph, this.state.user._id).then(res => {
-        console.log("SUCCESS!");
-      }).catch(err => console.log("ERROR!", err));
+      await _services_cryptoService__WEBPACK_IMPORTED_MODULE_14__["default"].saveGraph(graph, this.state.user._id).catch(err => console.log("ERROR!", err));
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "getFilteredCryptocurrencies", () => {
@@ -2754,21 +2775,21 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
     return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 272
+        lineNumber: 273
       },
       __self: this
     }, __jsx("div", {
       className: "w-50 mx-auto text-center pt-5",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 273
+        lineNumber: 274
       },
       __self: this
     }, __jsx("img", {
       src: _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_16___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 274
+        lineNumber: 275
       },
       __self: this
     }), __jsx("h1", {
@@ -2777,40 +2798,40 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 275
+        lineNumber: 276
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 275
+        lineNumber: 276
       },
       __self: this
     }, "Custom Data Graphs")), __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 276
+        lineNumber: 277
       },
       __self: this
     })), this.state.loaded ? __jsx("div", {
       className: "text-center pt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 279
+        lineNumber: 280
       },
       __self: this
     }, __jsx("div", {
       className: "row w-75 mx-auto",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 280
+        lineNumber: 281
       },
       __self: this
     }, __jsx("div", {
       className: "col-md-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 281
+        lineNumber: 282
       },
       __self: this
     }, __jsx("input", {
@@ -2825,13 +2846,13 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 282
+        lineNumber: 283
       },
       __self: this
     }), __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 283
+        lineNumber: 284
       },
       __self: this
     }, "   ", __jsx("i", {
@@ -2841,14 +2862,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 283
+        lineNumber: 284
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 285
+        lineNumber: 286
       },
       __self: this
     }, __jsx("select", {
@@ -2862,14 +2883,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 286
+        lineNumber: 287
       },
       __self: this
     }, __jsx("option", {
       value: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 286
+        lineNumber: 287
       },
       __self: this
     }, "Select Cryptocurrency"), cryptocurrencies.map(item => __jsx("option", {
@@ -2877,13 +2898,13 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 286
+        lineNumber: 287
       },
       __self: this
     }, item.name, " - ", item.symbol))), __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 287
+        lineNumber: 288
       },
       __self: this
     }, "   ", __jsx("i", {
@@ -2893,14 +2914,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 287
+        lineNumber: 288
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 289
+        lineNumber: 290
       },
       __self: this
     }, __jsx("input", {
@@ -2915,13 +2936,13 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 290
+        lineNumber: 291
       },
       __self: this
     }), __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 291
+        lineNumber: 292
       },
       __self: this
     }, "   ", __jsx("i", {
@@ -2931,14 +2952,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 291
+        lineNumber: 292
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 293
+        lineNumber: 294
       },
       __self: this
     }, __jsx("select", {
@@ -2952,14 +2973,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 294
+        lineNumber: 295
       },
       __self: this
     }, __jsx("option", {
       value: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 294
+        lineNumber: 295
       },
       __self: this
     }, "Select Currency"), currencies.map(item => __jsx("option", {
@@ -2967,13 +2988,13 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 294
+        lineNumber: 295
       },
       __self: this
     }, item.name, " - ", item.symbol))), __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 295
+        lineNumber: 296
       },
       __self: this
     }, "   ", __jsx("i", {
@@ -2983,26 +3004,26 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 295
+        lineNumber: 296
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 297
+        lineNumber: 298
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 298
+        lineNumber: 299
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 298
+        lineNumber: 299
       },
       __self: this
     }, "Add graph for selected values")), __jsx("button", {
@@ -3010,33 +3031,33 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: this.addGraph,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 299
+        lineNumber: 300
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-plus",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 299
+        lineNumber: 300
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 301
+        lineNumber: 302
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 302
+        lineNumber: 303
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 302
+        lineNumber: 303
       },
       __self: this
     }, "Refresh all graphs")), __jsx("button", {
@@ -3045,14 +3066,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       disabled: this.state.graphs.length === 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 303
+        lineNumber: 304
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-sync",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 303
+        lineNumber: 304
       },
       __self: this
     })))), this.state.graphs.length > 0 ? this.state.graphs.map((item, index) => __jsx("div", {
@@ -3060,34 +3081,34 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "pt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 308
+        lineNumber: 309
       },
       __self: this
     }, __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 309
+        lineNumber: 310
       },
       __self: this
     }), __jsx("img", {
       src: item.image,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 310
+        lineNumber: 311
       },
       __self: this
     }), __jsx("div", {
       className: "row mt-4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 311
+        lineNumber: 312
       },
       __self: this
     }, __jsx("div", {
       className: "col-md-9 text-center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 312
+        lineNumber: 313
       },
       __self: this
     }, !this.state.loading ? __jsx(react_highcharts__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -3098,35 +3119,35 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       oneToOne: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 313
+        lineNumber: 314
       },
       __self: this
     }) : __jsx("img", {
       src: _src_91_gif__WEBPACK_IMPORTED_MODULE_15___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 313
+        lineNumber: 314
       },
       __self: this
     })), __jsx("div", {
       className: "col-md-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 315
+        lineNumber: 316
       },
       __self: this
     }, __jsx("div", {
       className: "form-group",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 316
+        lineNumber: 317
       },
       __self: this
     }, __jsx("div", {
       className: "pt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 317
+        lineNumber: 318
       },
       __self: this
     }, __jsx("select", {
@@ -3136,7 +3157,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 318
+        lineNumber: 319
       },
       __self: this
     }, this.state.cryptocurrencies.map(i => __jsx("option", {
@@ -3144,14 +3165,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: i.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 318
+        lineNumber: 319
       },
       __self: this
     }, i.name, " - ", i.symbol)))), __jsx("div", {
       className: "pt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 320
+        lineNumber: 321
       },
       __self: this
     }, __jsx("select", {
@@ -3161,7 +3182,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 321
+        lineNumber: 322
       },
       __self: this
     }, this.state.currencies.map(i => __jsx("option", {
@@ -3169,33 +3190,33 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: i.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 321
+        lineNumber: 322
       },
       __self: this
     }, i.name, " - ", i.symbol)))), __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 323
+        lineNumber: 324
       },
       __self: this
     }, __jsx("div", {
       className: "col-md-12 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 324
+        lineNumber: 325
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 325
+        lineNumber: 326
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 325
+        lineNumber: 326
       },
       __self: this
     }, "Live data")), __jsx("input", {
@@ -3205,26 +3226,26 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 326
+        lineNumber: 327
       },
       __self: this
     })), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 328
+        lineNumber: 329
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 329
+        lineNumber: 330
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 329
+        lineNumber: 330
       },
       __self: this
     }, "Search")), __jsx("button", {
@@ -3232,33 +3253,33 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.refreshSingle(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 330
+        lineNumber: 331
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-search",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 330
+        lineNumber: 331
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 332
+        lineNumber: 333
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 333
+        lineNumber: 334
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 333
+        lineNumber: 334
       },
       __self: this
     }, "Refresh")), __jsx("button", {
@@ -3266,33 +3287,33 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.refreshSingle(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 334
+        lineNumber: 335
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-redo",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 334
+        lineNumber: 335
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 336
+        lineNumber: 337
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 337
+        lineNumber: 338
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 337
+        lineNumber: 338
       },
       __self: this
     }, "Delete")), __jsx("button", {
@@ -3300,33 +3321,33 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.removeGraph(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 338
+        lineNumber: 339
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-minus",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 338
+        lineNumber: 339
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 340
+        lineNumber: 341
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 341
+        lineNumber: 342
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 341
+        lineNumber: 342
       },
       __self: this
     }, "Save")), __jsx("button", {
@@ -3334,14 +3355,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.saveGraph(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 342
+        lineNumber: 343
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-save",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 342
+        lineNumber: 343
       },
       __self: this
     }))))))))) : "") : __jsx("div", {
@@ -3351,14 +3372,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 352
+        lineNumber: 353
       },
       __self: this
     }, __jsx("img", {
       src: _src_91_gif__WEBPACK_IMPORTED_MODULE_15___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 352
+        lineNumber: 353
       },
       __self: this
     })));
@@ -3442,14 +3463,16 @@ function getJwt() {
 /*!***********************************!*\
   !*** ./services/cryptoService.js ***!
   \***********************************/
-/*! exports provided: getCryptocurrencies, getCurrencies, saveGraph, createUserGraphs, default */
+/*! exports provided: getCryptocurrencies, getSavedData, getCurrencies, saveGraph, replaceGraphs, createUserGraphs, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCryptocurrencies", function() { return getCryptocurrencies; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSavedData", function() { return getSavedData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCurrencies", function() { return getCurrencies; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveGraph", function() { return saveGraph; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "replaceGraphs", function() { return replaceGraphs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createUserGraphs", function() { return createUserGraphs; });
 /* harmony import */ var _httpService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./httpService */ "./services/httpService.js");
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config */ "./config.json");
@@ -3460,8 +3483,13 @@ const apiEndpoit = _config__WEBPACK_IMPORTED_MODULE_1__["apiUrl"] + "/crypto";
 function getCryptocurrencies() {
   return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].get(`${apiEndpoit}/cryptocurrencies`);
 }
+function getSavedData(userId) {
+  return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].post(`${apiEndpoit}/savedData`, {
+    userId
+  });
+}
 function getCurrencies(cryptocurrency, currency) {
-  return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].post(apiEndpoit, {
+  return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].post(`${apiEndpoit}/getInfo`, {
     cryptocurrency,
     currency
   });
@@ -3472,6 +3500,9 @@ function saveGraph(graph, userId) {
     userId
   });
 }
+function replaceGraphs(graphs) {
+  return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].post(`${apiEndpoit}/replace`, graphs);
+}
 function createUserGraphs(userId) {
   return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].post(`${apiEndpoit}/create`, {
     userId
@@ -3481,7 +3512,9 @@ function createUserGraphs(userId) {
   getCurrencies,
   getCryptocurrencies,
   saveGraph,
-  createUserGraphs
+  createUserGraphs,
+  getSavedData,
+  replaceGraphs
 });
 
 /***/ }),
@@ -3570,14 +3603,14 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /*!***********************************!*\
   !*** multi ./pages/customdata.js ***!
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/laurentiu/Documents/crypto/client/pages/customdata.js */"./pages/customdata.js");
+module.exports = __webpack_require__(/*! D:\WEB\crypto\client\pages\customdata.js */"./pages/customdata.js");
 
 
 /***/ }),

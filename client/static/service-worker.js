@@ -8,7 +8,7 @@ async function getCurrencies(data){
         cryptocurrency: data[0],
         currency: data[1].toLowerCase()
     }
-    await fetch("http://localhost:3900/api/crypto", {
+    await fetch("http://localhost:3900/api/crypto/getInfo", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',

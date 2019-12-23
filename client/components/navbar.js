@@ -33,18 +33,22 @@ export default class Navbar extends Component {
                         <ul className="navbar-nav">
                             <li className="nav-item">
                                 <Link href="/">
-                                    <a className="nav-link"><strong><i className="fas fa-home"/></strong></a>
+                                    <a className="nav-link"><strong>Dashboard</strong></a>
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link href="/customdata">
                                     <a className="nav-link"><strong>Custom Data Graphs</strong></a>
                                 </Link>
-                                
+                            </li>
+                            <li className="nav-item">
+                                <Link href="/saveddata">
+                                    <a className="nav-link"><strong>Saved Data</strong></a>
+                                </Link>
                             </li>
                             <li className="nav-item">
                                 <Link href="/admin">
-                                    <a className="nav-link"><strong>Administration Panel</strong></a>
+                                    <a className="nav-link text-success"><strong>Administration Panel</strong></a>
                                 </Link>
                             </li>
                         </ul>

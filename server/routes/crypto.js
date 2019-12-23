@@ -25,7 +25,7 @@ router.get("/cryptocurrencies", auth, async (req, res) =>{
 	res.status(200).send({cryptocurrencies,currencies: resultCurrencies});
 });
 
-router.post("/", auth, async (req, res) =>{
+router.post("/getInfo", auth, async (req, res) =>{
 	let result = {};
 	await axios.get(`https://api.coingecko.com/api/v3/coins/${req.body.cryptocurrency}`).then(res => result = res.data);
 	const prices = [];
@@ -86,6 +86,26 @@ router.post("/save", auth, async (req, res) =>{
 	if (!graph) return res.status(404).send("The user with the given id was not found.");
 
 	res.send(graph);
+});
+
+router.post("/savedData", auth, async (req, res) =>{
+	const data = await Graph.findOne({userId:req.body.userId});
+	res.status(200).send(data);
+});
+
+router.post("/replace", auth, async (req, res) =>{
+	const graph = await Graph.update(
+		{userId:req.body.userId},
+		{$set:
+			{
+				graphs:req.body.graphs,
+			}
+		}
+	);
+
+	if (!graph) return res.status(404).send("The user with the given id was not found.");
+
+	res.status(200).send(graph);
 });
 
 module.exports = router;

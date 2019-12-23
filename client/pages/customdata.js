@@ -94,12 +94,12 @@ export default class CustomData extends Component {
 		const bkOptions = { ...chartOptions };
 		const graphs = [...this.state.graphs];
 		worker.onmessage = e => {
-			bkOptions.title = { text: `${this.state.selectedCryptocurrency.name} to ${this.state.selectedCurrency.name} exchange rate over time` },
-				bkOptions.series = [{
-					type: "line",
-					name: `${this.state.selectedCryptocurrency.name} to ${this.state.selectedCurrency.name}`,
-					data: e.data.prices
-				}]
+			bkOptions.title = { text: `${this.state.selectedCryptocurrency.name} to ${this.state.selectedCurrency.name} exchange rate over time` };
+      bkOptions.series = [{
+        type: "line",
+        name: `${this.state.selectedCryptocurrency.name} to ${this.state.selectedCurrency.name}`,
+        data: e.data.prices
+      }];
 			bkOptions.xAxis.categories = [...e.data.time];
 			graphs.push({
 				id: Date.now(),
@@ -108,7 +108,7 @@ export default class CustomData extends Component {
 				currency: this.state.selectedCurrency.value,
 				live: false,
 				image: e.data.image
-			})
+			});
 			this.setState({
 				graphs: graphs,
 				workers: this.state.workers + 1,
@@ -172,14 +172,14 @@ export default class CustomData extends Component {
 		worker.onmessage = e => {
 			const cryptocurrency= this.findName("cryptocurrencies", graphs[index].cryptocurrency);
 			const currency= this.findName("currencies", graphs[index].currency);
-			graphs[index].chartOptions.title = { text: `${cryptocurrency} to ${currency} exchange rate over time` },
+			graphs[index].chartOptions.title = { text: `${cryptocurrency} to ${currency} exchange rate over time` };
 			graphs[index].chartOptions.xAxis.categories = [...e.data.time];
 			graphs[index].image = e.data.image;
 			graphs[index].chartOptions.series = [{
 				type: "line",
 				name: `${graphs[index].cryptocurrency} to ${graphs[index].currency}`,
 				data: e.data.prices
-			}]
+			}];
 			this.setState({
 				graphs: graphs,
 				//loading: false
@@ -240,9 +240,10 @@ export default class CustomData extends Component {
 				value: bkGraph.currency,
 				name: currency
 			},
-			date: new Date
+      date: new Date,
+      image: bkGraph.image
 		}
-		await crypto.saveGraph(graph, this.state.user._id).then(res => { console.log("SUCCESS!"); }).catch(err => console.log("ERROR!", err));
+		await crypto.saveGraph(graph, this.state.user._id).catch(err => console.log("ERROR!", err));
 	}
 
 	getFilteredCryptocurrencies = () => {

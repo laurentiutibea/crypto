@@ -7,8 +7,12 @@ export function getCryptocurrencies(){
     return http.get(`${apiEndpoit}/cryptocurrencies`);
 }
 
+export function getSavedData(userId){
+	return http.post(`${apiEndpoit}/savedData`, {userId});
+}
+
 export function getCurrencies(cryptocurrency, currency){
-	return http.post(apiEndpoit, {
+	return http.post(`${apiEndpoit}/getInfo`, {
         cryptocurrency,
         currency
     });
@@ -16,6 +20,10 @@ export function getCurrencies(cryptocurrency, currency){
 
 export function saveGraph(graph, userId){
     return http.post(`${apiEndpoit}/save`,{graph, userId});
+}
+
+export function replaceGraphs(graphs){
+    return http.post(`${apiEndpoit}/replace`,graphs);
 }
 
 export function createUserGraphs(userId){
@@ -26,5 +34,7 @@ export default{
     getCurrencies,
     getCryptocurrencies,
     saveGraph,
-    createUserGraphs
+    createUserGraphs,
+    getSavedData,
+    replaceGraphs
 }
