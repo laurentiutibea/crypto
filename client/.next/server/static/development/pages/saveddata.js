@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -218,23 +218,50 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 15
       },
       __self: this
-    })), __jsx(_components_navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), __jsx("script", {
+      src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
+      integrity: "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo",
+      crossorigin: "anonymous",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }), __jsx("script", {
+      src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+      integrity: "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1",
+      crossorigin: "anonymous",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
+      },
+      __self: this
+    }), __jsx("script", {
+      src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+      integrity: "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM",
+      crossorigin: "anonymous",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    })), __jsx(_components_navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
       },
       __self: this
     }), __jsx("div", {
       className: "container",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 21
       },
       __self: this
     }, this.props.children), __jsx(_components_footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 24
       },
       __self: this
     }));
@@ -338,7 +365,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       },
       __self: this
     }, __jsx("nav", {
-      className: "navbar navbar-expand-sm navbar-light",
+      className: "navbar navbar-expand-md navbar-light",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 25
@@ -482,90 +509,86 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
         lineNumber: 46
       },
       __self: this
-    }, "Saved Data")))), __jsx("li", {
+    }, "Saved Data")))), this.state.user.isAdmin && __jsx("li", {
       className: "nav-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 50
       },
       __self: this
     }, __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
       href: "/admin",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 51
       },
       __self: this
     }, __jsx("a", {
       className: "nav-link text-success",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 52
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 52
       },
       __self: this
-    }, "Administration Panel")))))), __jsx("div", {
+    }, "Administration Panel"))))), __jsx("ul", {
+      className: "navbar-nav ml-auto",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 56
-      },
-      __self: this
-    }, __jsx("ul", {
-      className: "navbar-nav",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 57
       },
       __self: this
     }, __jsx("li", {
       className: "nav-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 57
       },
       __self: this
     }, __jsx("span", {
       className: "nav-link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
-      },
-      __self: this
-    }, "Hello ", this.state.user.name, "!")), __jsx("li", {
-      className: "nav-item",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 61
-      },
-      __self: this
-    }, __jsx("a", {
-      href: "#",
-      className: "nav-link",
-      onClick: this.handleLogout,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 58
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 58
+      },
+      __self: this
+    }, "Hello ", this.state.user.name, "!"), " ", __jsx("a", {
+      href: "#",
+      className: "text-danger",
+      style: {
+        display: "inline-block"
+      },
+      onClick: this.handleLogout,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-power-off",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 58
       },
       __self: this
-    }))))))));
+    })))))))));
   }
 
 }
@@ -2409,16 +2432,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! highcharts */ "highcharts");
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react_highcharts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-highcharts */ "react-highcharts");
-/* harmony import */ var react_highcharts__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_highcharts__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var immutability_helper__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! immutability-helper */ "immutability-helper");
-/* harmony import */ var immutability_helper__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(immutability_helper__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
-/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
-/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../src/91.gif */ "./src/91.gif");
-/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_src_91_gif__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../src/crypto-text.png */ "./src/crypto-text.png");
-/* harmony import */ var _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_src_crypto_text_png__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! highcharts-react-official */ "highcharts-react-official");
+/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(highcharts_react_official__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
+/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
+/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../src/91.gif */ "./src/91.gif");
+/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_src_91_gif__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../src/crypto-text.png */ "./src/crypto-text.png");
+/* harmony import */ var _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_src_crypto_text_png__WEBPACK_IMPORTED_MODULE_14__);
 
 
 
@@ -2432,7 +2453,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
-
 
 
 
@@ -2498,18 +2518,22 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         graphs: []
       },
       loaded: false,
-      graphs: []
+      graphs: [],
+      loadArr: []
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "refreshData", async () => {
       let graphs = [];
+      const loadArr = [...this.state.loadArr];
       if (this.state.graphs.length === 0) graphs = [];else this.setState({
         graphs: []
       });
       const {
         data
-      } = await _services_cryptoService__WEBPACK_IMPORTED_MODULE_13__["default"].getSavedData(this.state.user._id);
-      console.log(data);
+      } = await _services_cryptoService__WEBPACK_IMPORTED_MODULE_12__["default"].getSavedData(this.state.user._id);
+      this.setState({
+        loaded: false
+      });
 
       for (let i = 0; i < data.graphs.length; i++) {
         let bkOptions = _objectSpread({}, chartOptions);
@@ -2538,17 +2562,24 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
           graphId: data.graphs[i].graphId,
           date: data.graphs[i].date
         });
+        loadArr.push(false);
       }
 
       this.setState({
         data,
         loaded: true,
-        graphs
+        graphs,
+        loadArr
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "refreshSingle", index => {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "refreshSingle", async index => {
       const graphs = [...this.state.graphs];
+      const loadArr = [...this.state.loadArr];
+      loadArr[index] = true;
+      await this.setState({
+        loadArr
+      });
       graphs[index].chartOptions.title = {
         text: `${graphs[index].cryptocurrency.name} to ${graphs[index].currency.name} exchange rate over time`
       };
@@ -2557,8 +2588,10 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         name: `${graphs[index].cryptocurrency.name} to ${graphs[index].currency.name}`,
         data: graphs[index].chartOptions.series[0].data
       }];
+      loadArr[index] = false;
       this.setState({
-        graphs: graphs
+        graphs: graphs,
+        loadArr
       });
     });
 
@@ -2566,7 +2599,11 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       if (e.target.checked) {
         const worker = new Worker("static/service-worker.js");
         const graphs = [...this.state.graphs];
-        console.log(graphs[index]);
+        const loadArr = [...this.state.loadArr];
+        loadArr[index] = true;
+        this.setState({
+          loadArr
+        });
 
         worker.onmessage = e => {
           graphs[index].chartOptions.series.push({
@@ -2575,8 +2612,10 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
             data: e.data.prices,
             _colorIndex: 1
           });
+          loadArr[index] = false;
           this.setState({
-            graphs
+            graphs,
+            loadArr
           });
         };
 
@@ -2610,7 +2649,7 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         graphs: bkGraphs
       };
       console.log(bkGraphs);
-      await _services_cryptoService__WEBPACK_IMPORTED_MODULE_13__["default"].replaceGraphs(graph);
+      await _services_cryptoService__WEBPACK_IMPORTED_MODULE_12__["default"].replaceGraphs(graph);
       this.setState({
         graphs
       });
@@ -2618,8 +2657,8 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
   }
 
   async componentDidMount() {
-    const user = await _services_authService__WEBPACK_IMPORTED_MODULE_12__["default"].getCurrentUser();
-    const jwt = _services_authService__WEBPACK_IMPORTED_MODULE_12__["default"].getJwt();
+    const user = await _services_authService__WEBPACK_IMPORTED_MODULE_11__["default"].getCurrentUser();
+    const jwt = _services_authService__WEBPACK_IMPORTED_MODULE_11__["default"].getJwt();
     this.setState({
       user,
       jwt
@@ -2631,21 +2670,21 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
     return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 163
+        lineNumber: 173
       },
       __self: this
     }, __jsx("div", {
       className: "w-50 mx-auto text-center pt-5",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 164
+        lineNumber: 174
       },
       __self: this
     }, __jsx("img", {
-      src: _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_15___default.a,
+      src: _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_14___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 165
+        lineNumber: 175
       },
       __self: this
     }), __jsx("h1", {
@@ -2654,38 +2693,38 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 166
+        lineNumber: 176
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 166
+        lineNumber: 176
       },
       __self: this
     }, "Saved Data")), __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 167
+        lineNumber: 177
       },
       __self: this
     }), this.state.loaded && __jsx("div", {
       className: "col-md-12 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 168
+        lineNumber: 178
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 169
+        lineNumber: 179
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 169
+        lineNumber: 179
       },
       __self: this
     }, "Refresh")), __jsx("button", {
@@ -2693,21 +2732,21 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       onClick: this.refreshData,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 170
+        lineNumber: 180
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-sync",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 170
+        lineNumber: 180
       },
       __self: this
     })))), this.state.loaded ? __jsx("div", {
       className: "text-center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 174
+        lineNumber: 184
       },
       __self: this
     }, this.state.graphs.length > 0 ? this.state.graphs.map((item, index) => __jsx("div", {
@@ -2715,126 +2754,173 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       className: "pt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 177
+        lineNumber: 187
       },
       __self: this
     }, __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 178
+        lineNumber: 188
       },
       __self: this
     }), __jsx("img", {
       src: item.image,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 179
+        lineNumber: 189
       },
       __self: this
     }), __jsx("div", {
       className: "row mt-4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 180
+        lineNumber: 190
       },
       __self: this
     }, __jsx("div", {
       className: "col-md-9 text-center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 181
+        lineNumber: 191
       },
       __self: this
-    }, !this.state.loading ? __jsx(react_highcharts__WEBPACK_IMPORTED_MODULE_10___default.a, {
+    }, !this.state.loading && !this.state.loadArr[index] ? __jsx(highcharts_react_official__WEBPACK_IMPORTED_MODULE_10___default.a, {
       key: item.id,
       highcharts: highcharts__WEBPACK_IMPORTED_MODULE_9___default.a,
-      config: item.chartOptions,
-      ref: "chart",
-      oneToOne: true,
+      options: item.chartOptions,
+      allowChartUpdate: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 182
+        lineNumber: 192
       },
       __self: this
-    }) : __jsx("img", {
-      src: _src_91_gif__WEBPACK_IMPORTED_MODULE_14___default.a,
+    }) : __jsx("div", {
+      className: "mx-auto text-center",
+      style: {
+        paddingTop: "20%"
+      },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 182
+        lineNumber: 192
       },
       __self: this
-    })), __jsx("div", {
+    }, __jsx("img", {
+      src: _src_91_gif__WEBPACK_IMPORTED_MODULE_13___default.a,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 192
+      },
+      __self: this
+    }))), __jsx("div", {
       className: "col-md-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 184
+        lineNumber: 194
       },
       __self: this
     }, __jsx("div", {
       className: "form-group",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 185
+        lineNumber: 195
       },
       __self: this
     }, __jsx("div", {
       className: "pt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 186
+        lineNumber: 196
+      },
+      __self: this
+    }, __jsx("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 197
+      },
+      __self: this
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 197
+      },
+      __self: this
+    }, "Cryptocurrency"))), __jsx("div", {
+      className: "pt-2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 199
       },
       __self: this
     }, __jsx("input", {
       type: "text",
       value: item.cryptocurrency.name,
-      className: "form-control text-center",
+      className: "form-control text-center shadow",
       disabled: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 187
+        lineNumber: 200
       },
       __self: this
     })), __jsx("div", {
       className: "pt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 189
+        lineNumber: 202
+      },
+      __self: this
+    }, __jsx("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 203
+      },
+      __self: this
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 203
+      },
+      __self: this
+    }, "To currency"))), __jsx("div", {
+      className: "pt-2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 205
       },
       __self: this
     }, __jsx("input", {
       type: "text",
       value: item.currency.name,
-      className: "form-control text-center",
+      className: "form-control text-center shadow",
       disabled: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 190
+        lineNumber: 206
       },
       __self: this
     })), __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 192
+        lineNumber: 208
       },
       __self: this
     }, __jsx("div", {
       className: "col-md-12 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 193
+        lineNumber: 209
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 194
+        lineNumber: 210
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 194
+        lineNumber: 210
       },
       __self: this
     }, "Compare with current data")), __jsx("input", {
@@ -2843,26 +2929,26 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 195
+        lineNumber: 211
       },
       __self: this
     })), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 197
+        lineNumber: 213
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 198
+        lineNumber: 214
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 198
+        lineNumber: 214
       },
       __self: this
     }, "Delete")), __jsx("button", {
@@ -2870,33 +2956,33 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       onClick: () => this.editGraph(index, "remove"),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 199
+        lineNumber: 215
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-minus",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 199
+        lineNumber: 215
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 201
+        lineNumber: 217
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 202
+        lineNumber: 218
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 202
+        lineNumber: 218
       },
       __self: this
     }, "Save")), __jsx("button", {
@@ -2904,14 +2990,14 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       onClick: () => this.editGraph(index, "save"),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 203
+        lineNumber: 219
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-save",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 203
+        lineNumber: 219
       },
       __self: this
     }))))))))) : "") : __jsx("div", {
@@ -2921,14 +3007,14 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 213
+        lineNumber: 229
       },
       __self: this
     }, __jsx("img", {
-      src: _src_91_gif__WEBPACK_IMPORTED_MODULE_14___default.a,
+      src: _src_91_gif__WEBPACK_IMPORTED_MODULE_13___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 213
+        lineNumber: 229
       },
       __self: this
     })));
@@ -3152,7 +3238,7 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!**********************************!*\
   !*** multi ./pages/saveddata.js ***!
   \**********************************/
@@ -3307,14 +3393,14 @@ module.exports = require("highcharts");
 
 /***/ }),
 
-/***/ "immutability-helper":
-/*!**************************************!*\
-  !*** external "immutability-helper" ***!
-  \**************************************/
+/***/ "highcharts-react-official":
+/*!********************************************!*\
+  !*** external "highcharts-react-official" ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("immutability-helper");
+module.exports = require("highcharts-react-official");
 
 /***/ }),
 
@@ -3381,17 +3467,6 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-highcharts":
-/*!***********************************!*\
-  !*** external "react-highcharts" ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-highcharts");
 
 /***/ }),
 

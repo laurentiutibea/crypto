@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Layout from "../components/layout";
 import Highcharts from 'highcharts';
-import ReactHighcharts from 'react-highcharts';
-import update from "immutability-helper";
+import HighchartsReact from 'highcharts-react-official';
 
 import auth from "../services/authService";
 import crypto from "../services/cryptoService";
@@ -61,6 +60,7 @@ export default class CustomData extends Component {
 		searchQueryCryptocurrencies: "",
 		searchQueryCurrencies: "",
 		interval: [],
+		loadArr: [],
 		chartOptions: {}
 	}
 
@@ -75,31 +75,20 @@ export default class CustomData extends Component {
 				loaded: true
 			})
 		});
-		/* await crypto.getCurrencies("bitcoin","eur").then(res => {
-		  const bkOptions = {...this.state.chartOptions};
-		  bkOptions.series = [{
-			type: "area",
-			name: "BTC to EUR",
-			data: res.data
-		  }]
-		  this.setState({
-			data: res.data,
-			chartOptions: bkOptions
-			})
-		}); */
 	}
 
 	addGraph = () => {
 		const worker = new Worker("static/service-worker.js");
 		const bkOptions = { ...chartOptions };
 		const graphs = [...this.state.graphs];
+		const loadArr = [...this.state.loadArr];
 		worker.onmessage = e => {
 			bkOptions.title = { text: `${this.state.selectedCryptocurrency.name} to ${this.state.selectedCurrency.name} exchange rate over time` };
-      bkOptions.series = [{
-        type: "line",
-        name: `${this.state.selectedCryptocurrency.name} to ${this.state.selectedCurrency.name}`,
-        data: e.data.prices
-      }];
+			bkOptions.series = [{
+				type: "line",
+				name: `${this.state.selectedCryptocurrency.name} to ${this.state.selectedCurrency.name}`,
+				data: e.data.prices
+			}];
 			bkOptions.xAxis.categories = [...e.data.time];
 			graphs.push({
 				id: Date.now(),
@@ -109,10 +98,12 @@ export default class CustomData extends Component {
 				live: false,
 				image: e.data.image
 			});
+			loadArr.push(false);
 			this.setState({
 				graphs: graphs,
 				workers: this.state.workers + 1,
-				interval: ""
+				interval: "",
+				loadArr
 			})
 		}
 		worker.postMessage(`${this.state.selectedCryptocurrency.value},${this.state.selectedCurrency.value},${this.state.jwt}`);
@@ -168,7 +159,9 @@ export default class CustomData extends Component {
 	refreshSingle = (index) => {
 		const worker = new Worker("static/service-worker.js");
 		const graphs = [...this.state.graphs];
-		//this.setState({loading: true});
+		const loadArr = [...this.state.loadArr];
+		loadArr[index] = true;
+		this.setState({loadArr});
 		worker.onmessage = e => {
 			const cryptocurrency= this.findName("cryptocurrencies", graphs[index].cryptocurrency);
 			const currency= this.findName("currencies", graphs[index].currency);
@@ -180,9 +173,10 @@ export default class CustomData extends Component {
 				name: `${graphs[index].cryptocurrency} to ${graphs[index].currency}`,
 				data: e.data.prices
 			}];
+			loadArr[index] = false;
 			this.setState({
 				graphs: graphs,
-				//loading: false
+				loadArr
 			})
 		}
 		worker.postMessage(`${graphs[index].cryptocurrency},${graphs[index].currency},${this.state.jwt}`);
@@ -198,6 +192,9 @@ export default class CustomData extends Component {
 	liveData = (index) => {
 		const worker = new Worker("static/service-worker.js");
 		const graphs = [...this.state.graphs];
+		const loadArr = [...this.state.loadArr];
+		loadArr[index] = true;
+		this.setState({loadArr});
 		worker.onmessage = e => {
 			graphs[index].chartOptions.xAxis.categories.push(e.data.currentTime);
 			graphs[index].chartOptions.series[0].data.push(e.data.currentPrice);
@@ -205,9 +202,11 @@ export default class CustomData extends Component {
 				type: "line",
 				name: this.state.graphs[index].chartOptions.series[0].name,
 				data: graphs[index].chartOptions.series[0].data
-			}]
+			}];
+			loadArr[index] = false;
 			this.setState({
-				graphs: update(this.state.graphs, { [index]: { $set: graphs[index] } })
+				graphs,
+				loadArr
 			})
 		}
 		worker.postMessage(`${graphs[index].cryptocurrency},${graphs[index].currency},${this.state.jwt}`);
@@ -240,8 +239,8 @@ export default class CustomData extends Component {
 				value: bkGraph.currency,
 				name: currency
 			},
-      date: new Date,
-      image: bkGraph.image
+			date: new Date,
+			image: bkGraph.image
 		}
 		await crypto.saveGraph(graph, this.state.user._id).catch(err => console.log("ERROR!", err));
 	}
@@ -280,24 +279,24 @@ export default class CustomData extends Component {
 					<div className="text-center pt-2">
 						<div className="row w-75 mx-auto">
 							<div className="col-md-6">
-								<input type="text" onChange={this.handleSearch} placeholder="Search Cryptocurrency..." value={this.state.searchQueryCryptocurrencies} name="searchQueryCryptocurrencies" className="form-control w-75" style={{display: "inline-block"}}/>
+								<input type="text" onChange={this.handleSearch} placeholder="Search Cryptocurrency..." value={this.state.searchQueryCryptocurrencies} name="searchQueryCryptocurrencies" className="form-control w-75 shadow" style={{display: "inline-block"}}/>
 								<span>   <i className="fas fa-search" style={{display: "inline-block"}}/></span>
 							</div>
 							<div className="col-md-6">
-								<select name="Cryptocurrency" onChange={(e) => this.changeCryptocurrency(e, "cryptocurrencies")} disabled={!this.state.loaded} className="form-control" style={{display: "inline-block", width: "90%"}}><option value="">Select Cryptocurrency</option>{cryptocurrencies.map(item => (<option value={item.id} key={item.id}>{item.name} - {item.symbol}</option>))}</select>
+								<select name="Cryptocurrency" onChange={(e) => this.changeCryptocurrency(e, "cryptocurrencies")} disabled={!this.state.loaded} className="form-control shadow" style={{display: "inline-block", width: "90%"}}><option value="">Select Cryptocurrency</option>{cryptocurrencies.map(item => (<option value={item.id} key={item.id}>{item.name} - {item.symbol}</option>))}</select>
 								<span>   <i className="fas fa-hand-pointer" style={{display: "inline-block"}}/></span>
 							</div>
 							<div className="col-md-6 mt-2">
-								<input type="text" onChange={this.handleSearch} placeholder="Search Currency..." value={this.state.searchQueryCurrencies} name="searchQueryCurrencies" className="form-control w-75" style={{display: "inline-block"}}/>
+								<input type="text" onChange={this.handleSearch} placeholder="Search Currency..." value={this.state.searchQueryCurrencies} name="searchQueryCurrencies" className="form-control w-75 shadow" style={{display: "inline-block"}}/>
 								<span>   <i className="fas fa-search" style={{display: "inline-block"}}/></span>
 							</div>
 							<div className="col-md-6 mt-2">
-								<select name="Currency" onChange={(e) => this.changeCryptocurrency(e, "currencies")} disabled={!this.state.loaded} className="form-control" style={{display: "inline-block", width: "90%"}}><option value="">Select Currency</option>{currencies.map(item => (<option value={item.id} key={item.id}>{item.name} - {item.symbol}</option>))}</select>
+								<select name="Currency" onChange={(e) => this.changeCryptocurrency(e, "currencies")} disabled={!this.state.loaded} className="form-control shadow" style={{display: "inline-block", width: "90%"}}><option value="">Select Currency</option>{currencies.map(item => (<option value={item.id} key={item.id}>{item.name} - {item.symbol}</option>))}</select>
 								<span>   <i className="fas fa-hand-pointer" style={{display: "inline-block"}}/></span>
 							</div>
 							<div className="col-md-6 mt-3">
 								<p><strong>Add graph for selected values</strong></p>
-								<button className="btn btn-primary" onClick={this.addGraph}><i className="fas fa-plus"/></button>
+								<button className="btn btn-primary" onClick={this.addGraph} disabled={Object.keys(this.state.selectedCryptocurrency).length === 0 || Object.keys(this.state.selectedCurrency).length === 0}><i className="fas fa-plus"/></button>
 							</div>
 							<div className="col-md-6 mt-3">
 								<p><strong>Refresh all graphs</strong></p>
@@ -305,21 +304,21 @@ export default class CustomData extends Component {
 							</div>
 						</div>
 						{this.state.graphs.length > 0 ?
-							this.state.graphs.map((item, index) =>
+							this.state.graphs.map((item, index) => 
 								<div key={item.id} className="pt-3">
 									<hr/>
 									<img src={item.image} />
 									<div className="row mt-4">
 										<div className="col-md-9 text-center">
-											{!this.state.loading ? <ReactHighcharts key={item.id} highcharts={Highcharts} config={item.chartOptions} ref="chart" oneToOne={true} /> : <img src={loading} />}
+											{!this.state.loading && !this.state.loadArr[index] ? <HighchartsReact key={item.id} highcharts={Highcharts} options={item.chartOptions} allowChartUpdate = {true} /> : <div className="mx-auto text-center" style={{paddingTop: "20%"}}><img src={loading} /></div>}
 										</div>
 										<div className="col-md-3">
 											<div className="form-group">
 												<div className="pt-2">
-													<select name="Cryptocurrency" onChange={(e) => this.changeGraphCryptocurrency(e, index)} defaultValue={item.cryptocurrency} className="form-control">{this.state.cryptocurrencies.map(i => (<option value={i.id} key={i.id}>{i.name} - {i.symbol}</option>))}</select>
+													<select name="Cryptocurrency" onChange={(e) => this.changeGraphCryptocurrency(e, index)} defaultValue={item.cryptocurrency} className="form-control shadow">{this.state.cryptocurrencies.map(i => (<option value={i.id} key={i.id}>{i.name} - {i.symbol}</option>))}</select>
 												</div>
 												<div className="pt-2">
-													<select name="Currency" onChange={(e) => this.changeGraphCryptocurrency(e, index)} defaultValue={item.currency} className="form-control">{this.state.currencies.map(i => (<option value={i.id} key={i.id}>{i.name} - {i.symbol}</option>))}</select>
+													<select name="Currency" onChange={(e) => this.changeGraphCryptocurrency(e, index)} defaultValue={item.currency} className="form-control shadow">{this.state.currencies.map(i => (<option value={i.id} key={i.id}>{i.name} - {i.symbol}</option>))}</select>
 												</div>
 												<div className="row">
 													<div className="col-md-12 mt-3">

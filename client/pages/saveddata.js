@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Layout from "../components/layout";
 import Highcharts from 'highcharts';
-import ReactHighcharts from 'react-highcharts';
-import update from "immutability-helper";
+import HighchartsReact from 'highcharts-react-official';
 
 import auth from "../services/authService";
 import crypto from "../services/cryptoService";
@@ -52,7 +51,8 @@ export default class SavedData extends Component {
             graphs: []
         },
         loaded: false,
-        graphs: []
+        graphs: [],
+        loadArr: []
     }
 
     async componentDidMount(){
@@ -64,10 +64,11 @@ export default class SavedData extends Component {
 
     refreshData = async () => {
         let graphs = [];
+		const loadArr = [...this.state.loadArr];
         if(this.state.graphs.length === 0) graphs = [];
         else this.setState({graphs:[]});
         const {data} = await crypto.getSavedData(this.state.user._id);
-        console.log(data);
+        this.setState({loaded: false});
         for(let i=0; i<data.graphs.length; i++){
             let bkOptions = { ...chartOptions };
             bkOptions.title = { text: `${data.graphs[i].cryptocurrency.name} to ${data.graphs[i].currency.name} exchange rate over time` };
@@ -91,21 +92,27 @@ export default class SavedData extends Component {
                 image: data.graphs[i].image,
                 graphId: data.graphs[i].graphId,
                 date: data.graphs[i].date
-			});
+            });
+			loadArr.push(false);
         }
-        this.setState({data, loaded: true, graphs})
+        this.setState({data, loaded: true, graphs, loadArr});
     }
 
-    refreshSingle = (index) => {
+    refreshSingle = async (index) => {
         const graphs = [...this.state.graphs];
+        const loadArr = [...this.state.loadArr];
+		loadArr[index] = true;
+		await this.setState({loadArr});
         graphs[index].chartOptions.title = { text: `${graphs[index].cryptocurrency.name} to ${graphs[index].currency.name} exchange rate over time` };
         graphs[index].chartOptions.series = [{
             type: "line",
             name: `${graphs[index].cryptocurrency.name} to ${graphs[index].currency.name}`,
             data: graphs[index].chartOptions.series[0].data
         }];
+        loadArr[index] = false;
         this.setState({
-            graphs: graphs
+            graphs: graphs,
+            loadArr
         })
     }
 
@@ -113,7 +120,9 @@ export default class SavedData extends Component {
         if(e.target.checked){
             const worker = new Worker("static/service-worker.js");
             const graphs = [...this.state.graphs];
-            console.log(graphs[index]);
+            const loadArr = [...this.state.loadArr];
+            loadArr[index] = true;
+            this.setState({loadArr});
             worker.onmessage = e => {
                 graphs[index].chartOptions.series.push({
                     type: "line",
@@ -121,7 +130,8 @@ export default class SavedData extends Component {
                     data: e.data.prices,
                     _colorIndex: 1
                 });
-                this.setState({graphs});
+                loadArr[index] = false;
+                this.setState({graphs, loadArr});
             }
             worker.postMessage(`${graphs[index].cryptocurrency.value},${graphs[index].currency.value},${this.state.jwt}`);
         }
@@ -155,7 +165,7 @@ export default class SavedData extends Component {
         }
         console.log(bkGraphs);
         await crypto.replaceGraphs(graph);
-		this.setState({ graphs });
+        this.setState({ graphs });
     }
 
     render() {
@@ -179,15 +189,21 @@ export default class SavedData extends Component {
                                     <img src={item.image} />
                                     <div className="row mt-4">
                                         <div className="col-md-9 text-center">
-                                            {!this.state.loading ? <ReactHighcharts key={item.id} highcharts={Highcharts} config={item.chartOptions} ref="chart" oneToOne={true} /> : <img src={loading} />}
+                                            {!this.state.loading && !this.state.loadArr[index] ? <HighchartsReact key={item.id} highcharts={Highcharts} options={item.chartOptions} allowChartUpdate = {true}  /> : <div className="mx-auto text-center" style={{paddingTop: "20%"}}><img src={loading} /></div>}
                                         </div>
                                         <div className="col-md-3">
                                             <div className="form-group">
                                                 <div className="pt-2">
-													<input type="text" value={item.cryptocurrency.name} className="form-control text-center" disabled/>
+                                                    <span><strong>Cryptocurrency</strong></span>
+												</div>
+                                                <div className="pt-2">
+													<input type="text" value={item.cryptocurrency.name} className="form-control text-center shadow" disabled/>
+												</div>
+                                                <div className="pt-2">
+                                                    <span><strong>To currency</strong></span>
 												</div>
 												<div className="pt-2">
-                                                <input type="text" value={item.currency.name} className="form-control text-center" disabled/>
+                                                    <input type="text" value={item.currency.name} className="form-control text-center shadow" disabled/>
 												</div>
                                                 <div className="row">
                                                     <div className="col-md-12 mt-3">

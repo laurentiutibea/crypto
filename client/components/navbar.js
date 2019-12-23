@@ -22,7 +22,7 @@ export default class Navbar extends Component {
     render() {
         return (
             <div>
-                <nav className="navbar navbar-expand-sm navbar-light">
+                <nav className="navbar navbar-expand-md navbar-light">
                     <Link href="/">
                         <a className="navbar-brand" href="#"><img src={crypto}/></a>
                     </Link>
@@ -46,20 +46,16 @@ export default class Navbar extends Component {
                                     <a className="nav-link"><strong>Saved Data</strong></a>
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link href="/admin">
-                                    <a className="nav-link text-success"><strong>Administration Panel</strong></a>
-                                </Link>
-                            </li>
+                            {this.state.user.isAdmin && 
+                                <li className="nav-item">
+                                    <Link href="/admin">
+                                        <a className="nav-link text-success"><strong>Administration Panel</strong></a>
+                                    </Link>
+                                </li>}
                         </ul>
-                    </div>
-                    <div>
-                    <ul className="navbar-nav">
+                        <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <span className="nav-link">Hello {this.state.user.name}!</span>
-                            </li>
-                            <li className="nav-item">
-                                <a href="#" className="nav-link" onClick={this.handleLogout}><strong><i className="fas fa-power-off"/></strong></a>
+                                <span className="nav-link"><strong>Hello {this.state.user.name}!</strong> <a href="#" className="text-danger" style={{display:"inline-block"}} onClick={this.handleLogout}><strong><i className="fas fa-power-off"/></strong></a></span>
                             </li>
                         </ul>
                     </div>

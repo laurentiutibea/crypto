@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -218,23 +218,50 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 15
       },
       __self: this
-    })), __jsx(_components_navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), __jsx("script", {
+      src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
+      integrity: "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo",
+      crossorigin: "anonymous",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }), __jsx("script", {
+      src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+      integrity: "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1",
+      crossorigin: "anonymous",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
+      },
+      __self: this
+    }), __jsx("script", {
+      src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+      integrity: "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM",
+      crossorigin: "anonymous",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    })), __jsx(_components_navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
       },
       __self: this
     }), __jsx("div", {
       className: "container",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 21
       },
       __self: this
     }, this.props.children), __jsx(_components_footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 24
       },
       __self: this
     }));
@@ -338,7 +365,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       },
       __self: this
     }, __jsx("nav", {
-      className: "navbar navbar-expand-sm navbar-light",
+      className: "navbar navbar-expand-md navbar-light",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 25
@@ -482,90 +509,86 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
         lineNumber: 46
       },
       __self: this
-    }, "Saved Data")))), __jsx("li", {
+    }, "Saved Data")))), this.state.user.isAdmin && __jsx("li", {
       className: "nav-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 50
       },
       __self: this
     }, __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
       href: "/admin",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 51
       },
       __self: this
     }, __jsx("a", {
       className: "nav-link text-success",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 52
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 52
       },
       __self: this
-    }, "Administration Panel")))))), __jsx("div", {
+    }, "Administration Panel"))))), __jsx("ul", {
+      className: "navbar-nav ml-auto",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 56
-      },
-      __self: this
-    }, __jsx("ul", {
-      className: "navbar-nav",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 57
       },
       __self: this
     }, __jsx("li", {
       className: "nav-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 57
       },
       __self: this
     }, __jsx("span", {
       className: "nav-link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
-      },
-      __self: this
-    }, "Hello ", this.state.user.name, "!")), __jsx("li", {
-      className: "nav-item",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 61
-      },
-      __self: this
-    }, __jsx("a", {
-      href: "#",
-      className: "nav-link",
-      onClick: this.handleLogout,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 58
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 58
+      },
+      __self: this
+    }, "Hello ", this.state.user.name, "!"), " ", __jsx("a", {
+      href: "#",
+      className: "text-danger",
+      style: {
+        display: "inline-block"
+      },
+      onClick: this.handleLogout,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-power-off",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 58
       },
       __self: this
-    }))))))));
+    })))))))));
   }
 
 }
@@ -2422,16 +2445,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! highcharts */ "highcharts");
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var react_highcharts__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-highcharts */ "react-highcharts");
-/* harmony import */ var react_highcharts__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_highcharts__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var immutability_helper__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! immutability-helper */ "immutability-helper");
-/* harmony import */ var immutability_helper__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(immutability_helper__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
-/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
-/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../src/91.gif */ "./src/91.gif");
-/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_src_91_gif__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../src/crypto-text.png */ "./src/crypto-text.png");
-/* harmony import */ var _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_src_crypto_text_png__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! highcharts-react-official */ "highcharts-react-official");
+/* harmony import */ var highcharts_react_official__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(highcharts_react_official__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
+/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
+/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../src/91.gif */ "./src/91.gif");
+/* harmony import */ var _src_91_gif__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_src_91_gif__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../src/crypto-text.png */ "./src/crypto-text.png");
+/* harmony import */ var _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_src_crypto_text_png__WEBPACK_IMPORTED_MODULE_15__);
 
 
 
@@ -2446,7 +2467,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
-
 
 
 
@@ -2520,6 +2540,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       searchQueryCryptocurrencies: "",
       searchQueryCurrencies: "",
       interval: [],
+      loadArr: [],
       chartOptions: {}
     });
 
@@ -2529,6 +2550,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       const bkOptions = _objectSpread({}, chartOptions);
 
       const graphs = [...this.state.graphs];
+      const loadArr = [...this.state.loadArr];
 
       worker.onmessage = e => {
         bkOptions.title = {
@@ -2548,10 +2570,12 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
           live: false,
           image: e.data.image
         });
+        loadArr.push(false);
         this.setState({
           graphs: graphs,
           workers: this.state.workers + 1,
-          interval: ""
+          interval: "",
+          loadArr
         });
       };
 
@@ -2613,7 +2637,12 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "refreshSingle", index => {
       const worker = new Worker("static/service-worker.js");
-      const graphs = [...this.state.graphs]; //this.setState({loading: true});
+      const graphs = [...this.state.graphs];
+      const loadArr = [...this.state.loadArr];
+      loadArr[index] = true;
+      this.setState({
+        loadArr
+      });
 
       worker.onmessage = e => {
         const cryptocurrency = this.findName("cryptocurrencies", graphs[index].cryptocurrency);
@@ -2628,9 +2657,10 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
           name: `${graphs[index].cryptocurrency} to ${graphs[index].currency}`,
           data: e.data.prices
         }];
+        loadArr[index] = false;
         this.setState({
-          graphs: graphs //loading: false
-
+          graphs: graphs,
+          loadArr
         });
       };
 
@@ -2649,6 +2679,11 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "liveData", index => {
       const worker = new Worker("static/service-worker.js");
       const graphs = [...this.state.graphs];
+      const loadArr = [...this.state.loadArr];
+      loadArr[index] = true;
+      this.setState({
+        loadArr
+      });
 
       worker.onmessage = e => {
         graphs[index].chartOptions.xAxis.categories.push(e.data.currentTime);
@@ -2658,12 +2693,10 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
           name: this.state.graphs[index].chartOptions.series[0].name,
           data: graphs[index].chartOptions.series[0].data
         }];
+        loadArr[index] = false;
         this.setState({
-          graphs: immutability_helper__WEBPACK_IMPORTED_MODULE_12___default()(this.state.graphs, {
-            [index]: {
-              $set: graphs[index]
-            }
-          })
+          graphs,
+          loadArr
         });
       };
 
@@ -2703,7 +2736,7 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
         date: new Date(),
         image: bkGraph.image
       };
-      await _services_cryptoService__WEBPACK_IMPORTED_MODULE_14__["default"].saveGraph(graph, this.state.user._id).catch(err => console.log("ERROR!", err));
+      await _services_cryptoService__WEBPACK_IMPORTED_MODULE_13__["default"].saveGraph(graph, this.state.user._id).catch(err => console.log("ERROR!", err));
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(this, "getFilteredCryptocurrencies", () => {
@@ -2738,31 +2771,19 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
   }
 
   async componentDidMount() {
-    const user = _services_authService__WEBPACK_IMPORTED_MODULE_13__["default"].getCurrentUser();
-    const jwt = _services_authService__WEBPACK_IMPORTED_MODULE_13__["default"].getJwt();
+    const user = _services_authService__WEBPACK_IMPORTED_MODULE_12__["default"].getCurrentUser();
+    const jwt = _services_authService__WEBPACK_IMPORTED_MODULE_12__["default"].getJwt();
     this.setState({
       user,
       jwt
     });
-    await _services_cryptoService__WEBPACK_IMPORTED_MODULE_14__["default"].getCryptocurrencies().then(res => {
+    await _services_cryptoService__WEBPACK_IMPORTED_MODULE_13__["default"].getCryptocurrencies().then(res => {
       this.setState({
         cryptocurrencies: res.data.cryptocurrencies,
         currencies: res.data.currencies,
         loaded: true
       });
     });
-    /* await crypto.getCurrencies("bitcoin","eur").then(res => {
-      const bkOptions = {...this.state.chartOptions};
-      bkOptions.series = [{
-    	type: "area",
-    	name: "BTC to EUR",
-    	data: res.data
-      }]
-      this.setState({
-    	data: res.data,
-    	chartOptions: bkOptions
-    	})
-    }); */
   }
 
   render() {
@@ -2775,21 +2796,21 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
     return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 273
+        lineNumber: 272
       },
       __self: this
     }, __jsx("div", {
       className: "w-50 mx-auto text-center pt-5",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 274
+        lineNumber: 273
       },
       __self: this
     }, __jsx("img", {
-      src: _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_16___default.a,
+      src: _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_15___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 275
+        lineNumber: 274
       },
       __self: this
     }), __jsx("h1", {
@@ -2798,40 +2819,40 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 276
+        lineNumber: 275
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 276
+        lineNumber: 275
       },
       __self: this
     }, "Custom Data Graphs")), __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 277
+        lineNumber: 276
       },
       __self: this
     })), this.state.loaded ? __jsx("div", {
       className: "text-center pt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 280
+        lineNumber: 279
       },
       __self: this
     }, __jsx("div", {
       className: "row w-75 mx-auto",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 281
+        lineNumber: 280
       },
       __self: this
     }, __jsx("div", {
       className: "col-md-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 282
+        lineNumber: 281
       },
       __self: this
     }, __jsx("input", {
@@ -2840,7 +2861,23 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       placeholder: "Search Cryptocurrency...",
       value: this.state.searchQueryCryptocurrencies,
       name: "searchQueryCryptocurrencies",
-      className: "form-control w-75",
+      className: "form-control w-75 shadow",
+      style: {
+        display: "inline-block"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 282
+      },
+      __self: this
+    }), __jsx("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 283
+      },
+      __self: this
+    }, "   ", __jsx("i", {
+      className: "fas fa-search",
       style: {
         display: "inline-block"
       },
@@ -2849,48 +2886,32 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
         lineNumber: 283
       },
       __self: this
-    }), __jsx("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 284
-      },
-      __self: this
-    }, "   ", __jsx("i", {
-      className: "fas fa-search",
-      style: {
-        display: "inline-block"
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 284
-      },
-      __self: this
     }))), __jsx("div", {
       className: "col-md-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 286
+        lineNumber: 285
       },
       __self: this
     }, __jsx("select", {
       name: "Cryptocurrency",
       onChange: e => this.changeCryptocurrency(e, "cryptocurrencies"),
       disabled: !this.state.loaded,
-      className: "form-control",
+      className: "form-control shadow",
       style: {
         display: "inline-block",
         width: "90%"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 287
+        lineNumber: 286
       },
       __self: this
     }, __jsx("option", {
       value: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 287
+        lineNumber: 286
       },
       __self: this
     }, "Select Cryptocurrency"), cryptocurrencies.map(item => __jsx("option", {
@@ -2898,13 +2919,13 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 287
+        lineNumber: 286
       },
       __self: this
     }, item.name, " - ", item.symbol))), __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 288
+        lineNumber: 287
       },
       __self: this
     }, "   ", __jsx("i", {
@@ -2914,14 +2935,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 288
+        lineNumber: 287
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 290
+        lineNumber: 289
       },
       __self: this
     }, __jsx("input", {
@@ -2930,19 +2951,19 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       placeholder: "Search Currency...",
       value: this.state.searchQueryCurrencies,
       name: "searchQueryCurrencies",
-      className: "form-control w-75",
+      className: "form-control w-75 shadow",
       style: {
         display: "inline-block"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 291
+        lineNumber: 290
       },
       __self: this
     }), __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 292
+        lineNumber: 291
       },
       __self: this
     }, "   ", __jsx("i", {
@@ -2952,35 +2973,35 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 292
+        lineNumber: 291
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 294
+        lineNumber: 293
       },
       __self: this
     }, __jsx("select", {
       name: "Currency",
       onChange: e => this.changeCryptocurrency(e, "currencies"),
       disabled: !this.state.loaded,
-      className: "form-control",
+      className: "form-control shadow",
       style: {
         display: "inline-block",
         width: "90%"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 295
+        lineNumber: 294
       },
       __self: this
     }, __jsx("option", {
       value: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 295
+        lineNumber: 294
       },
       __self: this
     }, "Select Currency"), currencies.map(item => __jsx("option", {
@@ -2988,13 +3009,13 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 295
+        lineNumber: 294
       },
       __self: this
     }, item.name, " - ", item.symbol))), __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 296
+        lineNumber: 295
       },
       __self: this
     }, "   ", __jsx("i", {
@@ -3004,60 +3025,61 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 296
+        lineNumber: 295
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 298
+        lineNumber: 297
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 299
+        lineNumber: 298
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 299
+        lineNumber: 298
       },
       __self: this
     }, "Add graph for selected values")), __jsx("button", {
       className: "btn btn-primary",
       onClick: this.addGraph,
+      disabled: _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(this.state.selectedCryptocurrency).length === 0 || _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(this.state.selectedCurrency).length === 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 300
+        lineNumber: 299
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-plus",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 300
+        lineNumber: 299
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 302
+        lineNumber: 301
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 303
+        lineNumber: 302
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 303
+        lineNumber: 302
       },
       __self: this
     }, "Refresh all graphs")), __jsx("button", {
@@ -3066,14 +3088,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       disabled: this.state.graphs.length === 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 304
+        lineNumber: 303
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-sync",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 304
+        lineNumber: 303
       },
       __self: this
     })))), this.state.graphs.length > 0 ? this.state.graphs.map((item, index) => __jsx("div", {
@@ -3081,83 +3103,92 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "pt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 309
+        lineNumber: 308
       },
       __self: this
     }, __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 310
+        lineNumber: 309
       },
       __self: this
     }), __jsx("img", {
       src: item.image,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 311
+        lineNumber: 310
       },
       __self: this
     }), __jsx("div", {
       className: "row mt-4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 312
+        lineNumber: 311
       },
       __self: this
     }, __jsx("div", {
       className: "col-md-9 text-center",
       __source: {
         fileName: _jsxFileName,
+        lineNumber: 312
+      },
+      __self: this
+    }, !this.state.loading && !this.state.loadArr[index] ? __jsx(highcharts_react_official__WEBPACK_IMPORTED_MODULE_11___default.a, {
+      key: item.id,
+      highcharts: highcharts__WEBPACK_IMPORTED_MODULE_10___default.a,
+      options: item.chartOptions,
+      allowChartUpdate: true,
+      __source: {
+        fileName: _jsxFileName,
         lineNumber: 313
       },
       __self: this
-    }, !this.state.loading ? __jsx(react_highcharts__WEBPACK_IMPORTED_MODULE_11___default.a, {
-      key: item.id,
-      highcharts: highcharts__WEBPACK_IMPORTED_MODULE_10___default.a,
-      config: item.chartOptions,
-      ref: "chart",
-      oneToOne: true,
+    }) : __jsx("div", {
+      className: "mx-auto text-center",
+      style: {
+        paddingTop: "20%"
+      },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 314
+        lineNumber: 313
       },
       __self: this
-    }) : __jsx("img", {
-      src: _src_91_gif__WEBPACK_IMPORTED_MODULE_15___default.a,
+    }, __jsx("img", {
+      src: _src_91_gif__WEBPACK_IMPORTED_MODULE_14___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 314
+        lineNumber: 313
       },
       __self: this
-    })), __jsx("div", {
+    }))), __jsx("div", {
       className: "col-md-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 316
+        lineNumber: 315
       },
       __self: this
     }, __jsx("div", {
       className: "form-group",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 317
+        lineNumber: 316
       },
       __self: this
     }, __jsx("div", {
       className: "pt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 318
+        lineNumber: 317
       },
       __self: this
     }, __jsx("select", {
       name: "Cryptocurrency",
       onChange: e => this.changeGraphCryptocurrency(e, index),
       defaultValue: item.cryptocurrency,
-      className: "form-control",
+      className: "form-control shadow",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 319
+        lineNumber: 318
       },
       __self: this
     }, this.state.cryptocurrencies.map(i => __jsx("option", {
@@ -3165,24 +3196,24 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: i.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 319
+        lineNumber: 318
       },
       __self: this
     }, i.name, " - ", i.symbol)))), __jsx("div", {
       className: "pt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 321
+        lineNumber: 320
       },
       __self: this
     }, __jsx("select", {
       name: "Currency",
       onChange: e => this.changeGraphCryptocurrency(e, index),
       defaultValue: item.currency,
-      className: "form-control",
+      className: "form-control shadow",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 322
+        lineNumber: 321
       },
       __self: this
     }, this.state.currencies.map(i => __jsx("option", {
@@ -3190,33 +3221,33 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       key: i.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 322
+        lineNumber: 321
       },
       __self: this
     }, i.name, " - ", i.symbol)))), __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 324
+        lineNumber: 323
       },
       __self: this
     }, __jsx("div", {
       className: "col-md-12 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 325
+        lineNumber: 324
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 326
+        lineNumber: 325
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 326
+        lineNumber: 325
       },
       __self: this
     }, "Live data")), __jsx("input", {
@@ -3226,26 +3257,26 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 327
+        lineNumber: 326
       },
       __self: this
     })), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 329
+        lineNumber: 328
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 330
+        lineNumber: 329
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 330
+        lineNumber: 329
       },
       __self: this
     }, "Search")), __jsx("button", {
@@ -3253,33 +3284,33 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.refreshSingle(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 331
+        lineNumber: 330
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-search",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 331
+        lineNumber: 330
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 333
+        lineNumber: 332
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 334
+        lineNumber: 333
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 334
+        lineNumber: 333
       },
       __self: this
     }, "Refresh")), __jsx("button", {
@@ -3287,33 +3318,33 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.refreshSingle(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 335
+        lineNumber: 334
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-redo",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 335
+        lineNumber: 334
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 337
+        lineNumber: 336
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 338
+        lineNumber: 337
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 338
+        lineNumber: 337
       },
       __self: this
     }, "Delete")), __jsx("button", {
@@ -3321,33 +3352,33 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.removeGraph(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 339
+        lineNumber: 338
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-minus",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 339
+        lineNumber: 338
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 341
+        lineNumber: 340
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 342
+        lineNumber: 341
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 342
+        lineNumber: 341
       },
       __self: this
     }, "Save")), __jsx("button", {
@@ -3355,14 +3386,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       onClick: () => this.saveGraph(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 343
+        lineNumber: 342
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-save",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 343
+        lineNumber: 342
       },
       __self: this
     }))))))))) : "") : __jsx("div", {
@@ -3372,14 +3403,14 @@ class CustomData extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 353
+        lineNumber: 352
       },
       __self: this
     }, __jsx("img", {
-      src: _src_91_gif__WEBPACK_IMPORTED_MODULE_15___default.a,
+      src: _src_91_gif__WEBPACK_IMPORTED_MODULE_14___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 353
+        lineNumber: 352
       },
       __self: this
     })));
@@ -3603,7 +3634,7 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!***********************************!*\
   !*** multi ./pages/customdata.js ***!
   \***********************************/
@@ -3769,14 +3800,14 @@ module.exports = require("highcharts");
 
 /***/ }),
 
-/***/ "immutability-helper":
-/*!**************************************!*\
-  !*** external "immutability-helper" ***!
-  \**************************************/
+/***/ "highcharts-react-official":
+/*!********************************************!*\
+  !*** external "highcharts-react-official" ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("immutability-helper");
+module.exports = require("highcharts-react-official");
 
 /***/ }),
 
@@ -3843,17 +3874,6 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-highcharts":
-/*!***********************************!*\
-  !*** external "react-highcharts" ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-highcharts");
 
 /***/ }),
 
