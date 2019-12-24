@@ -14,7 +14,7 @@ const chartOptions = {
 	xAxis: {
 		type: 'datetime',
 		dateTimeLabelFormats: { day: '%d-%m-%Y - %h:%m' },
-		title: { text: 'Date' }
+        title: { text: 'Date' },
 	},
 	yAxis: {
 		title: { text: 'Exchange rate' }
@@ -52,7 +52,8 @@ export default class SavedData extends Component {
         },
         loaded: false,
         graphs: [],
-        loadArr: []
+        loadArr: [],
+        compare: false
     }
 
     async componentDidMount(){
@@ -75,7 +76,8 @@ export default class SavedData extends Component {
             bkOptions.series = [{
                 type: "line",
                 name: `${data.graphs[i].cryptocurrency.name} to ${data.graphs[i].currency.name}`,
-                data: data.graphs[i].series.data
+                data: data.graphs[i].series.data,
+                connectNulls: true
             }];
 			bkOptions.xAxis.categories = data.graphs[i].categories;
 			graphs.push({
@@ -96,30 +98,49 @@ export default class SavedData extends Component {
 			loadArr.push(false);
         }
         this.setState({data, loaded: true, graphs, loadArr});
+        console.log(graphs);
     }
 
     refreshSingle = async (index) => {
-        const graphs = [...this.state.graphs];
+        const {data} = await crypto.getSavedData(this.state.user._id);
         const loadArr = [...this.state.loadArr];
-		loadArr[index] = true;
-		await this.setState({loadArr});
-        graphs[index].chartOptions.title = { text: `${graphs[index].cryptocurrency.name} to ${graphs[index].currency.name} exchange rate over time` };
-        graphs[index].chartOptions.series = [{
+        loadArr[index] = true;
+        this.setState({loadArr});
+        const graphs = [...this.state.graphs];
+        let bkOptions = { ...chartOptions };
+        bkOptions.title = { text: `${data.graphs[index].cryptocurrency.name} to ${data.graphs[index].currency.name} exchange rate over time` };
+        bkOptions.series = [{
             type: "line",
-            name: `${graphs[index].cryptocurrency.name} to ${graphs[index].currency.name}`,
-            data: graphs[index].chartOptions.series[0].data
+            name: `${data.graphs[index].cryptocurrency.name} to ${data.graphs[index].currency.name}`,
+            data: data.graphs[index].series.data,
+            connectNulls: true
         }];
+        bkOptions.xAxis.categories = data.graphs[index].categories;
+        graphs[index] = {
+            chartOptions: bkOptions,
+            cryptocurrency: {
+                name: data.graphs[index].cryptocurrency.name,
+                value: data.graphs[index].cryptocurrency.value
+            },
+            currency: {
+                name: data.graphs[index].currency.name,
+                value: data.graphs[index].currency.value
+            },
+            live: false,
+            image: data.graphs[index].image,
+            graphId: data.graphs[index].graphId,
+            date: data.graphs[index].date
+        };
         loadArr[index] = false;
-        this.setState({
-            graphs: graphs,
-            loadArr
-        })
+        this.setState({data, loaded: true, graphs, loadArr});
+        console.log(graphs);
     }
 
-    compare = (e,index) => {
+    compare = async (e,index) => {
         if(e.target.checked){
             const worker = new Worker("static/service-worker.js");
             const graphs = [...this.state.graphs];
+            console.log(graphs);
             const loadArr = [...this.state.loadArr];
             loadArr[index] = true;
             this.setState({loadArr});
@@ -128,23 +149,58 @@ export default class SavedData extends Component {
                     type: "line",
                     name: "NEW:"+this.state.graphs[index].chartOptions.series[0].name,
                     data: e.data.prices,
-                    _colorIndex: 1
+                    _colorIndex: 1,
+                    connectNulls: true,
+                    pointStart: 1,
+                    pointInterval: 2
                 });
+
+                const dates = [];
+                for(let i=0; i<e.data.time.length; i++){
+                    dates.push(graphs[index].chartOptions.xAxis.categories[i]);
+                    dates.push(e.data.time[i]);
+                }
+                graphs[index].chartOptions.xAxis.categories = [...dates];
+                graphs[index].chartOptions.series[0].pointInterval =  2;
                 loadArr[index] = false;
-                this.setState({graphs, loadArr});
+                this.setState({graphs, loadArr, compare: true});
+                console.log(graphs[index].chartOptions.xAxis.categories);
             }
             worker.postMessage(`${graphs[index].cryptocurrency.value},${graphs[index].currency.value},${this.state.jwt}`);
         }
-        else this.refreshSingle(index);
+        else{
+            const graphs = [...this.state.graphs];
+            const loadArr = [...this.state.loadArr];
+            loadArr[index] = true;
+            await this.setState({loadArr});
+            graphs[index].chartOptions.title = { text: `${graphs[index].cryptocurrency.name} to ${graphs[index].currency.name} exchange rate over time` };
+            graphs[index].chartOptions.series = [{
+                type: "line",
+                name: `${graphs[index].cryptocurrency.name} to ${graphs[index].currency.name}`,
+                data: graphs[index].chartOptions.series[0].data,
+                connectNulls: true
+            }];
+            if(graphs[index].chartOptions.xAxis.categories.length > 9) graphs[index].chartOptions.xAxis.categories = graphs[index].chartOptions.xAxis.categories.filter((item, index) => index%2 === 0);
+            loadArr[index] = false;
+            this.setState({
+                graphs: graphs,
+                loadArr,
+                compare: false
+            })
+        }
     }
 
     editGraph = async (index, action) => {
 		let graphs = [...this.state.graphs];
         if(action === "remove") graphs = graphs.filter((item, i) => i !== index);
         let bkGraphs = [];
+        let bkCategories = [];
         graphs.forEach((element, i) => {
+            if(i === index) bkCategories = element.chartOptions.xAxis.categories.filter((item, index) => index%2 !== 0);
+            else if(element.chartOptions.xAxis.categories.length > 9) bkCategories = element.chartOptions.xAxis.categories.filter((item, index) => index%2 === 0);
+            else bkCategories = element.chartOptions.xAxis.categories;
             bkGraphs.push({
-                categories: element.chartOptions.xAxis.categories,
+                categories: bkCategories,
                 series: action === "save" ? i === index ? element.chartOptions.series[1] : element.chartOptions.series[0] : element.chartOptions.series[0],
                 graphId: element.graphId,
                 cryptocurrency: {
@@ -163,7 +219,6 @@ export default class SavedData extends Component {
             userId: this.state.user._id,
             graphs: bkGraphs
         }
-        console.log(bkGraphs);
         await crypto.replaceGraphs(graph);
         this.setState({ graphs });
     }
@@ -216,7 +271,7 @@ export default class SavedData extends Component {
                                                     </div>
                                                     <div className="col-md-6 mt-3">
                                                         <p><strong>Save</strong></p>
-                                                        <button className="btn btn-primary" onClick={() => this.editGraph(index,"save")}><i className="fas fa-save"/></button>
+                                                        <button className="btn btn-primary" onClick={() => this.editGraph(index,"save")} disabled={!this.state.compare}><i className="fas fa-save"/></button>
                                                     </div>
                                                 </div>
                                             </div>

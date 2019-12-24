@@ -14303,7 +14303,8 @@ function (_Component) {
       },
       loaded: false,
       graphs: [],
-      loadArr: []
+      loadArr: [],
+      compare: false
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_15__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_13__["default"])(_this), "refreshData",
@@ -14341,7 +14342,8 @@ function (_Component) {
                 bkOptions.series = [{
                   type: "line",
                   name: "".concat(data.graphs[i].cryptocurrency.name, " to ").concat(data.graphs[i].currency.name),
-                  data: data.graphs[i].series.data
+                  data: data.graphs[i].series.data,
+                  connectNulls: true
                 }];
                 bkOptions.xAxis.categories = data.graphs[i].categories;
                 graphs.push({
@@ -14369,7 +14371,9 @@ function (_Component) {
                 loadArr: loadArr
               });
 
-            case 10:
+              console.log(graphs);
+
+            case 11:
             case "end":
               return _context.stop();
           }
@@ -14383,36 +14387,64 @@ function (_Component) {
       var _ref3 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_8__["default"])(
       /*#__PURE__*/
       _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.mark(function _callee2(index) {
-        var graphs, loadArr;
+        var _ref4, data, loadArr, graphs, bkOptions;
+
         return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                graphs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_7__["default"])(_this.state.graphs);
+                _context2.next = 2;
+                return _services_cryptoService__WEBPACK_IMPORTED_MODULE_21__["default"].getSavedData(_this.state.user._id);
+
+              case 2:
+                _ref4 = _context2.sent;
+                data = _ref4.data;
                 loadArr = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_7__["default"])(_this.state.loadArr);
                 loadArr[index] = true;
-                _context2.next = 5;
-                return _this.setState({
+
+                _this.setState({
                   loadArr: loadArr
                 });
 
-              case 5:
-                graphs[index].chartOptions.title = {
-                  text: "".concat(graphs[index].cryptocurrency.name, " to ").concat(graphs[index].currency.name, " exchange rate over time")
+                graphs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_7__["default"])(_this.state.graphs);
+                bkOptions = _objectSpread({}, chartOptions);
+                bkOptions.title = {
+                  text: "".concat(data.graphs[index].cryptocurrency.name, " to ").concat(data.graphs[index].currency.name, " exchange rate over time")
                 };
-                graphs[index].chartOptions.series = [{
+                bkOptions.series = [{
                   type: "line",
-                  name: "".concat(graphs[index].cryptocurrency.name, " to ").concat(graphs[index].currency.name),
-                  data: graphs[index].chartOptions.series[0].data
+                  name: "".concat(data.graphs[index].cryptocurrency.name, " to ").concat(data.graphs[index].currency.name),
+                  data: data.graphs[index].series.data,
+                  connectNulls: true
                 }];
+                bkOptions.xAxis.categories = data.graphs[index].categories;
+                graphs[index] = {
+                  chartOptions: bkOptions,
+                  cryptocurrency: {
+                    name: data.graphs[index].cryptocurrency.name,
+                    value: data.graphs[index].cryptocurrency.value
+                  },
+                  currency: {
+                    name: data.graphs[index].currency.name,
+                    value: data.graphs[index].currency.value
+                  },
+                  live: false,
+                  image: data.graphs[index].image,
+                  graphId: data.graphs[index].graphId,
+                  date: data.graphs[index].date
+                };
                 loadArr[index] = false;
 
                 _this.setState({
+                  data: data,
+                  loaded: true,
                   graphs: graphs,
                   loadArr: loadArr
                 });
 
-              case 9:
+                console.log(graphs);
+
+              case 16:
               case "end":
                 return _context2.stop();
             }
@@ -14425,58 +14457,135 @@ function (_Component) {
       };
     }());
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_15__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_13__["default"])(_this), "compare", function (e, index) {
-      if (e.target.checked) {
-        var worker = new Worker("static/service-worker.js");
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_15__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_13__["default"])(_this), "compare",
+    /*#__PURE__*/
+    function () {
+      var _ref5 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_8__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.mark(function _callee3(e, index) {
+        var worker, graphs, loadArr, _graphs, _loadArr;
 
-        var graphs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_7__["default"])(_this.state.graphs);
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                if (!e.target.checked) {
+                  _context3.next = 11;
+                  break;
+                }
 
-        var loadArr = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_7__["default"])(_this.state.loadArr);
+                worker = new Worker("static/service-worker.js");
+                graphs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_7__["default"])(_this.state.graphs);
+                console.log(graphs);
+                loadArr = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_7__["default"])(_this.state.loadArr);
+                loadArr[index] = true;
 
-        loadArr[index] = true;
+                _this.setState({
+                  loadArr: loadArr
+                });
 
-        _this.setState({
-          loadArr: loadArr
-        });
+                worker.onmessage = function (e) {
+                  graphs[index].chartOptions.series.push({
+                    type: "line",
+                    name: "NEW:" + _this.state.graphs[index].chartOptions.series[0].name,
+                    data: e.data.prices,
+                    _colorIndex: 1,
+                    connectNulls: true,
+                    pointStart: 1,
+                    pointInterval: 2
+                  });
+                  var dates = [];
 
-        worker.onmessage = function (e) {
-          graphs[index].chartOptions.series.push({
-            type: "line",
-            name: "NEW:" + _this.state.graphs[index].chartOptions.series[0].name,
-            data: e.data.prices,
-            _colorIndex: 1
-          });
-          loadArr[index] = false;
+                  for (var i = 0; i < e.data.time.length; i++) {
+                    dates.push(graphs[index].chartOptions.xAxis.categories[i]);
+                    dates.push(e.data.time[i]);
+                  }
 
-          _this.setState({
-            graphs: graphs,
-            loadArr: loadArr
-          });
-        };
+                  graphs[index].chartOptions.xAxis.categories = [].concat(dates);
+                  graphs[index].chartOptions.series[0].pointInterval = 2;
+                  loadArr[index] = false;
 
-        worker.postMessage("".concat(graphs[index].cryptocurrency.value, ",").concat(graphs[index].currency.value, ",").concat(_this.state.jwt));
-      } else _this.refreshSingle(index);
-    });
+                  _this.setState({
+                    graphs: graphs,
+                    loadArr: loadArr,
+                    compare: true
+                  });
+
+                  console.log(graphs[index].chartOptions.xAxis.categories);
+                };
+
+                worker.postMessage("".concat(graphs[index].cryptocurrency.value, ",").concat(graphs[index].currency.value, ",").concat(_this.state.jwt));
+                _context3.next = 21;
+                break;
+
+              case 11:
+                _graphs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_7__["default"])(_this.state.graphs);
+                _loadArr = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_7__["default"])(_this.state.loadArr);
+                _loadArr[index] = true;
+                _context3.next = 16;
+                return _this.setState({
+                  loadArr: _loadArr
+                });
+
+              case 16:
+                _graphs[index].chartOptions.title = {
+                  text: "".concat(_graphs[index].cryptocurrency.name, " to ").concat(_graphs[index].currency.name, " exchange rate over time")
+                };
+                _graphs[index].chartOptions.series = [{
+                  type: "line",
+                  name: "".concat(_graphs[index].cryptocurrency.name, " to ").concat(_graphs[index].currency.name),
+                  data: _graphs[index].chartOptions.series[0].data,
+                  connectNulls: true
+                }];
+                if (_graphs[index].chartOptions.xAxis.categories.length > 9) _graphs[index].chartOptions.xAxis.categories = _graphs[index].chartOptions.xAxis.categories.filter(function (item, index) {
+                  return index % 2 === 0;
+                });
+                _loadArr[index] = false;
+
+                _this.setState({
+                  graphs: _graphs,
+                  loadArr: _loadArr,
+                  compare: false
+                });
+
+              case 21:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+
+      return function (_x2, _x3) {
+        return _ref5.apply(this, arguments);
+      };
+    }());
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_15__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_13__["default"])(_this), "editGraph",
     /*#__PURE__*/
     function () {
-      var _ref4 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_8__["default"])(
+      var _ref6 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_8__["default"])(
       /*#__PURE__*/
-      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.mark(function _callee3(index, action) {
-        var graphs, bkGraphs, graph;
-        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.wrap(function _callee3$(_context3) {
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.mark(function _callee4(index, action) {
+        var graphs, bkGraphs, bkCategories, graph;
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.wrap(function _callee4$(_context4) {
           while (1) {
-            switch (_context3.prev = _context3.next) {
+            switch (_context4.prev = _context4.next) {
               case 0:
                 graphs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_7__["default"])(_this.state.graphs);
                 if (action === "remove") graphs = graphs.filter(function (item, i) {
                   return i !== index;
                 });
                 bkGraphs = [];
+                bkCategories = [];
                 graphs.forEach(function (element, i) {
+                  if (i === index) bkCategories = element.chartOptions.xAxis.categories.filter(function (item, index) {
+                    return index % 2 !== 0;
+                  });else if (element.chartOptions.xAxis.categories.length > 9) bkCategories = element.chartOptions.xAxis.categories.filter(function (item, index) {
+                    return index % 2 === 0;
+                  });else bkCategories = element.chartOptions.xAxis.categories;
                   bkGraphs.push({
-                    categories: element.chartOptions.xAxis.categories,
+                    categories: bkCategories,
                     series: action === "save" ? i === index ? element.chartOptions.series[1] : element.chartOptions.series[0] : element.chartOptions.series[0],
                     graphId: element.graphId,
                     cryptocurrency: {
@@ -14495,8 +14604,7 @@ function (_Component) {
                   userId: _this.state.user._id,
                   graphs: bkGraphs
                 };
-                console.log(bkGraphs);
-                _context3.next = 8;
+                _context4.next = 8;
                 return _services_cryptoService__WEBPACK_IMPORTED_MODULE_21__["default"].replaceGraphs(graph);
 
               case 8:
@@ -14506,14 +14614,14 @@ function (_Component) {
 
               case 9:
               case "end":
-                return _context3.stop();
+                return _context4.stop();
             }
           }
-        }, _callee3);
+        }, _callee4);
       }));
 
-      return function (_x2, _x3) {
-        return _ref4.apply(this, arguments);
+      return function (_x4, _x5) {
+        return _ref6.apply(this, arguments);
       };
     }());
 
@@ -14525,17 +14633,17 @@ function (_Component) {
     value: function () {
       var _componentDidMount = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_8__["default"])(
       /*#__PURE__*/
-      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.mark(function _callee4() {
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.mark(function _callee5() {
         var user, jwt;
-        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.wrap(function _callee4$(_context4) {
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.wrap(function _callee5$(_context5) {
           while (1) {
-            switch (_context4.prev = _context4.next) {
+            switch (_context5.prev = _context5.next) {
               case 0:
-                _context4.next = 2;
+                _context5.next = 2;
                 return _services_authService__WEBPACK_IMPORTED_MODULE_20__["default"].getCurrentUser();
 
               case 2:
-                user = _context4.sent;
+                user = _context5.sent;
                 jwt = _services_authService__WEBPACK_IMPORTED_MODULE_20__["default"].getJwt();
                 this.setState({
                   user: user,
@@ -14545,10 +14653,10 @@ function (_Component) {
 
               case 6:
               case "end":
-                return _context4.stop();
+                return _context5.stop();
             }
           }
-        }, _callee4, this);
+        }, _callee5, this);
       }));
 
       function componentDidMount() {
@@ -14565,21 +14673,21 @@ function (_Component) {
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_17__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 228
         },
         __self: this
       }, __jsx("div", {
         className: "w-50 mx-auto text-center pt-5",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 174
+          lineNumber: 229
         },
         __self: this
       }, __jsx("img", {
         src: _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_23___default.a,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 175
+          lineNumber: 230
         },
         __self: this
       }), __jsx("h1", {
@@ -14588,38 +14696,38 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 176
+          lineNumber: 231
         },
         __self: this
       }, __jsx("strong", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 176
+          lineNumber: 231
         },
         __self: this
       }, "Saved Data")), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177
+          lineNumber: 232
         },
         __self: this
       }), this.state.loaded && __jsx("div", {
         className: "col-md-12 mt-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 233
         },
         __self: this
       }, __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 179
+          lineNumber: 234
         },
         __self: this
       }, __jsx("strong", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 179
+          lineNumber: 234
         },
         __self: this
       }, "Refresh")), __jsx("button", {
@@ -14627,21 +14735,21 @@ function (_Component) {
         onClick: this.refreshData,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 180
+          lineNumber: 235
         },
         __self: this
       }, __jsx("i", {
         className: "fas fa-sync",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 180
+          lineNumber: 235
         },
         __self: this
       })))), this.state.loaded ? __jsx("div", {
         className: "text-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 184
+          lineNumber: 239
         },
         __self: this
       }, this.state.graphs.length > 0 ? this.state.graphs.map(function (item, index) {
@@ -14650,34 +14758,34 @@ function (_Component) {
           className: "pt-3",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 187
+            lineNumber: 242
           },
           __self: this
         }, __jsx("hr", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 188
+            lineNumber: 243
           },
           __self: this
         }), __jsx("img", {
           src: item.image,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 189
+            lineNumber: 244
           },
           __self: this
         }), __jsx("div", {
           className: "row mt-4",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 190
+            lineNumber: 245
           },
           __self: this
         }, __jsx("div", {
           className: "col-md-9 text-center",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 191
+            lineNumber: 246
           },
           __self: this
         }, !_this2.state.loading && !_this2.state.loadArr[index] ? __jsx(highcharts_react_official__WEBPACK_IMPORTED_MODULE_19___default.a, {
@@ -14687,7 +14795,7 @@ function (_Component) {
           allowChartUpdate: true,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 192
+            lineNumber: 247
           },
           __self: this
         }) : __jsx("div", {
@@ -14697,54 +14805,54 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 192
+            lineNumber: 247
           },
           __self: this
         }, __jsx("img", {
           src: _src_91_gif__WEBPACK_IMPORTED_MODULE_22___default.a,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 192
+            lineNumber: 247
           },
           __self: this
         }))), __jsx("div", {
           className: "col-md-3",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 194
+            lineNumber: 249
           },
           __self: this
         }, __jsx("div", {
           className: "form-group",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 195
+            lineNumber: 250
           },
           __self: this
         }, __jsx("div", {
           className: "pt-2",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 196
+            lineNumber: 251
           },
           __self: this
         }, __jsx("span", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 197
+            lineNumber: 252
           },
           __self: this
         }, __jsx("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 197
+            lineNumber: 252
           },
           __self: this
         }, "Cryptocurrency"))), __jsx("div", {
           className: "pt-2",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 199
+            lineNumber: 254
           },
           __self: this
         }, __jsx("input", {
@@ -14754,33 +14862,33 @@ function (_Component) {
           disabled: true,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 200
+            lineNumber: 255
           },
           __self: this
         })), __jsx("div", {
           className: "pt-2",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 202
+            lineNumber: 257
           },
           __self: this
         }, __jsx("span", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 203
+            lineNumber: 258
           },
           __self: this
         }, __jsx("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 203
+            lineNumber: 258
           },
           __self: this
         }, "To currency"))), __jsx("div", {
           className: "pt-2",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 205
+            lineNumber: 260
           },
           __self: this
         }, __jsx("input", {
@@ -14790,33 +14898,33 @@ function (_Component) {
           disabled: true,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 206
+            lineNumber: 261
           },
           __self: this
         })), __jsx("div", {
           className: "row",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 208
+            lineNumber: 263
           },
           __self: this
         }, __jsx("div", {
           className: "col-md-12 mt-3",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 209
+            lineNumber: 264
           },
           __self: this
         }, __jsx("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 210
+            lineNumber: 265
           },
           __self: this
         }, __jsx("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 210
+            lineNumber: 265
           },
           __self: this
         }, "Compare with current data")), __jsx("input", {
@@ -14827,26 +14935,26 @@ function (_Component) {
           className: "form-control",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 211
+            lineNumber: 266
           },
           __self: this
         })), __jsx("div", {
           className: "col-md-6 mt-3",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 213
+            lineNumber: 268
           },
           __self: this
         }, __jsx("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 214
+            lineNumber: 269
           },
           __self: this
         }, __jsx("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 214
+            lineNumber: 269
           },
           __self: this
         }, "Delete")), __jsx("button", {
@@ -14856,33 +14964,33 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 215
+            lineNumber: 270
           },
           __self: this
         }, __jsx("i", {
           className: "fas fa-minus",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 215
+            lineNumber: 270
           },
           __self: this
         }))), __jsx("div", {
           className: "col-md-6 mt-3",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 217
+            lineNumber: 272
           },
           __self: this
         }, __jsx("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 218
+            lineNumber: 273
           },
           __self: this
         }, __jsx("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 218
+            lineNumber: 273
           },
           __self: this
         }, "Save")), __jsx("button", {
@@ -14890,16 +14998,17 @@ function (_Component) {
           onClick: function onClick() {
             return _this2.editGraph(index, "save");
           },
+          disabled: !_this2.state.compare,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 219
+            lineNumber: 274
           },
           __self: this
         }, __jsx("i", {
           className: "fas fa-save",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 219
+            lineNumber: 274
           },
           __self: this
         }))))))));
@@ -14910,14 +15019,14 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 229
+          lineNumber: 284
         },
         __self: this
       }, __jsx("img", {
         src: _src_91_gif__WEBPACK_IMPORTED_MODULE_22___default.a,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 229
+          lineNumber: 284
         },
         __self: this
       })));
@@ -15211,7 +15320,7 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 0:
+/***/ 6:
 /*!*****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fsaveddata&absolutePagePath=D%3A%5CWEB%5Ccrypto%5Cclient%5Cpages%5Csaveddata.js ***!
   \*****************************************************************************************************************************/
@@ -15234,5 +15343,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[6,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=saveddata.js.map

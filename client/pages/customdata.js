@@ -87,7 +87,8 @@ export default class CustomData extends Component {
 			bkOptions.series = [{
 				type: "line",
 				name: `${this.state.selectedCryptocurrency.name} to ${this.state.selectedCurrency.name}`,
-				data: e.data.prices
+				data: e.data.prices,
+                connectNulls: true
 			}];
 			bkOptions.xAxis.categories = [...e.data.time];
 			graphs.push({
@@ -145,7 +146,8 @@ export default class CustomData extends Component {
 				graphs[i].chartOptions.series = [{
 					type: "line",
 					name: this.state.graphs[i].chartOptions.series[0].name,
-					data: e.data.prices
+					data: e.data.prices,
+					connectNulls: true
 				}]
 				this.setState({
 					graphs: graphs,
@@ -171,7 +173,8 @@ export default class CustomData extends Component {
 			graphs[index].chartOptions.series = [{
 				type: "line",
 				name: `${graphs[index].cryptocurrency} to ${graphs[index].currency}`,
-				data: e.data.prices
+				data: e.data.prices,
+                connectNulls: true
 			}];
 			loadArr[index] = false;
 			this.setState({
@@ -201,7 +204,8 @@ export default class CustomData extends Component {
 			graphs[index].chartOptions.series = [{
 				type: "line",
 				name: this.state.graphs[index].chartOptions.series[0].name,
-				data: graphs[index].chartOptions.series[0].data
+				data: graphs[index].chartOptions.series[0].data,
+                connectNulls: true
 			}];
 			loadArr[index] = false;
 			this.setState({

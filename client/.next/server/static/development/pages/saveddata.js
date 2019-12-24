@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2519,7 +2519,8 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       },
       loaded: false,
       graphs: [],
-      loadArr: []
+      loadArr: [],
+      compare: false
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "refreshData", async () => {
@@ -2544,7 +2545,8 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         bkOptions.series = [{
           type: "line",
           name: `${data.graphs[i].cryptocurrency.name} to ${data.graphs[i].currency.name}`,
-          data: data.graphs[i].series.data
+          data: data.graphs[i].series.data,
+          connectNulls: true
         }];
         bkOptions.xAxis.categories = data.graphs[i].categories;
         graphs.push({
@@ -2571,34 +2573,62 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         graphs,
         loadArr
       });
+      console.log(graphs);
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "refreshSingle", async index => {
-      const graphs = [...this.state.graphs];
+      const {
+        data
+      } = await _services_cryptoService__WEBPACK_IMPORTED_MODULE_12__["default"].getSavedData(this.state.user._id);
       const loadArr = [...this.state.loadArr];
       loadArr[index] = true;
-      await this.setState({
+      this.setState({
         loadArr
       });
-      graphs[index].chartOptions.title = {
-        text: `${graphs[index].cryptocurrency.name} to ${graphs[index].currency.name} exchange rate over time`
+      const graphs = [...this.state.graphs];
+
+      let bkOptions = _objectSpread({}, chartOptions);
+
+      bkOptions.title = {
+        text: `${data.graphs[index].cryptocurrency.name} to ${data.graphs[index].currency.name} exchange rate over time`
       };
-      graphs[index].chartOptions.series = [{
+      bkOptions.series = [{
         type: "line",
-        name: `${graphs[index].cryptocurrency.name} to ${graphs[index].currency.name}`,
-        data: graphs[index].chartOptions.series[0].data
+        name: `${data.graphs[index].cryptocurrency.name} to ${data.graphs[index].currency.name}`,
+        data: data.graphs[index].series.data,
+        connectNulls: true
       }];
+      bkOptions.xAxis.categories = data.graphs[index].categories;
+      graphs[index] = {
+        chartOptions: bkOptions,
+        cryptocurrency: {
+          name: data.graphs[index].cryptocurrency.name,
+          value: data.graphs[index].cryptocurrency.value
+        },
+        currency: {
+          name: data.graphs[index].currency.name,
+          value: data.graphs[index].currency.value
+        },
+        live: false,
+        image: data.graphs[index].image,
+        graphId: data.graphs[index].graphId,
+        date: data.graphs[index].date
+      };
       loadArr[index] = false;
       this.setState({
-        graphs: graphs,
+        data,
+        loaded: true,
+        graphs,
         loadArr
       });
+      console.log(graphs);
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "compare", (e, index) => {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "compare", async (e, index) => {
       if (e.target.checked) {
         const worker = new Worker("static/service-worker.js");
         const graphs = [...this.state.graphs];
+        console.log(graphs);
         const loadArr = [...this.state.loadArr];
         loadArr[index] = true;
         this.setState({
@@ -2610,26 +2640,65 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
             type: "line",
             name: "NEW:" + this.state.graphs[index].chartOptions.series[0].name,
             data: e.data.prices,
-            _colorIndex: 1
+            _colorIndex: 1,
+            connectNulls: true,
+            pointStart: 1,
+            pointInterval: 2
           });
+          const dates = [];
+
+          for (let i = 0; i < e.data.time.length; i++) {
+            dates.push(graphs[index].chartOptions.xAxis.categories[i]);
+            dates.push(e.data.time[i]);
+          }
+
+          graphs[index].chartOptions.xAxis.categories = [...dates];
+          graphs[index].chartOptions.series[0].pointInterval = 2;
           loadArr[index] = false;
           this.setState({
             graphs,
-            loadArr
+            loadArr,
+            compare: true
           });
+          console.log(graphs[index].chartOptions.xAxis.categories);
         };
 
         worker.postMessage(`${graphs[index].cryptocurrency.value},${graphs[index].currency.value},${this.state.jwt}`);
-      } else this.refreshSingle(index);
+      } else {
+        const graphs = [...this.state.graphs];
+        const loadArr = [...this.state.loadArr];
+        loadArr[index] = true;
+        await this.setState({
+          loadArr
+        });
+        graphs[index].chartOptions.title = {
+          text: `${graphs[index].cryptocurrency.name} to ${graphs[index].currency.name} exchange rate over time`
+        };
+        graphs[index].chartOptions.series = [{
+          type: "line",
+          name: `${graphs[index].cryptocurrency.name} to ${graphs[index].currency.name}`,
+          data: graphs[index].chartOptions.series[0].data,
+          connectNulls: true
+        }];
+        if (graphs[index].chartOptions.xAxis.categories.length > 9) graphs[index].chartOptions.xAxis.categories = graphs[index].chartOptions.xAxis.categories.filter((item, index) => index % 2 === 0);
+        loadArr[index] = false;
+        this.setState({
+          graphs: graphs,
+          loadArr,
+          compare: false
+        });
+      }
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "editGraph", async (index, action) => {
       let graphs = [...this.state.graphs];
       if (action === "remove") graphs = graphs.filter((item, i) => i !== index);
       let bkGraphs = [];
+      let bkCategories = [];
       graphs.forEach((element, i) => {
+        if (i === index) bkCategories = element.chartOptions.xAxis.categories.filter((item, index) => index % 2 !== 0);else if (element.chartOptions.xAxis.categories.length > 9) bkCategories = element.chartOptions.xAxis.categories.filter((item, index) => index % 2 === 0);else bkCategories = element.chartOptions.xAxis.categories;
         bkGraphs.push({
-          categories: element.chartOptions.xAxis.categories,
+          categories: bkCategories,
           series: action === "save" ? i === index ? element.chartOptions.series[1] : element.chartOptions.series[0] : element.chartOptions.series[0],
           graphId: element.graphId,
           cryptocurrency: {
@@ -2648,7 +2717,6 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         userId: this.state.user._id,
         graphs: bkGraphs
       };
-      console.log(bkGraphs);
       await _services_cryptoService__WEBPACK_IMPORTED_MODULE_12__["default"].replaceGraphs(graph);
       this.setState({
         graphs
@@ -2670,21 +2738,21 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
     return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 173
+        lineNumber: 228
       },
       __self: this
     }, __jsx("div", {
       className: "w-50 mx-auto text-center pt-5",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 174
+        lineNumber: 229
       },
       __self: this
     }, __jsx("img", {
       src: _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_14___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 175
+        lineNumber: 230
       },
       __self: this
     }), __jsx("h1", {
@@ -2693,38 +2761,38 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 176
+        lineNumber: 231
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 176
+        lineNumber: 231
       },
       __self: this
     }, "Saved Data")), __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 177
+        lineNumber: 232
       },
       __self: this
     }), this.state.loaded && __jsx("div", {
       className: "col-md-12 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 178
+        lineNumber: 233
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 179
+        lineNumber: 234
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 179
+        lineNumber: 234
       },
       __self: this
     }, "Refresh")), __jsx("button", {
@@ -2732,21 +2800,21 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       onClick: this.refreshData,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 180
+        lineNumber: 235
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-sync",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 180
+        lineNumber: 235
       },
       __self: this
     })))), this.state.loaded ? __jsx("div", {
       className: "text-center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 184
+        lineNumber: 239
       },
       __self: this
     }, this.state.graphs.length > 0 ? this.state.graphs.map((item, index) => __jsx("div", {
@@ -2754,34 +2822,34 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       className: "pt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 187
+        lineNumber: 242
       },
       __self: this
     }, __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 188
+        lineNumber: 243
       },
       __self: this
     }), __jsx("img", {
       src: item.image,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 189
+        lineNumber: 244
       },
       __self: this
     }), __jsx("div", {
       className: "row mt-4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 190
+        lineNumber: 245
       },
       __self: this
     }, __jsx("div", {
       className: "col-md-9 text-center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 191
+        lineNumber: 246
       },
       __self: this
     }, !this.state.loading && !this.state.loadArr[index] ? __jsx(highcharts_react_official__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -2791,7 +2859,7 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       allowChartUpdate: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 192
+        lineNumber: 247
       },
       __self: this
     }) : __jsx("div", {
@@ -2801,54 +2869,54 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 192
+        lineNumber: 247
       },
       __self: this
     }, __jsx("img", {
       src: _src_91_gif__WEBPACK_IMPORTED_MODULE_13___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 192
+        lineNumber: 247
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 194
+        lineNumber: 249
       },
       __self: this
     }, __jsx("div", {
       className: "form-group",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 195
+        lineNumber: 250
       },
       __self: this
     }, __jsx("div", {
       className: "pt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 196
+        lineNumber: 251
       },
       __self: this
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 197
+        lineNumber: 252
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 197
+        lineNumber: 252
       },
       __self: this
     }, "Cryptocurrency"))), __jsx("div", {
       className: "pt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 199
+        lineNumber: 254
       },
       __self: this
     }, __jsx("input", {
@@ -2858,33 +2926,33 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       disabled: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 200
+        lineNumber: 255
       },
       __self: this
     })), __jsx("div", {
       className: "pt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 202
+        lineNumber: 257
       },
       __self: this
     }, __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 203
+        lineNumber: 258
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 203
+        lineNumber: 258
       },
       __self: this
     }, "To currency"))), __jsx("div", {
       className: "pt-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 205
+        lineNumber: 260
       },
       __self: this
     }, __jsx("input", {
@@ -2894,33 +2962,33 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       disabled: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 206
+        lineNumber: 261
       },
       __self: this
     })), __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 208
+        lineNumber: 263
       },
       __self: this
     }, __jsx("div", {
       className: "col-md-12 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 209
+        lineNumber: 264
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 210
+        lineNumber: 265
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 210
+        lineNumber: 265
       },
       __self: this
     }, "Compare with current data")), __jsx("input", {
@@ -2929,26 +2997,26 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 211
+        lineNumber: 266
       },
       __self: this
     })), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 213
+        lineNumber: 268
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 214
+        lineNumber: 269
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 214
+        lineNumber: 269
       },
       __self: this
     }, "Delete")), __jsx("button", {
@@ -2956,48 +3024,49 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       onClick: () => this.editGraph(index, "remove"),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 215
+        lineNumber: 270
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-minus",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 215
+        lineNumber: 270
       },
       __self: this
     }))), __jsx("div", {
       className: "col-md-6 mt-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 217
+        lineNumber: 272
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 218
+        lineNumber: 273
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 218
+        lineNumber: 273
       },
       __self: this
     }, "Save")), __jsx("button", {
       className: "btn btn-primary",
       onClick: () => this.editGraph(index, "save"),
+      disabled: !this.state.compare,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 219
+        lineNumber: 274
       },
       __self: this
     }, __jsx("i", {
       className: "fas fa-save",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 219
+        lineNumber: 274
       },
       __self: this
     }))))))))) : "") : __jsx("div", {
@@ -3007,14 +3076,14 @@ class SavedData extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 229
+        lineNumber: 284
       },
       __self: this
     }, __jsx("img", {
       src: _src_91_gif__WEBPACK_IMPORTED_MODULE_13___default.a,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 229
+        lineNumber: 284
       },
       __self: this
     })));
@@ -3238,7 +3307,7 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 3:
+/***/ 7:
 /*!**********************************!*\
   !*** multi ./pages/saveddata.js ***!
   \**********************************/
