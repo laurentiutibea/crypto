@@ -16,7 +16,7 @@ export default class Navbar extends Component {
 
     handleLogout = () => {
         auth.logout();
-        window.location = "/login";
+        window.location = "/index";
     }
 
     render() {
@@ -48,7 +48,8 @@ export default class Navbar extends Component {
                             </li>
                         </ul>
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item dropdown mr-4">
+                            {this.state.user ?
+                            <li className="nav-item dropdown mr-5">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <strong>Hello {this.state.user.name}! <i className="fas fa-user-circle"/></strong>
                                 </a>
@@ -59,7 +60,18 @@ export default class Navbar extends Component {
                                     <a href="#" className="dropdown-item text-danger" style={{display:"inline-block"}} onClick={this.handleLogout}><strong>Disconnect <i className="fas fa-power-off"/></strong></a>
                                 </div>
                             </li>
+                            : 
+                            <li className="nav-item">
+                                <Link href="/login">
+                                    <a className="nav-link" style={{display:"inline"}}><strong>Login  <i className="fas fa-sign-in-alt"/></strong></a>
+                                </Link>
+                                <Link href="/register">
+                                    <a className="nav-link" style={{display:"inline"}}><strong>Register  <i className="fas fa-user-plus"/></strong></a>
+                                </Link>
+                            </li>
+                            }
                         </ul>
+                        
                     </div>
                 </nav>
             </div>

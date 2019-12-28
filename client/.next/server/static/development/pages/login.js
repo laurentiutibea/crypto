@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2002,9 +2002,10 @@ class Login extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
 
   render() {
     return __jsx("div", {
-      className: "container",
+      className: "container home",
       style: {
-        marginTop: "15%"
+        paddingTop: "10%",
+        paddingBottom: "14%"
       },
       __source: {
         fileName: _jsxFileName,
@@ -2307,7 +2308,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMUAAABECAYAAAAx
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/login.js ***!
   \******************************/

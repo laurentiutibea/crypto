@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");
 const {User, validate, validateBool} = require("../models/user");
+const {Graph} = require("../models/graph");
 
 router.get("/", [auth, admin], async (req, res) =>{
 	const user = await User.find().select("-password -__v");
@@ -77,10 +78,12 @@ router.put("/admin/:id", [auth, admin], async (req, res) => {
 
 router.delete("/:id", [auth, admin], async (req, res) => {
 	const user = await User.findByIdAndRemove(req.params.id);
+	const graph = await Graph.findOneAndRemove({userId:req.params.id});
 
 	if (!user) return res.status(404).send("The user with the given ID was not found.");
+	if (!graph) return res.status(404).send("The graph with the given ID was not found.");
 
-	res.send(user);
+	res.send({user,graph});
 });
 
 module.exports = router;

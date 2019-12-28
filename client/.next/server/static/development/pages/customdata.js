@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -252,7 +252,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __self: this
     }), __jsx("div", {
-      className: "container",
+      className: "container " + this.props.className,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 21
@@ -346,7 +346,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleLogout", () => {
       _services_authService__WEBPACK_IMPORTED_MODULE_3__["default"].logout();
-      window.location = "/login";
+      window.location = "/index";
     });
   }
 
@@ -516,11 +516,11 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
         lineNumber: 50
       },
       __self: this
-    }, __jsx("li", {
-      className: "nav-item dropdown mr-4",
+    }, this.state.user ? __jsx("li", {
+      className: "nav-item dropdown mr-5",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 52
       },
       __self: this
     }, __jsx("a", {
@@ -533,20 +533,20 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       "aria-expanded": "false",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 53
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 54
       },
       __self: this
     }, "Hello ", this.state.user.name, "! ", __jsx("i", {
       className: "fas fa-user-circle",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 54
       },
       __self: this
     }))), __jsx("div", {
@@ -554,42 +554,42 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       "aria-labelledby": "navbarDropdown",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 56
       },
       __self: this
     }, __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
       href: "/password",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 57
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 57
       },
       __self: this
     }, "Change Password")), this.state.user.isAdmin && __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
       href: "/admin",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 58
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 58
       },
       __self: this
     }, "Administration Panel")), __jsx("div", {
       className: "dropdown-divider",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 59
       },
       __self: this
     }), __jsx("a", {
@@ -601,20 +601,87 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       onClick: this.handleLogout,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 60
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 60
       },
       __self: this
     }, "Disconnect ", __jsx("i", {
       className: "fas fa-power-off",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 60
+      },
+      __self: this
+    }))))) : __jsx("li", {
+      className: "nav-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 64
+      },
+      __self: this
+    }, __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      href: "/login",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "nav-link",
+      style: {
+        display: "inline"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
+      },
+      __self: this
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
+      },
+      __self: this
+    }, "Login  ", __jsx("i", {
+      className: "fas fa-sign-in-alt",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
+      },
+      __self: this
+    })))), __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      href: "/register",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "nav-link",
+      style: {
+        display: "inline"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: this
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: this
+    }, "Register  ", __jsx("i", {
+      className: "fas fa-user-plus",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
       },
       __self: this
     })))))))));
@@ -3669,7 +3736,7 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 8:
+/***/ 9:
 /*!***********************************!*\
   !*** multi ./pages/customdata.js ***!
   \***********************************/

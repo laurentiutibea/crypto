@@ -13127,9 +13127,10 @@ function (_Component) {
     key: "render",
     value: function render() {
       return __jsx("div", {
-        className: "container",
+        className: "container home",
         style: {
-          marginTop: "15%"
+          paddingTop: "10%",
+          paddingBottom: "14%"
         },
         __source: {
           fileName: _jsxFileName,

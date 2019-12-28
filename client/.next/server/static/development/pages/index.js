@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -252,7 +252,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __self: this
     }), __jsx("div", {
-      className: "container",
+      className: "container " + this.props.className,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 21
@@ -346,7 +346,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleLogout", () => {
       _services_authService__WEBPACK_IMPORTED_MODULE_3__["default"].logout();
-      window.location = "/login";
+      window.location = "/index";
     });
   }
 
@@ -516,11 +516,11 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
         lineNumber: 50
       },
       __self: this
-    }, __jsx("li", {
-      className: "nav-item dropdown mr-4",
+    }, this.state.user ? __jsx("li", {
+      className: "nav-item dropdown mr-5",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 52
       },
       __self: this
     }, __jsx("a", {
@@ -533,20 +533,20 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       "aria-expanded": "false",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 53
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 54
       },
       __self: this
     }, "Hello ", this.state.user.name, "! ", __jsx("i", {
       className: "fas fa-user-circle",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 54
       },
       __self: this
     }))), __jsx("div", {
@@ -554,42 +554,42 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       "aria-labelledby": "navbarDropdown",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 56
       },
       __self: this
     }, __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
       href: "/password",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 57
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 57
       },
       __self: this
     }, "Change Password")), this.state.user.isAdmin && __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
       href: "/admin",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 58
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 58
       },
       __self: this
     }, "Administration Panel")), __jsx("div", {
       className: "dropdown-divider",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 59
       },
       __self: this
     }), __jsx("a", {
@@ -601,20 +601,87 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       onClick: this.handleLogout,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 60
       },
       __self: this
     }, __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 60
       },
       __self: this
     }, "Disconnect ", __jsx("i", {
       className: "fas fa-power-off",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 60
+      },
+      __self: this
+    }))))) : __jsx("li", {
+      className: "nav-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 64
+      },
+      __self: this
+    }, __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      href: "/login",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "nav-link",
+      style: {
+        display: "inline"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
+      },
+      __self: this
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
+      },
+      __self: this
+    }, "Login  ", __jsx("i", {
+      className: "fas fa-sign-in-alt",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
+      },
+      __self: this
+    })))), __jsx(_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      href: "/register",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "nav-link",
+      style: {
+        display: "inline"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: this
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: this
+    }, "Register  ", __jsx("i", {
+      className: "fas fa-user-plus",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
       },
       __self: this
     })))))))));
@@ -2412,12 +2479,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
-/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
+/* harmony import */ var _components_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/link */ "./components/link.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
+/* harmony import */ var _services_authService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/authService */ "./services/authService.js");
+/* harmony import */ var _services_cryptoService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/cryptoService */ "./services/cryptoService.js");
+/* harmony import */ var _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../src/crypto-text.png */ "./src/crypto-text.png");
+/* harmony import */ var _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_src_crypto_text_png__WEBPACK_IMPORTED_MODULE_6__);
 
 var _jsxFileName = "D:\\WEB\\crypto\\client\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
 
 
 
@@ -2433,26 +2505,101 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
   }
 
   async componentDidMount() {
-    const user = _services_authService__WEBPACK_IMPORTED_MODULE_3__["default"].getCurrentUser();
+    const user = _services_authService__WEBPACK_IMPORTED_MODULE_4__["default"].getCurrentUser();
     this.setState({
       user
     });
   }
 
   render() {
-    if (false) {} else return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      className: "home",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "w-75 mx-auto text-center",
+      style: {
+        paddingTop: "10vh"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }, __jsx("img", {
+      src: _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_6___default.a,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 22
       },
       __self: this
-    }, __jsx("p", {
+    }), __jsx("h1", {
+      style: {
+        fontFamily: "Courier New"
+      },
       __source: {
         fileName: _jsxFileName,
         lineNumber: 23
       },
       __self: this
-    }, "Hello ", this.state.user.name));
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, "A solution for your investments")), __jsx("hr", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }), __jsx("div", {
+      className: "w-50 mx-auto",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }, __jsx("img", {
+      src: "https://steemitimages.com/DQmV75cQgvWMEXBdDrH7vJfMLzyAY8KxLvAsBrViSyendvB/coins-2.png",
+      className: "w-100",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    })), __jsx("div", {
+      className: "mt-5",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: this
+    }, __jsx(_components_link__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      href: "/customdata",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "btn btn-primary",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, "Build your custom graphs"))))));
   }
 
 }
@@ -2631,6 +2778,17 @@ function setJwt(jwt) {
 
 /***/ }),
 
+/***/ "./src/crypto-text.png":
+/*!*****************************!*\
+  !*** ./src/crypto-text.png ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
 /***/ "./src/crypto.png":
 /*!************************!*\
   !*** ./src/crypto.png ***!
@@ -2653,7 +2811,7 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 9:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
