@@ -157,7 +157,7 @@ function (_Component) {
           lineNumber: 13
         },
         __self: this
-      }, "Home"), __jsx("link", {
+      }, "Crypto"), __jsx("link", {
         rel: "stylesheet",
         href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
         integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
@@ -178,7 +178,7 @@ function (_Component) {
       }), __jsx("script", {
         src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
         integrity: "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo",
-        crossorigin: "anonymous",
+        crossOrigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 16
@@ -187,7 +187,7 @@ function (_Component) {
       }), __jsx("script", {
         src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
         integrity: "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1",
-        crossorigin: "anonymous",
+        crossOrigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 17
@@ -196,7 +196,7 @@ function (_Component) {
       }), __jsx("script", {
         src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
         integrity: "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM",
-        crossorigin: "anonymous",
+        crossOrigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 18
@@ -501,22 +501,28 @@ function (_Component) {
           lineNumber: 46
         },
         __self: this
-      }, "Saved Data")))), this.state.user.isAdmin && __jsx("li", {
-        className: "nav-item",
+      }, "Saved Data"))))), __jsx("ul", {
+        className: "navbar-nav ml-auto",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 50
         },
         __self: this
-      }, __jsx(_link__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        href: "/admin",
+      }, __jsx("li", {
+        className: "nav-item dropdown mr-4",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 51
         },
         __self: this
       }, __jsx("a", {
-        className: "nav-link text-success",
+        className: "nav-link dropdown-toggle",
+        href: "#",
+        id: "navbarDropdown",
+        role: "button",
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": "false",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 52
@@ -525,59 +531,82 @@ function (_Component) {
       }, __jsx("strong", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 53
         },
         __self: this
-      }, "Administration Panel"))))), __jsx("ul", {
-        className: "navbar-nav ml-auto",
+      }, "Hello ", this.state.user.name, "! ", __jsx("i", {
+        className: "fas fa-user-circle",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      }))), __jsx("div", {
+        className: "dropdown-menu mx-auto",
+        "aria-labelledby": "navbarDropdown",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }, __jsx(_link__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        href: "/password",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 56
         },
         __self: this
-      }, __jsx("li", {
-        className: "nav-item",
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, "Change Password")), this.state.user.isAdmin && __jsx(_link__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        href: "/admin",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 57
         },
         __self: this
-      }, __jsx("span", {
-        className: "nav-link",
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }, "Administration Panel")), __jsx("div", {
+        className: "dropdown-divider",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 58
         },
         __self: this
-      }, __jsx("strong", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 58
-        },
-        __self: this
-      }, "Hello ", this.state.user.name, "!"), " ", __jsx("a", {
+      }), __jsx("a", {
         href: "#",
-        className: "text-danger",
+        className: "dropdown-item text-danger",
         style: {
           display: "inline-block"
         },
         onClick: this.handleLogout,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 59
         },
         __self: this
       }, __jsx("strong", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 59
         },
         __self: this
-      }, __jsx("i", {
+      }, "Disconnect ", __jsx("i", {
         className: "fas fa-power-off",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 59
         },
         __self: this
       })))))))));
@@ -14670,24 +14699,26 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_17__["default"], {
+      if ( true && !_services_authService__WEBPACK_IMPORTED_MODULE_20__["default"].getCurrentUser()) {
+        window.location.replace("/login");
+      } else return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_17__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 228
+          lineNumber: 231
         },
         __self: this
       }, __jsx("div", {
         className: "w-50 mx-auto text-center pt-5",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 229
+          lineNumber: 232
         },
         __self: this
       }, __jsx("img", {
         src: _src_crypto_text_png__WEBPACK_IMPORTED_MODULE_23___default.a,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 230
+          lineNumber: 233
         },
         __self: this
       }), __jsx("h1", {
@@ -14696,38 +14727,38 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 231
+          lineNumber: 234
         },
         __self: this
       }, __jsx("strong", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 231
+          lineNumber: 234
         },
         __self: this
       }, "Saved Data")), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 232
+          lineNumber: 235
         },
         __self: this
       }), this.state.loaded && __jsx("div", {
         className: "col-md-12 mt-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 233
+          lineNumber: 236
         },
         __self: this
       }, __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 234
+          lineNumber: 237
         },
         __self: this
       }, __jsx("strong", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 234
+          lineNumber: 237
         },
         __self: this
       }, "Refresh")), __jsx("button", {
@@ -14735,21 +14766,21 @@ function (_Component) {
         onClick: this.refreshData,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 238
         },
         __self: this
       }, __jsx("i", {
         className: "fas fa-sync",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 238
         },
         __self: this
       })))), this.state.loaded ? __jsx("div", {
         className: "text-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 239
+          lineNumber: 242
         },
         __self: this
       }, this.state.graphs.length > 0 ? this.state.graphs.map(function (item, index) {
@@ -14758,34 +14789,34 @@ function (_Component) {
           className: "pt-3",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 242
+            lineNumber: 245
           },
           __self: this
         }, __jsx("hr", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 243
+            lineNumber: 246
           },
           __self: this
         }), __jsx("img", {
           src: item.image,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 244
+            lineNumber: 247
           },
           __self: this
         }), __jsx("div", {
           className: "row mt-4",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 245
+            lineNumber: 248
           },
           __self: this
         }, __jsx("div", {
           className: "col-md-9 text-center",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 246
+            lineNumber: 249
           },
           __self: this
         }, !_this2.state.loading && !_this2.state.loadArr[index] ? __jsx(highcharts_react_official__WEBPACK_IMPORTED_MODULE_19___default.a, {
@@ -14795,7 +14826,7 @@ function (_Component) {
           allowChartUpdate: true,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 247
+            lineNumber: 250
           },
           __self: this
         }) : __jsx("div", {
@@ -14805,54 +14836,54 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 247
+            lineNumber: 250
           },
           __self: this
         }, __jsx("img", {
           src: _src_91_gif__WEBPACK_IMPORTED_MODULE_22___default.a,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 247
+            lineNumber: 250
           },
           __self: this
         }))), __jsx("div", {
           className: "col-md-3",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 249
+            lineNumber: 252
           },
           __self: this
         }, __jsx("div", {
           className: "form-group",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 250
+            lineNumber: 253
           },
           __self: this
         }, __jsx("div", {
           className: "pt-2",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 251
+            lineNumber: 254
           },
           __self: this
         }, __jsx("span", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 252
+            lineNumber: 255
           },
           __self: this
         }, __jsx("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 252
+            lineNumber: 255
           },
           __self: this
         }, "Cryptocurrency"))), __jsx("div", {
           className: "pt-2",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 254
+            lineNumber: 257
           },
           __self: this
         }, __jsx("input", {
@@ -14862,33 +14893,33 @@ function (_Component) {
           disabled: true,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 255
+            lineNumber: 258
           },
           __self: this
         })), __jsx("div", {
           className: "pt-2",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 257
+            lineNumber: 260
           },
           __self: this
         }, __jsx("span", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 258
+            lineNumber: 261
           },
           __self: this
         }, __jsx("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 258
+            lineNumber: 261
           },
           __self: this
         }, "To currency"))), __jsx("div", {
           className: "pt-2",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 260
+            lineNumber: 263
           },
           __self: this
         }, __jsx("input", {
@@ -14898,33 +14929,33 @@ function (_Component) {
           disabled: true,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 261
+            lineNumber: 264
           },
           __self: this
         })), __jsx("div", {
           className: "row",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 263
+            lineNumber: 266
           },
           __self: this
         }, __jsx("div", {
           className: "col-md-12 mt-3",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 264
+            lineNumber: 267
           },
           __self: this
         }, __jsx("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 265
+            lineNumber: 268
           },
           __self: this
         }, __jsx("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 265
+            lineNumber: 268
           },
           __self: this
         }, "Compare with current data")), __jsx("input", {
@@ -14935,26 +14966,26 @@ function (_Component) {
           className: "form-control",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 266
+            lineNumber: 269
           },
           __self: this
         })), __jsx("div", {
           className: "col-md-6 mt-3",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 268
+            lineNumber: 271
           },
           __self: this
         }, __jsx("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 269
+            lineNumber: 272
           },
           __self: this
         }, __jsx("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 269
+            lineNumber: 272
           },
           __self: this
         }, "Delete")), __jsx("button", {
@@ -14964,33 +14995,33 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 270
+            lineNumber: 273
           },
           __self: this
         }, __jsx("i", {
           className: "fas fa-minus",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 270
+            lineNumber: 273
           },
           __self: this
         }))), __jsx("div", {
           className: "col-md-6 mt-3",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 272
+            lineNumber: 275
           },
           __self: this
         }, __jsx("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 273
+            lineNumber: 276
           },
           __self: this
         }, __jsx("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 273
+            lineNumber: 276
           },
           __self: this
         }, "Save")), __jsx("button", {
@@ -15001,14 +15032,14 @@ function (_Component) {
           disabled: !_this2.state.compare,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 274
+            lineNumber: 277
           },
           __self: this
         }, __jsx("i", {
           className: "fas fa-save",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 274
+            lineNumber: 277
           },
           __self: this
         }))))))));
@@ -15019,14 +15050,14 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 284
+          lineNumber: 287
         },
         __self: this
       }, __jsx("img", {
         src: _src_91_gif__WEBPACK_IMPORTED_MODULE_22___default.a,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 284
+          lineNumber: 287
         },
         __self: this
       })));
@@ -15191,14 +15222,14 @@ function getJwt() {
 /*!***********************************!*\
   !*** ./services/cryptoService.js ***!
   \***********************************/
-/*! exports provided: getCryptocurrencies, getSavedData, getCurrencies, saveGraph, replaceGraphs, createUserGraphs, default */
+/*! exports provided: getCryptocurrencies, getSavedData, getInfo, saveGraph, replaceGraphs, createUserGraphs, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCryptocurrencies", function() { return getCryptocurrencies; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSavedData", function() { return getSavedData; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCurrencies", function() { return getCurrencies; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getInfo", function() { return getInfo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveGraph", function() { return saveGraph; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "replaceGraphs", function() { return replaceGraphs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createUserGraphs", function() { return createUserGraphs; });
@@ -15216,7 +15247,7 @@ function getSavedData(userId) {
     userId: userId
   });
 }
-function getCurrencies(cryptocurrency, currency) {
+function getInfo(cryptocurrency, currency) {
   return _httpService__WEBPACK_IMPORTED_MODULE_0__["default"].post("".concat(apiEndpoit, "/getInfo"), {
     cryptocurrency: cryptocurrency,
     currency: currency
@@ -15237,7 +15268,7 @@ function createUserGraphs(userId) {
   });
 }
 /* harmony default export */ __webpack_exports__["default"] = ({
-  getCurrencies: getCurrencies,
+  getInfo: getInfo,
   getCryptocurrencies: getCryptocurrencies,
   saveGraph: saveGraph,
   createUserGraphs: createUserGraphs,
@@ -15320,7 +15351,7 @@ module.exports = "/_next/static/images/crypto-1543ce0fdc8a5a80c0018d4c2d431e25.p
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!*****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fsaveddata&absolutePagePath=D%3A%5CWEB%5Ccrypto%5Cclient%5Cpages%5Csaveddata.js ***!
   \*****************************************************************************************************************************/
@@ -15343,5 +15374,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js","styles"]]]);
+},[[5,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=saveddata.js.map

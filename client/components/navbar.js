@@ -46,16 +46,18 @@ export default class Navbar extends Component {
                                     <a className="nav-link"><strong>Saved Data</strong></a>
                                 </Link>
                             </li>
-                            {this.state.user.isAdmin && 
-                                <li className="nav-item">
-                                    <Link href="/admin">
-                                        <a className="nav-link text-success"><strong>Administration Panel</strong></a>
-                                    </Link>
-                                </li>}
                         </ul>
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <span className="nav-link"><strong>Hello {this.state.user.name}!</strong> <a href="#" className="text-danger" style={{display:"inline-block"}} onClick={this.handleLogout}><strong><i className="fas fa-power-off"/></strong></a></span>
+                            <li className="nav-item dropdown mr-4">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <strong>Hello {this.state.user.name}! <i className="fas fa-user-circle"/></strong>
+                                </a>
+                                <div className="dropdown-menu mx-auto" aria-labelledby="navbarDropdown">
+                                    <Link href="/password"><a className="dropdown-item">Change Password</a></Link>
+                                    {this.state.user.isAdmin && <Link href="/admin"><a className="dropdown-item">Administration Panel</a></Link>}
+                                    <div className="dropdown-divider"></div>
+                                    <a href="#" className="dropdown-item text-danger" style={{display:"inline-block"}} onClick={this.handleLogout}><strong>Disconnect <i className="fas fa-power-off"/></strong></a>
+                                </div>
                             </li>
                         </ul>
                     </div>

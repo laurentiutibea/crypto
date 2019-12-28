@@ -27,4 +27,44 @@
     box-shadow: 4px 4px 23px -4px rgba(0,0,0,0.25);
 }
 
+.table-data {
+    overflow-x: auto; 
+}
+
+.table {
+    border: 1px solid #dee2e6; 
+}
+
+.table table {
+    font-size: 14px;
+    border-collapse: collapse;
+    width: 600px; 
+}
+
+.table td, .table th {
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+    color: #404040;
+    font-weight: bolder; 
+}
+
+.table td a, .table th a {
+    text-decoration: none;
+    color: #2C78B4;
+    font-weight: bold; 
+}
+
+.table tbody tr:hover {
+    background-color: #eeeeee; 
+}
+
+.table th {
+    position: sticky;
+    top: 0;
+    background-color: #7ec1ff93;
+    color: brown;
+    font-weight: bold; 
+}
+
 /*# sourceMappingURL=styles.chunk.css.map*/

@@ -270,6 +270,10 @@ export default class CustomData extends Component {
 	}
 
 	render() {
+		if(process.browser && !auth.getCurrentUser()) {
+            window.location.replace("/login");
+		}
+		else {
 		const { filtered: cryptocurrencies } = this.getFilteredCryptocurrencies();
 		const { filtered: currencies } = this.getFilteredCurrencies();
 		return (
@@ -278,7 +282,7 @@ export default class CustomData extends Component {
 					<img src={cryptoImg} />
 					<h1 style={{fontFamily: "Courier New"}}><strong>Custom Data Graphs</strong></h1>
 					<hr/>
-					</div>
+				</div>
 				{this.state.loaded ?
 					<div className="text-center pt-2">
 						<div className="row w-75 mx-auto">
@@ -356,5 +360,6 @@ export default class CustomData extends Component {
 				: <div className="w-50 mx-auto text-center" style={{paddingTop: "30vh"}}><img src={loading} /></div>}
 			</Layout>
 		)
+	}
 	}
 }

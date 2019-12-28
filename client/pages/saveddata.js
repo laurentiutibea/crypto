@@ -224,7 +224,10 @@ export default class SavedData extends Component {
     }
 
     render() {
-        return (
+        if(process.browser && !auth.getCurrentUser()) {
+            window.location.replace("/login");
+        }
+        else return (
             <Layout>
                 <div className="w-50 mx-auto text-center pt-5">
 					<img src={cryptoImg} />

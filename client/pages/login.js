@@ -3,6 +3,8 @@ import Head from "next/head";
 import Link from 'next/link';
 
 import auth from "../services/authService";
+import cryptoImg from "../src/crypto-text.png";
+import "../static/style.css";
 
 export default class Login extends Component {
     state = {
@@ -39,21 +41,21 @@ export default class Login extends Component {
     }
 
     render() {
-        
-
         return (
             <div className="container" style={{marginTop:"15%"}}>
                 <Head>
                     <title>Login</title>
                     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
                 </Head>
-                <div className="card w-50 mx-auto">
+                <div className="card w-50 mx-auto shadow">
                     <div className="card-body text-center pt-4">
-                        <h5 className="card-title">Login Page</h5>
+                        <img src={cryptoImg}/>
+                        <h1 style={{fontFamily: "Courier New"}}><strong>Login</strong></h1>
+					    <hr/>
                         <form onSubmit={this.doSubmit} method="POST" className="m-auto">
                             <div className="form-group input">
-                                <input type="text" name="email" placeholder="Email" value={this.state.data.email} onChange={this.handleChange} className="form-control mb-3 mt-2"/>
-                                <input type="password" name="password" placeholder="Password" value={this.state.data.password} onChange={this.handleChange} className="form-control mb-3"/>
+                                <input type="text" name="email" placeholder="Email" value={this.state.data.email} onChange={this.handleChange} className="form-control mb-3 mt-2 shadow w-75 mx-auto"/>
+                                <input type="password" name="password" placeholder="Password" value={this.state.data.password} onChange={this.handleChange} className="form-control mb-3 shadow w-75 mx-auto"/>
                                 <p>Create an account:
                                     <Link href="/register">
                                         <a><span className="ml-2">Register</span></a>
